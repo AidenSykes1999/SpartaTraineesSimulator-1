@@ -54,10 +54,9 @@ public class Controller {
             for (Centre centre : centres) {
                 System.out.print(centre.getCurrentCapacity() + ", ");
             }
-
             System.out.println("Waiting list size: " + waitingList.size());
 
-            // for(int j = 0; j < trainees.size(); i++){
+           // for(int j = 0; j < trainees.size(); i++){
             //     while(trainees.get(j).getTrainingTime() < )
             //     trainees.get(j).incrementTrainingTime();
             // }
@@ -71,7 +70,7 @@ public class Controller {
         }
 
         System.out.println("Total centres: " + totalCenters);
-        System.out.println("Total waitinglist: " + waitingList.size());
+        System.out.println("Total waitingList size: " + waitingList.size());
     }
 
     public ArrayList<Trainee> generateTrainees(){
