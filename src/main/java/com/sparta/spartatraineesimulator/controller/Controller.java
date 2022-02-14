@@ -85,4 +85,16 @@ public class Controller {
 
         return newTrainees;
     }
+
+    public int getTotalEnlisted() {
+        return totalEnlisted;
+    }
+
+    public ArrayList<Centre> getCentres() {
+        return centres;
+    }
+
+    public ArrayList<Trainee> getWaitingList() {
+        return waitingList;
+    }
 }
