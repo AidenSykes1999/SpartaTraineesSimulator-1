@@ -4,6 +4,7 @@ package com.sparta.spartatraineesimulator.controller;
 
 import com.sparta.spartatraineesimulator.model.Centre;
 import com.sparta.spartatraineesimulator.model.Trainee;
+import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ public class Controller {
     private ArrayList<Trainee> waitingList = new ArrayList<>();
 
     public void runSimulation(int month) {
+        DisplayManager dm = new DisplayManager();
         for(int i = 0; i < month; i++){
 
             ArrayList<Trainee> newTrainees = generateTrainees();
@@ -69,8 +71,10 @@ public class Controller {
             totalCenters += centre.getCurrentCapacity();
         }
 
-        System.out.println("Total centres: " + totalCenters);
-        System.out.println("Total waitingList size: " + waitingList.size());
+        System.out.println(dm.displayTheDetails(totalCenters/100, totalCenters/100, totalCenters, waitingList.size()));
+
+//        System.out.println("Total centres: " + totalCenters/100);
+//        System.out.println("Total waitingList size: " + waitingList.size());
     }
 
     public ArrayList<Trainee> generateTrainees(){
