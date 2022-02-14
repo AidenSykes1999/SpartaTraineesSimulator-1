@@ -12,6 +12,8 @@ public class Centre {
         this.trainees = trainees;
     }
 
+
+
     public ArrayList<Trainee> getTrainees() {
         return trainees;
     }
@@ -19,5 +21,12 @@ public class Centre {
     public void setTrainees(ArrayList<Trainee> trainees) {
         this.trainees = trainees;
     }
+
+
+    // Auto-generated Constructor
+    public Centre() {
+
+    }
+
 
 }
