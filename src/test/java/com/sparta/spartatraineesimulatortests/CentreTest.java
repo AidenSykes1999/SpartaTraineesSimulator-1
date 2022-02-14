@@ -22,19 +22,31 @@ public class CentreTest {
     }
 
     @Test
-    @DisplayName("Given the project is run, ensure that Centre's getter and setter are functional")
-    void testGetterAndSetter(){
+    @DisplayName("Given the project is run, ensure that program can flag max capacity")
+    void isMaxCapacity(){
 
         Centre centre = new Centre();
-        ArrayList<Trainee> trainees;
-        centre.getTrainees();
-        ArrayList<Trainee> trainees1 = null ;
-        centre.setTrainees(trainees1);
 
-        Assertions.assertNotNull(centre);
+        centre.getCurrentCapacity();
+        Boolean expected = centre.isCentreFull();
+
+        Assertions.assertEquals(false,expected);
 
     }
 
+    @Test
+    @DisplayName("Given there is a Centre, ensure that program can find the number of empty spaces in the centre")
+    void findEmptySpaceInCentre(){
 
+        Centre centre = new Centre();
+        int LIMIT = 100;
+        int currentCapacity = 0;
+        centre.getCurrentCapacity();
+
+        int expected = centre.getEmptySpace();
+
+        Assertions.assertEquals(100,expected);
+
+    }
 
 }
