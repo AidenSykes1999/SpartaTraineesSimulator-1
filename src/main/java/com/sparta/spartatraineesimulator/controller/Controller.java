@@ -6,42 +6,84 @@ import com.sparta.spartatraineesimulator.model.Centre;
 import com.sparta.spartatraineesimulator.model.Trainee;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Controller {
+
+    private int totalEnlisted = 0;
     private int traineeId = 0;
-    private ArrayList<Centre> centres;
-    private ArrayList<Trainee> trainees = new ArrayList<>();
+    private ArrayList<Centre> centres = new ArrayList<>();
+    private ArrayList<Trainee> waitingList = new ArrayList<>();
 
     public void runSimulation(int month) {
         for(int i = 0; i < month; i++){
-            generateTrainees();
+
+            ArrayList<Trainee> newTrainees = generateTrainees();
+            waitingList.addAll(newTrainees);
+            totalEnlisted += newTrainees.size();
+
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
             System.out.println("1 month passed");
             if(i % 2 == 0){
                 centres.add(new Centre());
             }
-            for(int k = 0; k < centres.size(); k++){
-                centres.get(k).setTrainees
+
+            for (Centre centre : centres) {
+                if (!centre.isCentreFull()) {
+                    int freeSpace = centre.getEmptySpace();
+
+                    if (freeSpace >= waitingList.size()) {
+                        centre.addAllTrainees(waitingList);
+                        waitingList.clear();
+                    }
+                    else if (freeSpace < waitingList.size()) {
+                        List<Trainee> subListTrainee = waitingList.subList(0, freeSpace);
+                        centre.addAllTrainees(subListTrainee);
+                        waitingList.removeAll(subListTrainee);
+                    }
+
+                }
             }
-            for(int j = 0; j < trainees.size(); i++){
-                while(trainees.get(j).getTrainingTime() < )
-                trainees.get(j).incrementTrainingTime();
+
+            for (Centre centre : centres) {
+                System.out.print(centre.getCurrentCapacity() + ", ");
             }
+
+            System.out.println("Waiting list size: " + waitingList.size());
+
+            // for(int j = 0; j < trainees.size(); i++){
+            //     while(trainees.get(j).getTrainingTime() < )
+            //     trainees.get(j).incrementTrainingTime();
+            // }
         }
+
+        System.out.println("Total enlisted: " + totalEnlisted);
+
+        int totalCenters = 0;
+        for (Centre centre : centres) {
+            totalCenters += centre.getCurrentCapacity();
+        }
+
+        System.out.println("Total centres: " + totalCenters);
+        System.out.println("Total waitinglist: " + waitingList.size());
     }
 
     public ArrayList<Trainee> generateTrainees(){
         Random r = new Random();
         int numberOfTrainees = r.nextInt(50, 101);
+        ArrayList<Trainee> newTrainees = new ArrayList<Trainee>();
+
         for(int i = 0; i < numberOfTrainees; i++){
-            trainees.add(new Trainee(traineeId, 0));
+            newTrainees.add(new Trainee(traineeId, 0));
             traineeId++;
         }
-        return trainees;
+
+        return newTrainees;
     }
 }
