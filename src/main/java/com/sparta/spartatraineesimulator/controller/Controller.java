@@ -14,6 +14,7 @@ public class Controller {
 
     private int totalEnlisted = 0;
     private int traineeId = 0;
+    private int totalTraining = 0;
     private ArrayList<Centre> centres = new ArrayList<>();
     private ArrayList<Trainee> waitingList = new ArrayList<>();
 
@@ -66,12 +67,17 @@ public class Controller {
 
         System.out.println("Total enlisted: " + totalEnlisted);
 
-        int totalCenters = 0;
+        int totalFullCenters = 0;
         for (Centre centre : centres) {
-            totalCenters += centre.getCurrentCapacity();
+            totalFullCenters += centre.getCurrentCapacity()/100;
         }
+        if (totalEnlisted > (centres.size()*100)){
+            totalTraining = centres.size()*100;
+        }
+        else
+            totalTraining = totalEnlisted;
 
-        System.out.println(dm.displayTheDetails(totalCenters/100, totalCenters/100, totalCenters, waitingList.size()));
+        System.out.println(dm.displayTheDetails(centres.size(), totalFullCenters, totalTraining, waitingList.size()));
 
 //        System.out.println("Total centres: " + totalCenters/100);
 //        System.out.println("Total waitingList size: " + waitingList.size());
