@@ -1,7 +1,11 @@
 package com.sparta.spartatraineesimulator;
 
 import com.sparta.spartatraineesimulator.controller.Controller;
+import com.sparta.spartatraineesimulator.model.TrainingCentre;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
+import com.sparta.spartatraineesimulator.view.FileWriterClass;
+
+import java.util.ArrayList;
 
 public class Main {
 
@@ -32,9 +36,12 @@ public class Main {
         int numberOfFullCentres = controller.getNumberOfFullCentres();
         int numberCurrentlyTraining = controller.getNumberCurrentlyTraining();
         int numberOfTraineesWaiting = controller.getNumberOfTraineesWaiting();
+        ArrayList<TrainingCentre> centres = controller.getCentres();
 
         dm.displayTheDetails(numberOfOpenCentres, numberOfFullCentres, numberCurrentlyTraining, numberOfTraineesWaiting);
 
+        FileWriterClass writer = new FileWriterClass();
+        writer.outputToFile(centres);
     }
 
 }
