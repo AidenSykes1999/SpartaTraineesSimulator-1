@@ -5,12 +5,9 @@ import java.util.ArrayList;
 public class TechCentre extends TrainingCentre {
 
     public TechCentre() {
-
         super();
-        setLimit(100);
+        setLimit(200);
         this.setTrainees(new ArrayList<>(getLimit()));
-
-
     }
 
     @Override
