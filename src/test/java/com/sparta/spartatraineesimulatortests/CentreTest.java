@@ -79,7 +79,7 @@ public class CentreTest {
 
         boolean expected = techCentre.shouldClose();
 
-        Assertions.assertTrue(true);
+        Assertions.assertTrue(expected);
 
 
     }
@@ -90,11 +90,10 @@ public class CentreTest {
 
         TrainingHub trainingHub = new TrainingHub();
         trainingHub.setCurrentCapacity(24);
-        trainingHub.getCurrentCapacity();
 
         boolean expected = trainingHub.shouldClose();
 
-        Assertions.assertEquals(true, true);
+        Assertions.assertTrue(expected);
 
 
     }
