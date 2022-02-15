@@ -2,9 +2,12 @@ package com.sparta.spartatraineesimulator;
 
 import com.sparta.spartatraineesimulator.controller.Controller;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
 
+    public static Logger logger = LogManager.getLogger("Sparta-Simulator-Logger");
     private static int currentMonth = 0;
 
     public static void main(String[] args) {
