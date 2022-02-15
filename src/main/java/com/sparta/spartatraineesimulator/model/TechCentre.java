@@ -20,4 +20,12 @@ public class TechCentre extends TrainingCentre {
 
     }
 
+    @Override
+    public String toString() {
+        return "TechCentre:\n" +
+                "Current capacity = " + super.getCurrentCapacity() +
+                "\nLimit = " + super.getLimit() +
+                "\nEmpty Space = " + super.getEmptySpace() +
+                "\nTrainees = " + super.getTrainees() + "\n\n";
+    }
 }

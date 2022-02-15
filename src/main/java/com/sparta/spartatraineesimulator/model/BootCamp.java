@@ -27,4 +27,13 @@ public class BootCamp extends TrainingCentre {
 
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "BootCamp:\n" +
+                "Current capacity = " + super.getCurrentCapacity() +
+                "\nLimit = " + super.getLimit() +
+                "\nEmpty Space = " + super.getEmptySpace() +
+                "\nTrainees = " + super.getTrainees() + "\n\n";
+    }
 }

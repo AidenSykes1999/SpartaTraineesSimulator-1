@@ -50,4 +50,13 @@ public class Trainee {
     public Courses getCourseType() {
         return courseType;
     }
+
+    @Override
+    public String toString() {
+        return "\nTrainee:\n" +
+                "Trainee ID = " + traineeId +
+                "\nTraining time = " + trainingTime +
+                "\nIs waiting? = " + isWaiting +
+                "\nCourse = " + courseType;
+    }
 }

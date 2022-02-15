@@ -136,5 +136,9 @@ public class Controller {
     public int getTotalEnlisted() {
         return totalEnlisted;
     }
+
+    public ArrayList<TrainingCentre> getCentres() {
+        return centres;
+    }
 }
 
