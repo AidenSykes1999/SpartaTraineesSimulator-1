@@ -1,12 +1,9 @@
 package com.sparta.spartatraineesimulatortests;
 
-import com.sparta.spartatraineesimulator.model.Centre;
-import com.sparta.spartatraineesimulator.model.Trainee;
+import com.sparta.spartatraineesimulator.model.TechCentre;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 public class CentreTest {
 
@@ -15,7 +12,7 @@ public class CentreTest {
     @DisplayName("Given the project is run, ensure that Centre is runnable.")
     void getCentreTestMethod(){
 
-        Centre centre = new Centre();
+        TechCentre centre = new TechCentre();
 
         Assertions.assertNotNull(centre);
 
@@ -25,7 +22,7 @@ public class CentreTest {
     @DisplayName("Given the project is run, ensure that program can flag max capacity")
     void isMaxCapacity(){
 
-        Centre centre = new Centre();
+        TechCentre centre = new TechCentre();
 
         centre.getCurrentCapacity();
         Boolean expected = centre.isCentreFull();
@@ -38,12 +35,12 @@ public class CentreTest {
     @DisplayName("Given there is a Centre, ensure that program can find the number of empty spaces in the centre")
     void findEmptySpaceInCentre(){
 
-        Centre centre = new Centre();
+        TechCentre techCentre = new TechCentre();
         int LIMIT = 100;
         int currentCapacity = 0;
-        centre.getCurrentCapacity();
+        techCentre.getCurrentCapacity();
 
-        int expected = centre.getEmptySpace();
+        int expected = techCentre.getEmptySpace();
 
         Assertions.assertEquals(100,expected);
 
