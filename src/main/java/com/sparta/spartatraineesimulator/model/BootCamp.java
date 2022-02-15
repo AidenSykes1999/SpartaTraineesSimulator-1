@@ -2,7 +2,7 @@ package com.sparta.spartatraineesimulator.model;
 
 import java.util.ArrayList;
 
-public class BootCamp extends AbstractCentre{
+public class BootCamp extends TrainingCentre {
 
     private int numMonthsInactive = 0;
 

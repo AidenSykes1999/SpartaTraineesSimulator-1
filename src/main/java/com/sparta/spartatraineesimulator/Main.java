@@ -5,12 +5,36 @@ import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 public class Main {
 
+    private static int currentMonth = 0;
+
     public static void main(String[] args) {
-        System.out.println("Hello");
+
         DisplayManager dm = new DisplayManager();
         Controller controller = new Controller();
+
         int months = dm.numberOfMonths();
-        controller.runSimulation(months);
+
+        for(int i = 0; i < months; i++) {
+
+            controller.runSimulationTick(i);
+            dm.displayMonthPassed();
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            currentMonth++;
+
+        }
+
+        int numberOfOpenCentres = controller.getNumberOfOpenCentres();
+        int numberOfFullCentres = controller.getNumberOfFullCentres();
+        int numberCurrentlyTraining = controller.getNumberCurrentlyTraining();
+        int numberOfTraineesWaiting = controller.getNumberOfTraineesWaiting();
+
+        dm.displayTheDetails(numberOfOpenCentres, numberOfFullCentres, numberCurrentlyTraining, numberOfTraineesWaiting);
+
     }
 
 }

@@ -2,7 +2,7 @@ package com.sparta.spartatraineesimulator.model;
 
 import java.util.ArrayList;
 
-public class TechCentre extends AbstractCentre {
+public class TechCentre extends TrainingCentre {
 
     public TechCentre() {
 
