@@ -14,7 +14,7 @@ public class TechCentre extends TrainingCentre {
     }
 
     @Override
-    boolean shouldClose() {
+    public boolean shouldClose() {
 
         if (getCurrentCapacity() < 25){
             return true;

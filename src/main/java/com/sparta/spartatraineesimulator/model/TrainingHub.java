@@ -13,7 +13,7 @@ public class TrainingHub extends TrainingCentre {
     }
 
     @Override
-    boolean shouldClose() {
+    public boolean shouldClose() {
         if (getCurrentCapacity() < 25){
             return true;
         } else { return false; }
