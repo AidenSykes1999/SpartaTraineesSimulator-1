@@ -6,22 +6,17 @@ public class BootCamp extends TrainingCentre {
 
     private int numMonthsInactive = 0;
 
-
     public BootCamp() {
-
         super();
         setLimit(500);
         this.setTrainees(new ArrayList<>(getLimit()));
-
     }
 
     @Override
     boolean shouldClose() {
 
         if (getCurrentCapacity() < 25){
-
             numMonthsInactive++;
-
         }
         // If number of months inactive is more than 3
 

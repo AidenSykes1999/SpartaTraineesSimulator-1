@@ -3,7 +3,6 @@ package com.sparta.spartatraineesimulator.controller;
 // tick stuff
 
 import com.sparta.spartatraineesimulator.model.*;
-import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +16,9 @@ public class Controller {
     private int totalEnlisted = 0;
     private int traineeId = 0;
 
+    private int bootCampCount = 0;
+    private int trainingHubCount = 0;
+
     public void runSimulationTick (int month) {
 
         ArrayList<Trainee> newTrainees = generateTrainees();
@@ -26,6 +28,7 @@ public class Controller {
         createCenter(month);
         addTraineesToCentres();
 
+        // for debugging
         for (TrainingCentre centre : centres) {
             System.out.print(centre.getCurrentCapacity() + ", ");
         }
@@ -53,40 +56,53 @@ public class Controller {
             int min = 1;
             int max = 3;
 
-            // let 1 = Tech, 2 = Boot and 3 = Training
+            // 1 = TrainingHub, 2 = BootCamp && limit 2, 3 = TechCentre
             int randomChoice = (int) Math.floor(Math.random() * (max - min + 1) + min);
 
-            switch (randomChoice) {
-                case 1:
-                    centres.add(new TechCentre());
-                    break;
-                case 2:
-                    centres.add(new BootCamp());
-                    break;
-                case 3:
-                    centres.add(new TrainingHub());
-                    break;
+            // TrainingHub limit = 3
+            if (randomChoice == 1 && trainingHubCount < 3) {
+                centres.add(new TrainingHub());
+                trainingHubCount++;
             }
+            // BootCamp limit = 2
+            else if (randomChoice == 2 && bootCampCount < 2) {
+                centres.add(new BootCamp());
+                bootCampCount++;
+            }
+            else if (randomChoice == 3) {
+                centres.add(new TechCentre());
+
+            }
+
         }
     }
 
+    // A centre takes a random number of trainees every month. (0 - 50 trainees up to their capacity)
     private void addTraineesToCentres () {
         for (TrainingCentre centre : centres) {
             if (!centre.isCentreFull()) {
+
                 int freeSpace = centre.getEmptySpace();
+
+                // limit to the amount of trainee able to be taken is 50
+                if (50 < freeSpace) {
+                    freeSpace = 50;
+                }
 
                 if (freeSpace >= waitingList.size()) {
                     centre.addAllTrainees(waitingList);
                     waitingList.clear();
+
                 } else if (freeSpace < waitingList.size()) {
                     List<Trainee> subListTrainee = waitingList.subList(0, freeSpace);
                     centre.addAllTrainees(subListTrainee);
                     waitingList.removeAll(subListTrainee);
+
                 }
+
             }
         }
     }
-
 
     public int getNumberOfOpenCentres() {
         return centres.size();
