@@ -48,9 +48,7 @@ public class CentreTest {
         TechCentre centre = new TechCentre();
         TrainingHub centre2 = new TrainingHub();
         BootCamp centre3 = new BootCamp();
-        centre.getCurrentCapacity();
-        centre2.getCurrentCapacity();
-        centre3.getCurrentCapacity();
+
         Boolean expected = centre.isCentreFull();
         Boolean expected2 = centre2.isCentreFull();
         Boolean expected3 = centre3.isCentreFull();
@@ -65,13 +63,10 @@ public class CentreTest {
     void findEmptySpaceInCentre(){
 
         TechCentre techCentre = new TechCentre();
-        int LIMIT = 100;
-        int currentCapacity = 0;
-        techCentre.getCurrentCapacity();
 
         int expected = techCentre.getEmptySpace();
 
-        Assertions.assertEquals(100,expected);
+        Assertions.assertEquals(techCentre.getLimit(),expected);
 
     }
 
@@ -81,11 +76,10 @@ public class CentreTest {
 
         TechCentre techCentre = new TechCentre();
         techCentre.setCurrentCapacity(24);
-        techCentre.getCurrentCapacity();
 
         boolean expected = techCentre.shouldClose();
 
-        Assertions.assertEquals(true, true);
+        Assertions.assertTrue(true);
 
 
     }
