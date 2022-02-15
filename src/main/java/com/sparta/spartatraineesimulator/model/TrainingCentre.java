@@ -9,6 +9,7 @@ public abstract class TrainingCentre {
     private int limit = 0;
     private int currentCapacity = 0;
     private ArrayList<Trainee> trainees;
+    private String name;
 
     /// Constructor
 
@@ -24,6 +25,9 @@ public abstract class TrainingCentre {
     }
 
     public void addAllTrainees(List<Trainee> waitingList) {
+        for (Trainee t : waitingList){
+            t.setIsWaiting(false);
+        }
         trainees.addAll(waitingList);
         this.currentCapacity = trainees.size();
     }
@@ -33,6 +37,14 @@ public abstract class TrainingCentre {
     }
 
     /// Getters and Setters
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
 
     public int getLimit() {
         return limit;

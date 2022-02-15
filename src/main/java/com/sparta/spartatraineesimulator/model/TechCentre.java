@@ -8,6 +8,7 @@ public class TechCentre extends TrainingCentre {
         super();
         setLimit(200);
         this.setTrainees(new ArrayList<>(getLimit()));
+        this.setName("Tech Centre");
     }
 
     @Override

@@ -10,8 +10,9 @@ import java.util.Random;
 
 public class Controller {
 
-    private ArrayList<TrainingCentre> centres = new ArrayList<>();
-    private ArrayList<Trainee> waitingList = new ArrayList<>();
+    public ArrayList<TrainingCentre> centres = new ArrayList<>();
+    public ArrayList<Trainee> waitingList = new ArrayList<>();
+    public ArrayList<Trainee> allTrainees = new ArrayList<>();
 
     private int totalEnlisted = 0;
     private int traineeId = 0;
@@ -22,6 +23,9 @@ public class Controller {
     public void runSimulationTick (int month) {
 
         ArrayList<Trainee> newTrainees = generateTrainees();
+
+        allTrainees.addAll(newTrainees);
+
         waitingList.addAll(newTrainees);
         totalEnlisted += newTrainees.size();
 
@@ -46,6 +50,7 @@ public class Controller {
             newTrainees.add(new Trainee(traineeId, 0));
             traineeId++;
         }
+
 
         return newTrainees;
     }
