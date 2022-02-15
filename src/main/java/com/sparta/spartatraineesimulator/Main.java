@@ -1,7 +1,10 @@
 package com.sparta.spartatraineesimulator;
 
 import com.sparta.spartatraineesimulator.controller.Controller;
+import com.sparta.spartatraineesimulator.model.TrainingCentre;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
+
+import java.util.ArrayList;
 
 public class Main {
 
@@ -28,12 +31,14 @@ public class Main {
 
         }
 
-        int numberOfOpenCentres = controller.getNumberOfOpenCentres();
-        int numberOfFullCentres = controller.getNumberOfFullCentres();
-        int numberCurrentlyTraining = controller.getNumberCurrentlyTraining();
-        int numberOfTraineesWaiting = controller.getNumberOfTraineesWaiting();
+        ArrayList<TrainingCentre> centres = controller.centres;
 
-        dm.displayTheDetails(numberOfOpenCentres, numberOfFullCentres, numberCurrentlyTraining, numberOfTraineesWaiting);
+        dm.displayTheDetails(centres);
+//        int numberOfFullCentres = controller.getNumberOfFullCentres();
+//        int numberCurrentlyTraining = controller.getNumberCurrentlyTraining();
+//        int numberOfTraineesWaiting = controller.getNumberOfTraineesWaiting();
+
+        //dm.displayTheDetails(openCentres, numberOfFullCentres, numberCurrentlyTraining, numberOfTraineesWaiting);
 
     }
 

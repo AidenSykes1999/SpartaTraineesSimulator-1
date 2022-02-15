@@ -1,5 +1,8 @@
 package com.sparta.spartatraineesimulator.view;
 
+import com.sparta.spartatraineesimulator.model.TrainingCentre;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DisplayManager {
@@ -21,11 +24,37 @@ public class DisplayManager {
     }
 
 
-    public void displayTheDetails(int numberOfOpenCentres, int numberOfFullCentres,
-                                  int numberOfTraineesCurrentlyTraining, int numberOfTraineesOnTheWaitingList){
+    public void displayTheDetails(ArrayList<TrainingCentre> openCentres){
 
-        String output = "The current total number of open centres is "+ numberOfOpenCentres +". The number of full centres is "+ numberOfFullCentres +
-                ". The number of trainees in training is "+ numberOfTraineesCurrentlyTraining +". And finally the total of trainees on the waiting list is "+ numberOfTraineesOnTheWaitingList +".";
+        int totalOpenBootcamps = 0;
+        int totalOpenTrainingHubs = 0;
+        int totalOpenTechCentres = 0;
+
+        for (TrainingCentre tc: openCentres){
+            switch (tc.getName()){
+                case "Bootcamp" -> totalOpenBootcamps++;
+                case "Training Hub" -> totalOpenTrainingHubs++;
+                case "Tech Centre" -> totalOpenTechCentres++;
+            }
+        }
+
+        int totalFullBootcamps = 0;
+        int totalFullTrainingHubs = 0;
+        int totalFullTechCentres = 0;
+
+        for (TrainingCentre tc: openCentres){
+            if (tc.isCentreFull())
+                switch (tc.getName()){
+                    case "Bootcamp" -> totalFullBootcamps++;
+                    case "Training Hub" -> totalFullTrainingHubs++;
+                    case "Tech Centre" -> totalFullTechCentres++;
+                }
+        }
+
+        String output = "Total open centres: Training Hub - " + totalOpenTrainingHubs + ", Bootcamp - " + totalOpenBootcamps + ". Tech Centre - " + totalOpenTechCentres + ".\n" +
+                "" +
+                "Total full centres: Training Hub - " + totalFullTrainingHubs + ". Bootcamp - " + totalFullBootcamps + ". Tech Centre - " + totalFullTechCentres + ". \n" +
+                "";
 
         System.out.println(output);
     }

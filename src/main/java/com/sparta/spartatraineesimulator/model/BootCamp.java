@@ -10,6 +10,7 @@ public class BootCamp extends TrainingCentre {
         super();
         setLimit(500);
         this.setTrainees(new ArrayList<>(getLimit()));
+        this.setName("Bootcamp");
     }
 
     @Override
