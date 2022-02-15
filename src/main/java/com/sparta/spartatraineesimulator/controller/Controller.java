@@ -2,8 +2,7 @@ package com.sparta.spartatraineesimulator.controller;
 
 // tick stuff
 
-import com.sparta.spartatraineesimulator.model.Centre;
-import com.sparta.spartatraineesimulator.model.Trainee;
+import com.sparta.spartatraineesimulator.model.*;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ public class Controller {
     private int totalEnlisted = 0;
     private int traineeId = 0;
     private int totalTraining = 0;
-    private ArrayList<Centre> centres = new ArrayList<>();
+    private ArrayList<AbstractCentre> centres = new ArrayList<>();
     private ArrayList<Trainee> waitingList = new ArrayList<>();
 
     public void runSimulation(int month) {
@@ -34,10 +33,34 @@ public class Controller {
 
             System.out.println("1 month passed");
             if(i % 2 == 0){
-                centres.add(new Centre());
+
+                Random randint = new Random();
+                int min = 1;
+                int max = 3;
+
+                // let 1 = Tech, 2 = Boot and 3 = Training
+
+                int randomChoice = (int)Math.floor(Math.random()*(max-min+1)+min);
+
+                switch(randomChoice){
+
+                    case 1:
+                        centres.add(new TechCentre());
+                        break;
+                    case 2:
+                        centres.add(new BootCamp());
+                        break;
+                    case 3:
+                        centres.add(new TrainingHub());
+                        break;
+                    default:
+
+                }
+
+
             }
 
-            for (Centre centre : centres) {
+            for (AbstractCentre centre : centres) {
                 if (!centre.isCentreFull()) {
                     int freeSpace = centre.getEmptySpace();
 
@@ -54,7 +77,7 @@ public class Controller {
                 }
             }
 
-            for (Centre centre : centres) {
+            for (AbstractCentre centre : centres) {
                 System.out.print(centre.getCurrentCapacity() + ", ");
             }
             System.out.println("Waiting list size: " + waitingList.size());
@@ -68,7 +91,7 @@ public class Controller {
         System.out.println("Total enlisted: " + totalEnlisted);
 
         int totalFullCenters = 0;
-        for (Centre centre : centres) {
+        for (AbstractCentre centre : centres) {
             totalFullCenters += centre.getCurrentCapacity()/100;
         }
         if (totalEnlisted > (centres.size()*100)){
@@ -100,7 +123,7 @@ public class Controller {
         return totalEnlisted;
     }
 
-    public ArrayList<Centre> getCentres() {
+    public ArrayList<AbstractCentre> getCentres() {
         return centres;
     }
 
