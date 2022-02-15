@@ -9,6 +9,7 @@ public class TrainingHub extends TrainingCentre {
         setLimit(100);
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setCourseType(Course.NONE);
+        this.setName("Training Hub");
     }
 
     @Override
@@ -19,4 +20,12 @@ public class TrainingHub extends TrainingCentre {
 
     }
 
+    @Override
+    public String toString() {
+        return "TrainingHub:\n" +
+                "Current capacity = " + super.getCurrentCapacity() +
+                "\nLimit = " + super.getLimit() +
+                "\nEmpty Space = " + super.getEmptySpace() +
+                "\nTrainees = " + super.getTrainees() + "\n\n";
+    }
 }

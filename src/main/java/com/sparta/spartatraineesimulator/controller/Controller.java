@@ -12,6 +12,7 @@ public class Controller {
 
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
     private ArrayList<Trainee> waitingList = new ArrayList<>();
+    private ArrayList<Trainee> allTrainees = new ArrayList<>();
 
     private int totalEnlisted = 0;
     private int traineeId = 0;
@@ -22,6 +23,9 @@ public class Controller {
     public void runSimulationTick (int month) {
 
         ArrayList<Trainee> newTrainees = generateTrainees();
+
+        allTrainees.addAll(newTrainees);
+
         waitingList.addAll(newTrainees);
         totalEnlisted += newTrainees.size();
 
@@ -46,6 +50,7 @@ public class Controller {
             newTrainees.add(new Trainee(traineeId, 0));
             traineeId++;
         }
+
 
         return newTrainees;
     }
@@ -107,7 +112,7 @@ public class Controller {
     private void addTraineesToTechCentres() {
         for (TrainingCentre centre : centres) {
 
-            if (!centre.getCourseType().equals(Course.NONE) && !centre.isCentreFull()) {
+            if (centre.getCourseType() != Course.NONE && !centre.isCentreFull()) {
 
                 int freeSpace = centre.getEmptySpace();
 
@@ -166,5 +171,14 @@ public class Controller {
     public int getTotalEnlisted() {
         return totalEnlisted;
     }
+
+    public ArrayList<TrainingCentre> getCentres() {
+        return centres;
+    }
+
+    public ArrayList<Trainee> getAllTrainees() {
+        return allTrainees;
+    }
+
 }
 

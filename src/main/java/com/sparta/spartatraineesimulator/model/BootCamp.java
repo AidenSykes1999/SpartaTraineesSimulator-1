@@ -11,6 +11,7 @@ public class BootCamp extends TrainingCentre {
         setLimit(500);
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setCourseType(Course.NONE);
+        this.setName("Bootcamp");
     }
 
     @Override
@@ -26,5 +27,14 @@ public class BootCamp extends TrainingCentre {
         }
 
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "BootCamp:\n" +
+                "Current capacity = " + super.getCurrentCapacity() +
+                "\nLimit = " + super.getLimit() +
+                "\nEmpty Space = " + super.getEmptySpace() +
+                "\nTrainees = " + super.getTrainees() + "\n\n";
     }
 }
