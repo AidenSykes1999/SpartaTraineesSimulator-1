@@ -29,13 +29,6 @@ public class Trainee {
         this.traineeId = traineeId;
     }
 
-    @Override
-    public String toString() {
-        return "Trainee{" +
-                "traineeId=" + traineeId +
-                '}';
-    }
-
     //setter for the waiting
     public void setIsWaiting(boolean isWaiting) {
         this.isWaiting = isWaiting;
@@ -49,5 +42,14 @@ public class Trainee {
     //getter for the trainee's course type
     public Courses getCourseType() {
         return courseType;
+    }
+
+    @Override
+    public String toString() {
+        return "\nTrainee:\n" +
+                "Trainee ID = " + traineeId +
+                "\nTraining time = " + trainingTime +
+                "\nIs waiting? = " + isWaiting +
+                "\nCourse = " + courseType;
     }
 }

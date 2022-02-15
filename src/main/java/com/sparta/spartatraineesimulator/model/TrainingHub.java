@@ -18,4 +18,12 @@ public class TrainingHub extends TrainingCentre {
 
     }
 
+    @Override
+    public String toString() {
+        return "TrainingHub:\n" +
+                "Current capacity = " + super.getCurrentCapacity() +
+                "\nLimit = " + super.getLimit() +
+                "\nEmpty Space = " + super.getEmptySpace() +
+                "\nTrainees = " + super.getTrainees() + "\n\n";
+    }
 }

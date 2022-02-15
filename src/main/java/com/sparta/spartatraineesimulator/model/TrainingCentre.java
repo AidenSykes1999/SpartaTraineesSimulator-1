@@ -58,5 +58,12 @@ public abstract class TrainingCentre {
         return currentCapacity;
     }
 
-
+    @Override
+    public String toString() {
+        return "TrainingCentre{" +
+                "limit=" + limit +
+                ", currentCapacity=" + currentCapacity +
+                ", trainees=" + trainees +
+                '}';
+    }
 }
