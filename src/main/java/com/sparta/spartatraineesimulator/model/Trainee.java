@@ -29,13 +29,6 @@ public class Trainee {
         this.traineeId = traineeId;
     }
 
-    @Override
-    public String toString() {
-        return "Trainee{" +
-                "traineeId=" + traineeId + " " + courseType +
-                '}';
-    }
-
     //setter for the waiting
     public void setIsWaiting(boolean isWaiting) {
         this.isWaiting = isWaiting;

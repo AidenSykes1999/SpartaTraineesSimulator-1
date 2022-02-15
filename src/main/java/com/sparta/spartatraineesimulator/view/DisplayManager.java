@@ -1,5 +1,6 @@
 package com.sparta.spartatraineesimulator.view;
 
+import com.sparta.spartatraineesimulator.model.Trainee;
 import com.sparta.spartatraineesimulator.model.TrainingCentre;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class DisplayManager {
     }
 
 
-    public void displayTheDetails(ArrayList<TrainingCentre> openCentres){
+    public void displayTheDetails(ArrayList<TrainingCentre> openCentres, ArrayList<Trainee> allTrainees){
 
         int totalOpenBootcamps = 0;
         int totalOpenTrainingHubs = 0;
@@ -51,10 +52,36 @@ public class DisplayManager {
                 }
         }
 
+        int trainingJava = 0, trainingCSharp = 0, trainingData = 0, trainingDevOps = 0, trainingBusiness = 0,
+                waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
+
+        for (Trainee t: allTrainees){
+            if (t.isWaiting()){
+                switch (t.getCourseType()) {
+                    case JAVA -> waitingJava++;
+                    case C_SHARP -> waitingCSharp++;
+                    case DATA -> waitingData++;
+                    case DEVOPS -> waitingDevOps++;
+                    case BUSINESS -> waitingBusiness++;
+                }
+            }
+            else{
+                switch (t.getCourseType()){
+                    case JAVA -> trainingJava++;
+                    case C_SHARP -> trainingCSharp++;
+                    case DATA -> trainingData++;
+                    case DEVOPS -> trainingDevOps++;
+                    case BUSINESS -> trainingBusiness++;
+                }
+
+            }
+        }
+
         String output = "Total open centres: Training Hub - " + totalOpenTrainingHubs + ", Bootcamp - " + totalOpenBootcamps + ". Tech Centre - " + totalOpenTechCentres + ".\n" +
-                "" +
+                "Total closed centres: Training Hub - " + ". Bootcamp - " + ". Tech Centre - " + ".\n" +
                 "Total full centres: Training Hub - " + totalFullTrainingHubs + ". Bootcamp - " + totalFullBootcamps + ". Tech Centre - " + totalFullTechCentres + ". \n" +
-                "";
+                "Total training: Java - " + trainingJava + ". C# - " + trainingCSharp + ". Data - " + trainingData + ". DevOps - " + trainingDevOps + ". Business - " + trainingBusiness + ". \n" +
+                "Total waiting: Java - " + waitingJava + ". C# - " + waitingCSharp + ". Data - " + waitingData + ". DevOps - " + waitingDevOps + ". Business - " + waitingBusiness + ". \n";
 
         System.out.println(output);
     }

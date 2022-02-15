@@ -1,6 +1,7 @@
 package com.sparta.spartatraineesimulator;
 
 import com.sparta.spartatraineesimulator.controller.Controller;
+import com.sparta.spartatraineesimulator.model.Trainee;
 import com.sparta.spartatraineesimulator.model.TrainingCentre;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
 import com.sparta.spartatraineesimulator.view.FileWriterClass;
@@ -34,16 +35,18 @@ public class Main {
 
         }
 
-        int numberOfOpenCentres = controller.getNumberOfOpenCentres();
-        int numberOfFullCentres = controller.getNumberOfFullCentres();
-        int numberCurrentlyTraining = controller.getNumberCurrentlyTraining();
-        int numberOfTraineesWaiting = controller.getNumberOfTraineesWaiting();
+//        int numberOfOpenCentres = controller.getNumberOfOpenCentres();
+//        int numberOfFullCentres = controller.getNumberOfFullCentres();
+//        int numberCurrentlyTraining = controller.getNumberCurrentlyTraining();
+//        int numberOfTraineesWaiting = controller.getNumberOfTraineesWaiting();
+
+        ArrayList<Trainee> trainees = controller.allTrainees;
         ArrayList<TrainingCentre> centres = controller.getCentres();
 
-        //dm.displayTheDetails(openCentres, numberOfFullCentres, numberCurrentlyTraining, numberOfTraineesWaiting);
+        dm.displayTheDetails(centres, trainees);
 
-        FileWriterClass writer = new FileWriterClass();
-        writer.outputToFile(centres);
+//        FileWriterClass writer = new FileWriterClass();
+//        writer.outputToFile(centres);
     }
 
 }

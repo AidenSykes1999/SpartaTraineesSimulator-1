@@ -25,6 +25,9 @@ public abstract class TrainingCentre {
     }
 
     public void addAllTrainees(List<Trainee> waitingList) {
+        for (Trainee t : waitingList){
+            t.setIsWaiting(false);
+        }
         trainees.addAll(waitingList);
         this.currentCapacity = trainees.size();
     }
