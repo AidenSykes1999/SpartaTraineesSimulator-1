@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class AbstractCentre {
+public abstract class TrainingCentre {
 
     private int limit = 0;
     private int currentCapacity = 0;
@@ -12,7 +12,7 @@ public abstract class AbstractCentre {
 
     /// Constructor
 
-    public AbstractCentre() {
+    public TrainingCentre() {
     }
 
     /// Methods inherited

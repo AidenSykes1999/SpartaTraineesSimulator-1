@@ -11,10 +11,11 @@ import java.util.Random;
 
 public class Controller {
 
+    private ArrayList<TrainingCentre> centres = new ArrayList<>();
+    private ArrayList<Trainee> waitingList = new ArrayList<>();
+
     private int totalEnlisted = 0;
     private int traineeId = 0;
-    private ArrayList<AbstractCentre> centres = new ArrayList<>();
-    private ArrayList<Trainee> waitingList = new ArrayList<>();
 
     public void runSimulationTick (int month) {
 
@@ -27,24 +28,11 @@ public class Controller {
         createCenter(month);
         addTraineesToCentres();
 
-        for (AbstractCentre centre : centres) {
+        for (TrainingCentre centre : centres) {
             System.out.print(centre.getCurrentCapacity() + ", ");
         }
 
         System.out.println("Waiting list size: " + waitingList.size());
-
-        System.out.println("Total enlisted: " + totalEnlisted);
-
-        int totalFullCenters = 0;
-        int totalTraining = 0;
-        for (AbstractCentre centre : centres) {
-            if (centre.isCentreFull()) {
-                totalFullCenters++;
-            }
-            totalTraining += centre.getCurrentCapacity();
-        }
-
-        System.out.println(dm.displayTheDetails(centres.size(), totalFullCenters, totalTraining, waitingList.size()));
 
     }
 
@@ -85,7 +73,7 @@ public class Controller {
     }
 
     private void addTraineesToCentres () {
-        for (AbstractCentre centre : centres) {
+        for (TrainingCentre centre : centres) {
             if (!centre.isCentreFull()) {
                 int freeSpace = centre.getEmptySpace();
 
@@ -102,17 +90,32 @@ public class Controller {
     }
 
 
-    public int getTotalEnlisted () {
-        return totalEnlisted;
+    public int getNumberOfOpenCentres() {
+        return centres.size();
     }
 
-    public ArrayList<AbstractCentre> getCentres() {
-        return centres;
+    public int getNumberOfFullCentres() {
+        int totalFullCenters = 0;
+        for (TrainingCentre centre : centres) {
+            if (centre.isCentreFull()) {
+                totalFullCenters++;
+            }
+        }
+
+        return totalFullCenters;
     }
 
-    public ArrayList<Trainee> getWaitingList () {
-        return waitingList;
+    public int getNumberCurrentlyTraining() {
+        int totalTraining = 0;
+        for (TrainingCentre centre : centres) {
+            totalTraining += centre.getCurrentCapacity();
+        }
+
+        return totalTraining;
     }
 
+    public int getNumberOfTraineesWaiting() {
+        return waitingList.size();
+    }
 }
 

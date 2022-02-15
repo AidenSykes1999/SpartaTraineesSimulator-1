@@ -19,84 +19,84 @@ public class ControllerTest {
         Assertions.assertEquals(true, actual);
     }
 
-    @Test
-    @DisplayName("Given twelve months, centresTotal should be more than zero")
-    public void givenTwelveMonths_CentresTotalShouldBeMoreThanZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(12);
-        int centresTotal = controller.getCentres().size();
-        Assertions.assertEquals(true, centresTotal > 0);
-    }
-
-    @Test
-    @DisplayName("Given twelve months, totalEnlisted should be more than zero")
-    public void givenTwelveMonths_TotalEnlistedShouldBeMoreThanZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(12);
-        int totalEnlisted = controller.getTotalEnlisted();
-        Assertions.assertEquals(true, totalEnlisted > 0);
-    }
-
-    @Test
-    @DisplayName("Given twelve months, waitingListTotal should be more than zero")
-    public void givenTwelveMonths_WaitingListTotalShouldBeMoreThanZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(12);
-        int waitingListTotal = controller.getWaitingList().size();
-        Assertions.assertEquals(true, waitingListTotal > 0);
-    }
-
-    @Test
-    @DisplayName("Given zero months, centresTotal should be zero")
-    public void givenZeroMonths_CentresTotalShouldBeZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(0);
-        int centresTotal = controller.getCentres().size();
-        Assertions.assertEquals(true, centresTotal == 0);
-    }
-
-    @Test
-    @DisplayName("Given zero months, totalEnlisted should be zero")
-    public void givenZeroMonths_TotalEnlistedShouldBeZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(0);
-        int totalEnlisted = controller.getTotalEnlisted();
-        Assertions.assertEquals(true, totalEnlisted == 0);
-    }
-
-    @Test
-    @DisplayName("Given zero months, waitingListTotal should be more than zero")
-    public void givenZeroMonths_WaitingListTotalShouldBeMoreThanZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(0);
-        int waitingListTotal = controller.getWaitingList().size();
-        Assertions.assertEquals(true, waitingListTotal == 0);
-    }
-
-    @Test
-    @DisplayName("Given minus one months, centresTotal should be zero")
-    public void givenMinusOneMonths_CentresTotalShouldBeZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(-1);
-        int centresTotal = controller.getCentres().size();
-        Assertions.assertEquals(true, centresTotal == 0);
-    }
-
-    @Test
-    @DisplayName("Given minus one months, totalEnlisted should be zero")
-    public void givenMinusOneMonths_TotalEnlistedShouldBeZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(-1);
-        int totalEnlisted = controller.getTotalEnlisted();
-        Assertions.assertEquals(true, totalEnlisted == 0);
-    }
-
-    @Test
-    @DisplayName("Given minus one months, waitingListTotal should be more than zero")
-    public void givenMinusOneMonths_WaitingListTotalShouldBeMoreThanZero(){
-        Controller controller = new Controller();
-        controller.runSimulation(-1);
-        int waitingListTotal = controller.getWaitingList().size();
-        Assertions.assertEquals(true, waitingListTotal == 0);
-    }
+    // @Test
+    // @DisplayName("Given twelve months, centresTotal should be more than zero")
+    // public void givenTwelveMonths_CentresTotalShouldBeMoreThanZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(12);
+    //     int centresTotal = controller.getCentres().size();
+    //     Assertions.assertEquals(true, centresTotal > 0);
+    // }
+    //
+    // @Test
+    // @DisplayName("Given twelve months, totalEnlisted should be more than zero")
+    // public void givenTwelveMonths_TotalEnlistedShouldBeMoreThanZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(12);
+    //     int totalEnlisted = controller.getTotalEnlisted();
+    //     Assertions.assertEquals(true, totalEnlisted > 0);
+    // }
+    //
+    // @Test
+    // @DisplayName("Given twelve months, waitingListTotal should be more than zero")
+    // public void givenTwelveMonths_WaitingListTotalShouldBeMoreThanZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(12);
+    //     int waitingListTotal = controller.getWaitingList().size();
+    //     Assertions.assertEquals(true, waitingListTotal > 0);
+    // }
+    //
+    // @Test
+    // @DisplayName("Given zero months, centresTotal should be zero")
+    // public void givenZeroMonths_CentresTotalShouldBeZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(0);
+    //     int centresTotal = controller.getCentres().size();
+    //     Assertions.assertEquals(true, centresTotal == 0);
+    // }
+    //
+    // @Test
+    // @DisplayName("Given zero months, totalEnlisted should be zero")
+    // public void givenZeroMonths_TotalEnlistedShouldBeZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(0);
+    //     int totalEnlisted = controller.getTotalEnlisted();
+    //     Assertions.assertEquals(true, totalEnlisted == 0);
+    // }
+    //
+    // @Test
+    // @DisplayName("Given zero months, waitingListTotal should be more than zero")
+    // public void givenZeroMonths_WaitingListTotalShouldBeMoreThanZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(0);
+    //     int waitingListTotal = controller.getWaitingList().size();
+    //     Assertions.assertEquals(true, waitingListTotal == 0);
+    // }
+    //
+    // @Test
+    // @DisplayName("Given minus one months, centresTotal should be zero")
+    // public void givenMinusOneMonths_CentresTotalShouldBeZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(-1);
+    //     int centresTotal = controller.getCentres().size();
+    //     Assertions.assertEquals(true, centresTotal == 0);
+    // }
+    //
+    // @Test
+    // @DisplayName("Given minus one months, totalEnlisted should be zero")
+    // public void givenMinusOneMonths_TotalEnlistedShouldBeZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(-1);
+    //     int totalEnlisted = controller.getTotalEnlisted();
+    //     Assertions.assertEquals(true, totalEnlisted == 0);
+    // }
+    //
+    // @Test
+    // @DisplayName("Given minus one months, waitingListTotal should be more than zero")
+    // public void givenMinusOneMonths_WaitingListTotalShouldBeMoreThanZero(){
+    //     Controller controller = new Controller();
+    //     controller.runSimulation(-1);
+    //     int waitingListTotal = controller.getWaitingList().size();
+    //     Assertions.assertEquals(true, waitingListTotal == 0);
+    // }
 }

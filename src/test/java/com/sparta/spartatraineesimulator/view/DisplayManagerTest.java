@@ -50,13 +50,13 @@ class DisplayManagerTest {
         assertEquals(12, dm.numberOfMonths());
     }
 
-    @Test
-    @DisplayName("Given 4 Integer values, return a String displaying the same data in correlation to the StringBuilder")
-    public void given4IntegerValuesReturnAStringDisplayingTheSameDataInCorrelationToTheStringBuilder(){
-        String expected = "The current total number of open centres is 34. The number of full centres is 33" +
-                ". The number of trainees in training is 3389. And finally the total of trainees on the waiting list is 0.";
-
-        Assertions.assertEquals(expected, dm.displayTheDetails(34,33, 3389, 0));
-    }
+    // @Test
+    // @DisplayName("Given 4 Integer values, return a String displaying the same data in correlation to the StringBuilder")
+    // public void given4IntegerValuesReturnAStringDisplayingTheSameDataInCorrelationToTheStringBuilder(){
+    //     String expected = "The current total number of open centres is 34. The number of full centres is 33" +
+    //             ". The number of trainees in training is 3389. And finally the total of trainees on the waiting list is 0.";
+    //
+    //     Assertions.assertEquals(expected, dm.displayTheDetails(34,33, 3389, 0));
+    // }
 
 }
