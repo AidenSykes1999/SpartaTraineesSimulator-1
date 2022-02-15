@@ -9,11 +9,7 @@ public abstract class TrainingCentre {
     private int limit = 0;
     private int currentCapacity = 0;
     private ArrayList<Trainee> trainees;
-
-    /// Constructor
-
-    public TrainingCentre() {
-    }
+    private Course courseType;
 
     /// Methods inherited
 
@@ -58,5 +54,11 @@ public abstract class TrainingCentre {
         return currentCapacity;
     }
 
+    public void setCourseType(Course courseType) {
+        this.courseType = courseType;
+    }
 
+    public Course getCourseType() {
+        return courseType;
+    }
 }

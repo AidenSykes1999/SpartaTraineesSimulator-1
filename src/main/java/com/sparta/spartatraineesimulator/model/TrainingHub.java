@@ -8,6 +8,7 @@ public class TrainingHub extends TrainingCentre {
         super();
         setLimit(100);
         this.setTrainees(new ArrayList<>(getLimit()));
+        this.setCourseType(Course.NONE);
     }
 
     @Override

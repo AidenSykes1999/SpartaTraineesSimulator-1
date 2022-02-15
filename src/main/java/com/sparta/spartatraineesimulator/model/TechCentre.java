@@ -8,7 +8,6 @@ public class TechCentre extends TrainingCentre {
 
     public TechCentre() {
         super();
-
         setLimit(200);
         this.setTrainees(new ArrayList<>(getLimit()));
     }

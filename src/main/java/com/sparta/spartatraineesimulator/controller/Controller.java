@@ -104,6 +104,37 @@ public class Controller {
         }
     }
 
+    private void addTraineesToTechCentres() {
+        for (TrainingCentre centre : centres) {
+
+            if (!centre.getCourseType().equals(Course.NONE) && !centre.isCentreFull()) {
+
+                int freeSpace = centre.getEmptySpace();
+
+                // limit to the amount of trainee able to be taken is 50
+                if (50 < freeSpace) {
+                    freeSpace = 50;
+                }
+
+
+
+                if (freeSpace >= waitingList.size()) {
+                    centre.addAllTrainees(waitingList);
+                    waitingList.clear();
+
+                } else if (freeSpace < waitingList.size()) {
+                    List<Trainee> subListTrainee = waitingList.subList(0, freeSpace);
+                    centre.addAllTrainees(subListTrainee);
+                    waitingList.removeAll(subListTrainee);
+
+                }
+
+            }
+
+        }
+
+    }
+
     public int getNumberOfOpenCentres() {
         return centres.size();
     }

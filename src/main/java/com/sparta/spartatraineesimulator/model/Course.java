@@ -7,10 +7,11 @@ public enum Course { //courses in the academy
     C_SHARP,
     DATA,
     DEVOPS,
-    BUSINESS;
+    BUSINESS,
+    NONE;
 
     private static final List<Course> VALUES = List.of(values()); //using generalised list to store the enums in it
-    private static final int COURSES_SIZE = VALUES.size(); //size of the courses list- a constant
+    private static final int COURSES_SIZE = 5; //size of the courses list- a constant
     private static final ProjectRandomGenerator projectRandomGenerator =
             new ProjectRandomGenerator(1234567891234567891L); //using a long seed (will also test it later)
 
@@ -21,10 +22,11 @@ public enum Course { //courses in the academy
             case DATA -> "Data";
             case DEVOPS -> "DevOps";
             case BUSINESS -> "Business";
+            case NONE -> "None";
         };
     }
 
     public static Course randomCourseType() { //selecting a random course
-        return VALUES.get(projectRandomGenerator.inRange(0, COURSES_SIZE - 1)); //getting a random value/course from the list of courses (within our range)
+        return VALUES.get(projectRandomGenerator.inRange(0, COURSES_SIZE-1)); //getting a random value/course from the list of courses (within our range)
     }
 }
