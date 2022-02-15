@@ -3,7 +3,6 @@ package com.sparta.spartatraineesimulator.controller;
 // tick stuff
 
 import com.sparta.spartatraineesimulator.model.*;
-import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
 import java.util.List;
