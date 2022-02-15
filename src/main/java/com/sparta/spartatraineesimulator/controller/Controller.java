@@ -4,6 +4,7 @@ package com.sparta.spartatraineesimulator.controller;
 
 import com.sparta.spartatraineesimulator.model.Centre;
 import com.sparta.spartatraineesimulator.model.Trainee;
+import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +14,12 @@ public class Controller {
 
     private int totalEnlisted = 0;
     private int traineeId = 0;
+    private int totalTraining = 0;
     private ArrayList<Centre> centres = new ArrayList<>();
     private ArrayList<Trainee> waitingList = new ArrayList<>();
 
     public void runSimulation(int month) {
+        DisplayManager dm = new DisplayManager();
         for(int i = 0; i < month; i++){
 
             ArrayList<Trainee> newTrainees = generateTrainees();
@@ -64,13 +67,20 @@ public class Controller {
 
         System.out.println("Total enlisted: " + totalEnlisted);
 
-        int totalCenters = 0;
+        int totalFullCenters = 0;
         for (Centre centre : centres) {
-            totalCenters += centre.getCurrentCapacity();
+            totalFullCenters += centre.getCurrentCapacity()/100;
         }
+        if (totalEnlisted > (centres.size()*100)){
+            totalTraining = centres.size()*100;
+        }
+        else
+            totalTraining = totalEnlisted;
 
-        System.out.println("Total centres: " + totalCenters);
-        System.out.println("Total waitingList size: " + waitingList.size());
+        System.out.println(dm.displayTheDetails(centres.size(), totalFullCenters, totalTraining, waitingList.size()));
+
+//        System.out.println("Total centres: " + totalCenters/100);
+//        System.out.println("Total waitingList size: " + waitingList.size());
     }
 
     public ArrayList<Trainee> generateTrainees(){
