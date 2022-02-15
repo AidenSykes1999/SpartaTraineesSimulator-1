@@ -23,8 +23,6 @@ public class Controller {
         waitingList.addAll(newTrainees);
         totalEnlisted += newTrainees.size();
 
-        DisplayManager dm = new DisplayManager();
-        System.out.println("1 month passed");
         createCenter(month);
         addTraineesToCentres();
 
@@ -116,6 +114,10 @@ public class Controller {
 
     public int getNumberOfTraineesWaiting() {
         return waitingList.size();
+    }
+
+    public int getTotalEnlisted() {
+        return totalEnlisted;
     }
 }
 

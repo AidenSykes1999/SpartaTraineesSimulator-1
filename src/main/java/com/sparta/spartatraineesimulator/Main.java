@@ -17,13 +17,13 @@ public class Main {
         for(int i = 0; i < months; i++) {
 
             controller.runSimulationTick(i);
+            dm.displayMonthPassed();
 
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             currentMonth++;
 
         }

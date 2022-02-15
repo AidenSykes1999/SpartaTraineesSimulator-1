@@ -29,4 +29,8 @@ public class DisplayManager {
 
         System.out.println(output);
     }
+
+    public void displayMonthPassed() {
+        System.out.println("1 month passed");
+    }
 }
