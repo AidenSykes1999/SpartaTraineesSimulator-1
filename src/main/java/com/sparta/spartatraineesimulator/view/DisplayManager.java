@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DisplayManager {
+    private int monthCount = 0;
     StringBuilder sb = new StringBuilder();
     public int numberOfMonths(){
         int numberOfMonths = 12;
@@ -36,11 +37,24 @@ public class DisplayManager {
 
 
         System.out.println(sb); // Prints the culmination of the StringBuilder, incrementally each month or all at once
+
+        sb.delete(0, sb.length());
+    }
+
+    public boolean doPrintEachMonth(){
+        boolean isTrue = false;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like incrementally display each month? (Default: No)");
+        String str = scanner.next();
+        if ("yes".equalsIgnoreCase(str)){
+            isTrue = true;
+        }
+        return isTrue;
     }
 
     private StringBuilder totalClosedCentres(ArrayList<TrainingCentre> openCentres) {
 
-        return sb.append("Total closed centres: Training Hub - ").append(". Bootcamp - ").append(". Tech Centre - " + ".\n");
+        return sb.append("Total closed centres: Training Hub - ").append(". Bootcamp - ").append(". Tech Centre - ").append(".\n\n");
     }
 
     private StringBuilder totalOpenCentres(ArrayList<TrainingCentre> openCentres) {
@@ -59,7 +73,7 @@ public class DisplayManager {
         return sb.append("Total open centres: Training Hub - ")
                 .append(totalOpenTrainingHubs).append(", Bootcamp - ")
                 .append(totalOpenBootcamps).append(". Tech Centre - ")
-                .append(totalOpenTechCentres).append(".\n");
+                .append(totalOpenTechCentres).append(".\n\n");
     }
 
     private StringBuilder totalFullCentres(ArrayList<TrainingCentre> openCentres) {
@@ -79,12 +93,10 @@ public class DisplayManager {
         return sb.append("Total full centres: Training Hub - ")
                     .append(totalFullTrainingHubs).append(", Bootcamp - ")
                     .append(totalFullBootcamps).append(". Tech Centre - ")
-                    .append(totalFullTechCentres).append(".\n");
+                    .append(totalFullTechCentres).append(".\n\n");
     }
 
-    public void displayMonthPassed() {
-        System.out.println("1 month passed");
-    }
+
 
     public StringBuilder trainingAndWaitingIncrement(ArrayList<Trainee> trainees){
         int trainingJava = 0, trainingCSharp = 0, trainingData = 0, trainingDevOps = 0, trainingBusiness = 0,
@@ -114,8 +126,13 @@ public class DisplayManager {
 
         return sb.append("Total training: Java - ").append(trainingJava).append(". C# - ").append(trainingCSharp)
                 .append(". Data - ").append(trainingData).append(". DevOps - ").append(trainingDevOps)
-                .append(". Business - ").append(trainingBusiness).append(". \n").append("Total waiting: Java - ")
+                .append(". Business - ").append(trainingBusiness).append(". \n\n").append("Total waiting: Java - ")
                 .append(waitingJava).append(". C# - ").append(waitingCSharp).append(". Data - ").append(waitingData)
                 .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness).append(". \n");
+    }
+
+    public void displayMonthPassed() {
+        monthCount++;
+        System.out.println("Month " + monthCount);
     }
 }
