@@ -37,14 +37,9 @@ public class Main {
 
         }
 
-//        int numberOfOpenCentres = controller.getNumberOfOpenCentres();
-//        int numberOfFullCentres = controller.getNumberOfFullCentres();
-//        int numberCurrentlyTraining = controller.getNumberCurrentlyTraining();
-//        int numberOfTraineesWaiting = controller.getNumberOfTraineesWaiting();
-
         ArrayList<Trainee> trainees = controller.getAllTrainees();
         ArrayList<TrainingCentre> centres = controller.getCentres();
-        ArrayList<TrainingCentre> closedCentres = controller.closedCentres;
+        ArrayList<TrainingCentre> closedCentres = controller.getClosedCentres();
 
         dm.displayTheDetails(centres, closedCentres, trainees);
 

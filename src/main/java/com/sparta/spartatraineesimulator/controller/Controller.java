@@ -14,7 +14,11 @@ public class Controller {
     DisplayManager dm = new DisplayManager();
 
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
-    public ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
+    private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
+
+    public ArrayList<TrainingCentre> getClosedCentres() {
+        return closedCentres;
+    }
 
     private ArrayList<Trainee> waitingList = new ArrayList<>();
     private ArrayList<Trainee> allTrainees = new ArrayList<>();

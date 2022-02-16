@@ -166,4 +166,13 @@ public class DisplayManager {
         monthCount++;
         System.out.println("Month " + monthCount);
     }
+
+    public String messageFromACompany(ArrayList<Trainee> goneToWork, String company){
+
+        StringBuilder stringBuilder = new StringBuilder();
+        int total = goneToWork.size();
+
+        return stringBuilder.append(total).append(" ").append(goneToWork.get(0).getCourseType())
+                .append(" have been taken by ").append(company).toString();
+    }
 }
