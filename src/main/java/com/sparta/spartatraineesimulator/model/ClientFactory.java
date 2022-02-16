@@ -12,7 +12,7 @@ public class ClientFactory {
     public void createClient(){
         Random r = new Random();
         clientIdCounter++;
-        recruitingClients.add(new Client(clientIdCounter, Courses.randomCourseType(), r.nextInt(15, 51)));
+        recruitingClients.add(new Client(clientIdCounter, Course.randomCourseType(), r.nextInt(15, 51)));
     }
 
     public void addTraineesToClients(ArrayList<Trainee> bench){

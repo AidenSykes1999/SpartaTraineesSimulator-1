@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Client {
     private int clientId;
-    private Courses traineeTypeRequirement;
+    private Course traineeTypeRequirement;
     private int traineeNumberRequirement;
     private ArrayList<Trainee> trainees = new ArrayList<>();
     boolean isHappy;
     int months;
 
-    public Client(int clientId, Courses traineeTypeRequirement, int traineeRequirement){
+    public Client(int clientId, Course traineeTypeRequirement, int traineeRequirement){
         this.clientId = clientId;
         this.traineeTypeRequirement = traineeTypeRequirement;
         this.traineeNumberRequirement = traineeRequirement;
@@ -21,7 +21,7 @@ public class Client {
         return clientId;
     }
 
-    public Courses getTraineeTypeRequirement() {
+    public Course getTraineeTypeRequirement() {
         return traineeTypeRequirement;
     }
 
