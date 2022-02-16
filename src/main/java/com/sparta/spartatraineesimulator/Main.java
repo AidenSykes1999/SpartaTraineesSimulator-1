@@ -25,7 +25,12 @@ public class Main {
 
         for(int i = 0; i < months; i++) {
 
-            controller.runSimulationTick(i, doIncremental);
+            controller.runSimulationTick(i);
+
+            if (doIncremental) {
+                dm.displayTheDetails(controller.getCentres(), controller.getClosedCentres(), controller.getAllTrainees());
+            }
+
             dm.displayMonthPassed();
 
             try {

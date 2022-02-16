@@ -11,14 +11,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Controller {
-    DisplayManager dm = new DisplayManager();
 
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
     private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
-
-    public ArrayList<TrainingCentre> getClosedCentres() {
-        return closedCentres;
-    }
 
     private ArrayList<Trainee> waitingList = new ArrayList<>();
     private ArrayList<Trainee> allTrainees = new ArrayList<>();
@@ -29,7 +24,7 @@ public class Controller {
     private int bootCampCount = 0;
     private int trainingHubCount = 0;
 
-    public void runSimulationTick (int month, boolean doIncrementalOutput) {
+    public void runSimulationTick (int month) {
 
         ArrayList<Trainee> newTrainees = generateTrainees();
 
@@ -55,14 +50,9 @@ public class Controller {
             Collections.reverse(waitingList);
         }
 
-
         // for debugging
         for (TrainingCentre centre : centres) {
             System.out.print(centre.getCurrentCapacity() + ", ");
-        }
-
-        if (doIncrementalOutput){
-            dm.displayTheDetails(centres, closedCentres, allTrainees);
         }
 
         System.out.println("Waiting list size: " + waitingList.size());
@@ -175,32 +165,6 @@ public class Controller {
         }
     }
 
-    private List<Trainee> addTrainees(TrainingCentre centre, ArrayList<Trainee> trainees) {
-
-        int freeSpace = centre.getEmptySpace();
-
-        // limit to the amount of trainee able to be taken is 50
-        if (50 < freeSpace) {
-            freeSpace = 50;
-        }
-
-        List<Trainee> addedTrainees = null;
-
-        if (freeSpace >= trainees.size()) {
-            addedTrainees = trainees;
-            centre.addAllTrainees(addedTrainees);
-            trainees.clear();
-
-        } else if (freeSpace < trainees.size()) {
-            addedTrainees = trainees.subList(0, freeSpace);
-            centre.addAllTrainees(addedTrainees);
-
-        }
-
-        return addedTrainees;
-
-    }
-
     private ArrayList<Trainee> closeCentres() {
 
         ArrayList<Trainee> traineesRemovedFromCentre = new ArrayList<>();
@@ -262,6 +226,10 @@ public class Controller {
 
     public ArrayList<Trainee> getAllTrainees() {
         return allTrainees;
+    }
+
+    public ArrayList<TrainingCentre> getClosedCentres() {
+        return closedCentres;
     }
 
 }

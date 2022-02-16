@@ -38,9 +38,9 @@ public class DisplayManager {
         trainingAndWaitingIncrement(allTrainees);
         // Calls the methods and appends the details to the StringBuilder
 
-        for (Trainee t : allTrainees){
-            System.out.println(t.getTrainingTime());
-        }
+        // for (Trainee t : allTrainees){
+        //     System.out.println(t.getTrainingTime());
+        // }
 
 
         System.out.println(sb); // Prints the culmination of the StringBuilder, incrementally each month or all at once
