@@ -79,6 +79,14 @@ public abstract class TrainingCentre {
         return courseType;
     }
 
+    public boolean hasCourse() {
+        if (courseType != Course.NONE) {
+            return true;
+        }
+        return false;
+    }
+
+
     @Override
     public String toString() {
         return "TrainingCentre{" +

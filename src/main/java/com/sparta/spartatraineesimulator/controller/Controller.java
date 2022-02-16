@@ -39,12 +39,14 @@ public class Controller {
         totalEnlisted += newTrainees.size();
 
         createCenter(month);
-        addTraineesToCentres(waitingList);
+        addTraineesTechCentre(waitingList);
+        addTraineesCentre(waitingList);
 
         // we will close the center if the current capacity of center is less than 25
         ArrayList<Trainee> reassignedTrainees = closeCentres();
         // try to reassign trainees
-        addTraineesToCentres(reassignedTrainees);
+        addTraineesTechCentre(reassignedTrainees);
+        addTraineesCentre(reassignedTrainees);
 
         // if some trainees still need reassigning add them to front of waitingList
         Collections.reverse(waitingList);
@@ -60,8 +62,8 @@ public class Controller {
             dm.displayTheDetails(centres, closedCentres, allTrainees);
         }
 
-        System.out.println("\nWaiting list size: " + waitingList.size());
-
+        System.out.println("Waiting list size: " + waitingList.size());
+        System.out.println("Total enrolled: " + totalEnlisted);
 
     }
 
@@ -105,29 +107,23 @@ public class Controller {
         }
     }
 
-    private void addTraineesToTechCentres() {
+    private void addTraineesTechCentre(ArrayList<Trainee> trainees) {
         for (TrainingCentre centre : centres) {
 
-            if (centre.getCourseType() != Course.NONE && !centre.isCentreFull()) {
+            if (centre.hasCourse() && !centre.isCentreFull()) {
 
-                int freeSpace = centre.getEmptySpace();
+                ArrayList<Trainee> traineeAddList = new ArrayList<>();
 
-                // limit to the amount of trainee able to be taken is 50
-                if (50 < freeSpace) {
-                    freeSpace = 50;
+                for (Trainee trainee : trainees) {
+                    if (trainee.getCourseType() == centre.getCourseType()) {
+                        traineeAddList.add(trainee);
+                    }
                 }
 
+                List<Trainee> addedTrainees = addTrainees(centre, traineeAddList);
 
-
-                if (freeSpace >= waitingList.size()) {
-                    centre.addAllTrainees(waitingList);
-                    waitingList.clear();
-
-                } else if (freeSpace < waitingList.size()) {
-                    List<Trainee> subListTrainee = waitingList.subList(0, freeSpace);
-                    centre.addAllTrainees(subListTrainee);
-                    waitingList.removeAll(subListTrainee);
-
+                if (traineeAddList.size() != 0) {
+                    trainees.removeAll(addedTrainees);
                 }
 
             }
@@ -137,30 +133,43 @@ public class Controller {
     }
 
     // A centre takes a random number of trainees every month. (0 - 50 trainees up to their capacity)
-    private void addTraineesToCentres(ArrayList<Trainee> trainees) {
+    private void addTraineesCentre(ArrayList<Trainee> trainees) {
         for (TrainingCentre centre : centres) {
-            if (!centre.isCentreFull()) {
+            if (!centre.hasCourse() && !centre.isCentreFull()) {
+                List<Trainee> addedTrainees = addTrainees(centre, trainees);
 
-                int freeSpace = centre.getEmptySpace();
-
-                // limit to the amount of trainee able to be taken is 50
-                if (50 < freeSpace) {
-                    freeSpace = 50;
-                }
-
-                if (freeSpace >= trainees.size()) {
-                    centre.addAllTrainees(trainees);
-                    trainees.clear();
-
-                } else if (freeSpace < trainees.size()) {
-                    List<Trainee> subListTrainee = trainees.subList(0, freeSpace);
-                    centre.addAllTrainees(subListTrainee);
-                    trainees.removeAll(subListTrainee);
-
+                if (trainees.size() != 0) {
+                    trainees.removeAll(addedTrainees);
                 }
 
             }
         }
+    }
+
+    private List<Trainee> addTrainees(TrainingCentre centre, ArrayList<Trainee> trainees) {
+
+        int freeSpace = centre.getEmptySpace();
+
+        // limit to the amount of trainee able to be taken is 50
+        if (50 < freeSpace) {
+            freeSpace = 50;
+        }
+
+        List<Trainee> addedTrainees = null;
+
+        if (freeSpace >= trainees.size()) {
+            addedTrainees = trainees;
+            centre.addAllTrainees(addedTrainees);
+            trainees.clear();
+
+        } else if (freeSpace < trainees.size()) {
+            addedTrainees = trainees.subList(0, freeSpace);
+            centre.addAllTrainees(addedTrainees);
+
+        }
+
+        return addedTrainees;
+
     }
 
     private ArrayList<Trainee> closeCentres() {
@@ -175,12 +184,12 @@ public class Controller {
                 System.out.println("Since the current capacity(" + centre.getCurrentCapacity() + ") of centre is less than 25, so closing the centre");
 
                 centresToBeRemoved.add(centre);
-                closedCentres.add(centre);
                 centre.removeTrainees();
             }
         }
 
         centres.removeAll(centresToBeRemoved);
+        closedCentres.addAll(centresToBeRemoved);
 
         return traineesRemovedFromCentre;
 
