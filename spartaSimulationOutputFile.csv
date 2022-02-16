@@ -1,0 +1,4091 @@
+BootCamp:
+Current capacity = 500
+Limit = 500
+Empty Space = 0
+Trainees = [
+Trainee:
+Trainee ID = 0
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 1
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 2
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 3
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 4
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 5
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 6
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 7
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 8
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 9
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 10
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 11
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 12
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 13
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 14
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 15
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 16
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 17
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 18
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 19
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 20
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 21
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 22
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 23
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 24
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 25
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 26
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 27
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 28
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 29
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 30
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 31
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 32
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 33
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 34
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 35
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 36
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 37
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 38
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 39
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 40
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 41
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 42
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 43
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 44
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 45
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 46
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 47
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 48
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 49
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 50
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 51
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 52
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 53
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 54
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 55
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 56
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 57
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 58
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 59
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 60
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 61
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 62
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 63
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 64
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 65
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 66
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 67
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 68
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 69
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 70
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 71
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 72
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 73
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 74
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 75
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 76
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 77
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 78
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 79
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 80
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 81
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 82
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 83
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 84
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 85
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 86
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 87
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 88
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 89
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 90
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 91
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 92
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 93
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 94
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 95
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 96
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 97
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 98
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 99
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 100
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 101
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 102
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 103
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 104
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 105
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 106
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 107
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 108
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 109
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 110
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 111
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 112
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 113
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 114
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 115
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 116
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 117
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 118
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 119
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 120
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 121
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 122
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 123
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 124
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 125
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 126
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 127
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 128
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 129
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 130
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 131
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 132
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 133
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 134
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 135
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 136
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 137
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 138
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 139
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 140
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 141
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 142
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 143
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 144
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 145
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 146
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 147
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 148
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 149
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 199
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 200
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 201
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 202
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 203
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 204
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 205
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 206
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 207
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 208
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 209
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 210
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 211
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 212
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 213
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 214
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 215
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 216
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 217
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 218
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 219
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 220
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 221
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 222
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 223
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 224
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 225
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 226
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 227
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 228
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 229
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 230
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 231
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 232
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 233
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 234
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 235
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 236
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 237
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 238
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 239
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 240
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 241
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 242
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 243
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 244
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 245
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 246
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 247
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 248
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 258
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 259
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 260
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 261
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 262
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 263
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 264
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 265
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 266
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 267
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 268
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 269
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 270
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 271
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 272
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 273
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 274
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 275
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 276
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 277
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 278
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 279
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 280
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 281
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 282
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 283
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 284
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 285
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 286
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 287
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 288
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 289
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 290
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 291
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 292
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 293
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 294
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 295
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 296
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 297
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 298
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 299
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 300
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 301
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 302
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 303
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 304
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 305
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 306
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 307
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 337
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 338
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 339
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 340
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 341
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 342
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 343
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 344
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 345
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 346
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 347
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 348
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 349
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 350
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 351
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 352
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 353
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 354
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 355
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 356
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 357
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 358
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 359
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 360
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 361
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 362
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 363
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 364
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 365
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 366
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 367
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 368
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 369
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 370
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 371
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 372
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 373
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 374
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 375
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 376
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 377
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 378
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 379
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 380
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 381
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 382
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 383
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 384
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 385
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 386
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 392
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 393
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 394
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 395
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 396
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 397
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 398
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 399
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 400
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 401
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 402
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 403
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 404
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 405
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 406
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 407
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 408
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 409
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 410
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 411
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 412
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 413
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 414
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 415
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 416
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 417
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 418
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 419
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 420
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 421
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 422
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 423
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 424
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 425
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 426
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 427
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 428
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 429
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 430
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 431
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 432
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 433
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 434
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 435
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 436
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 437
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 438
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 439
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 440
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 441
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 489
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 490
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 491
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 492
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 493
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 494
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 495
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 496
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 497
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 498
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 499
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 500
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 501
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 502
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 503
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 504
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 505
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 506
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 507
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 508
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 509
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 510
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 511
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 512
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 513
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 514
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 515
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 516
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 517
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 518
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 519
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 520
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 521
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 522
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 523
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 524
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 525
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 526
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 527
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 528
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 529
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 530
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 531
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 532
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 533
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 534
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 535
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 536
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 537
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 538
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 544
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 545
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 546
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 547
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 548
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 549
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 550
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 551
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 552
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 553
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 554
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 555
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 556
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 557
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 558
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 559
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 560
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 561
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 562
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 563
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 564
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 565
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 566
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 567
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 568
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 569
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 570
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 571
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 572
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 573
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 574
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 575
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 576
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 577
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 578
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 579
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 580
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 581
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 582
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 583
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 584
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 585
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 586
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 587
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 588
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 589
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 590
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 591
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 592
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 593
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 595
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 596
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 597
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 598
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 599
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 600
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 601
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 602
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 603
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 604
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 605
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 606
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 607
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 608
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 609
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 610
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 611
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 612
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 613
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 614
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 615
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 616
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 617
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 618
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 619
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 620
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 621
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 622
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 623
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 624
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 625
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 626
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 627
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 628
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 629
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 630
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 631
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 632
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 633
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 634
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 635
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 636
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 637
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 638
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 639
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 640
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 641
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 642
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 643
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 644
+Training time = 0
+Is waiting? = true
+Course = DEVOPS]
+
+TrainingHub:
+Current capacity = 100
+Limit = 100
+Empty Space = 0
+Trainees = [
+Trainee:
+Trainee ID = 150
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 151
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 152
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 153
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 154
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 155
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 156
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 157
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 158
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 159
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 160
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 161
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 162
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 163
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 164
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 165
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 166
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 167
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 168
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 169
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 170
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 171
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 172
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 173
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 174
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 175
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 176
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 177
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 178
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 179
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 180
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 181
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 182
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 183
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 184
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 185
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 186
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 187
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 188
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 189
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 190
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 191
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 192
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 193
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 194
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 195
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 196
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 197
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 198
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 249
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 250
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 251
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 252
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 253
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 254
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 255
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 256
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 257
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 308
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 309
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 310
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 311
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 312
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 313
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 314
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 315
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 316
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 317
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 318
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 319
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 320
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 321
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 322
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 323
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 324
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 325
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 326
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 327
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 328
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 329
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 330
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 331
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 332
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 333
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 334
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 335
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 336
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 387
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 388
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 389
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 390
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 391
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 442
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 443
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 444
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 445
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 446
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 447
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 448
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 449
+Training time = 0
+Is waiting? = true
+Course = DATA]
+
+TechCentre:
+Current capacity = 179
+Limit = 200
+Empty Space = 21
+Trainees = [
+Trainee:
+Trainee ID = 450
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 451
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 452
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 453
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 454
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 455
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 456
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 457
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 458
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 459
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 460
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 461
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 462
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 463
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 464
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 465
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 466
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 467
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 468
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 469
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 470
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 471
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 472
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 473
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 474
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 475
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 476
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 477
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 478
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 479
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 480
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 481
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 482
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 483
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 484
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 485
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 486
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 487
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 488
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 539
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 540
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 541
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 542
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 543
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 594
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 645
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 646
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 647
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 648
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 649
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 650
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 651
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 652
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 653
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 654
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 655
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 656
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 657
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 658
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 659
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 660
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 661
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 662
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 663
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 664
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 665
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 666
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 667
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 668
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 669
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 670
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 671
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 672
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 673
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 674
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 675
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 676
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 677
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 678
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 679
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 680
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 681
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 682
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 683
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 684
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 685
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 686
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 687
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 688
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 689
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 690
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 691
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 692
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 693
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 694
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 695
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 696
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 697
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 698
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 699
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 700
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 701
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 702
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 703
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 704
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 705
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 706
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 707
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 708
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 709
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 710
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 711
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 712
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 713
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 714
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 715
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 716
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 717
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 718
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 719
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 720
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 721
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 722
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 723
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 724
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 725
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 726
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 727
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 728
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 740
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 741
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 742
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 743
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 744
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 745
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 746
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 747
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 748
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 749
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 750
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 751
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 752
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 753
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 754
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 755
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 756
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 757
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 758
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 759
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 760
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 761
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 762
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 763
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 764
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 765
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 766
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 767
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 768
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 769
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 770
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 771
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 772
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 773
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 774
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 775
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 776
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 777
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 778
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 779
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 780
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 781
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 782
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 783
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 784
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 785
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 786
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 787
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 788
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 789
+Training time = 0
+Is waiting? = true
+Course = DATA]
+
+TechCentre:
+Current capacity = 32
+Limit = 200
+Empty Space = 168
+Trainees = [
+Trainee:
+Trainee ID = 729
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 730
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 731
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 732
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 733
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 734
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 735
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 736
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 737
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 738
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 739
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 790
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 791
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 792
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 793
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 794
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 795
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 796
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 797
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 798
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 799
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 800
+Training time = 0
+Is waiting? = true
+Course = DEVOPS, 
+Trainee:
+Trainee ID = 801
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 802
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 803
+Training time = 0
+Is waiting? = true
+Course = BUSINESS, 
+Trainee:
+Trainee ID = 804
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 805
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 806
+Training time = 0
+Is waiting? = true
+Course = DATA, 
+Trainee:
+Trainee ID = 807
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 808
+Training time = 0
+Is waiting? = true
+Course = C_SHARP, 
+Trainee:
+Trainee ID = 809
+Training time = 0
+Is waiting? = true
+Course = JAVA, 
+Trainee:
+Trainee ID = 810
+Training time = 0
+Is waiting? = true
+Course = DEVOPS]
+
+TechCentre:
+Current capacity = 0
+Limit = 200
+Empty Space = 200
+Trainees = []
+
+TrainingHub:
+Current capacity = 0
+Limit = 100
+Empty Space = 100
+Trainees = []
+

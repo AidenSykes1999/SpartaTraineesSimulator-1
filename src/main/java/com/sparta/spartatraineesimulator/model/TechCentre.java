@@ -4,10 +4,17 @@ import java.util.ArrayList;
 
 public class TechCentre extends TrainingCentre {
 
+    private final Course centreCourse = Course.randomCourseType();
+
     public TechCentre() {
         super();
         setLimit(200);
         this.setTrainees(new ArrayList<>(getLimit()));
+        this.setName("Tech Centre");
+    }
+
+    public Course getCourseType() {
+        return centreCourse;
     }
 
     @Override
@@ -19,4 +26,12 @@ public class TechCentre extends TrainingCentre {
 
     }
 
+    @Override
+    public String toString() {
+        return "TechCentre:\n" +
+                "Current capacity = " + super.getCurrentCapacity() +
+                "\nLimit = " + super.getLimit() +
+                "\nEmpty Space = " + super.getEmptySpace() +
+                "\nTrainees = " + super.getTrainees() + "\n\n";
+    }
 }

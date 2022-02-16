@@ -10,10 +10,12 @@ public class BootCamp extends TrainingCentre {
         super();
         setLimit(500);
         this.setTrainees(new ArrayList<>(getLimit()));
+        this.setCourseType(Course.NONE);
+        this.setName("Bootcamp");
     }
 
     @Override
-    boolean shouldClose() {
+    public boolean shouldClose() {
 
         if (getCurrentCapacity() < 25){
             numMonthsInactive++;
@@ -25,5 +27,14 @@ public class BootCamp extends TrainingCentre {
         }
 
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "BootCamp:\n" +
+                "Current capacity = " + super.getCurrentCapacity() +
+                "\nLimit = " + super.getLimit() +
+                "\nEmpty Space = " + super.getEmptySpace() +
+                "\nTrainees = " + super.getTrainees() + "\n\n";
     }
 }
