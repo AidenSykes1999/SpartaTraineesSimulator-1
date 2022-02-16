@@ -10,11 +10,12 @@ public class BootCamp extends TrainingCentre {
         super();
         setLimit(500);
         this.setTrainees(new ArrayList<>(getLimit()));
+        this.setCourseType(Course.NONE);
         this.setName("Bootcamp");
     }
 
     @Override
-    boolean shouldClose() {
+    public boolean shouldClose() {
 
         if (getCurrentCapacity() < 25){
             numMonthsInactive++;

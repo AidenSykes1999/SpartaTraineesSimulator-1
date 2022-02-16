@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DisplayManager {
+
     private int monthCount = 0;
     StringBuilder sb = new StringBuilder();
     // Allows the user to specify a non-negative or non-zero integer for the length of time to simulate

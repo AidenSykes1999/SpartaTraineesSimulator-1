@@ -1,12 +1,12 @@
 package com.sparta.spartatraineesimulator.model;
 
 public class Trainee {
+
     private int traineeId;
     private int trainingTime = 0;
 
-    // new variables for the waiting list
     private boolean isWaiting = true;
-    private final Courses courseType = Courses.randomCourseType(); //random course for a trainee
+    private final Course courseType = Course.randomCourseType(); //random course for a trainee
 
     public Trainee(int traineeId, int trainingTime){
         this.traineeId = traineeId;
@@ -40,7 +40,7 @@ public class Trainee {
     }
 
     //getter for the trainee's course type
-    public Courses getCourseType() {
+    public Course getCourseType() {
         return courseType;
     }
 
