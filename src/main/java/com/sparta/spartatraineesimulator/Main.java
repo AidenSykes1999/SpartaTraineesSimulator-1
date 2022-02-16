@@ -21,10 +21,11 @@ public class Main {
         Controller controller = new Controller();
 
         int months = dm.numberOfMonths();
+        boolean doIncremental = dm.doPrintEachMonth();
 
         for(int i = 0; i < months; i++) {
 
-            controller.runSimulationTick(i);
+            controller.runSimulationTick(i, doIncremental);
             dm.displayMonthPassed();
 
             try {

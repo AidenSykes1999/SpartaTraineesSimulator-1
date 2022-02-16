@@ -3,12 +3,14 @@ package com.sparta.spartatraineesimulator.controller;
 // tick stuff
 
 import com.sparta.spartatraineesimulator.model.*;
+import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Controller {
+    DisplayManager dm = new DisplayManager();
 
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
     private ArrayList<Trainee> waitingList = new ArrayList<>();
@@ -20,7 +22,7 @@ public class Controller {
     private int bootCampCount = 0;
     private int trainingHubCount = 0;
 
-    public void runSimulationTick (int month) {
+    public void runSimulationTick (int month, boolean doIncrementalOutput) {
 
         ArrayList<Trainee> newTrainees = generateTrainees();
 
@@ -36,8 +38,12 @@ public class Controller {
         for (TrainingCentre centre : centres) {
             System.out.print(centre.getCurrentCapacity() + ", ");
         }
+        if (doIncrementalOutput){
+            dm.displayTheDetails(centres, allTrainees);
+        }
 
-        System.out.println("Waiting list size: " + waitingList.size());
+        System.out.println("\nWaiting list size: " + waitingList.size());
+
 
     }
 
