@@ -16,6 +16,10 @@ public class Controller {
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
     private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
 
+    public ArrayList<TrainingCentre> getClosedCentres() {
+        return closedCentres;
+    }
+
     private ArrayList<Trainee> waitingList = new ArrayList<>();
     private ArrayList<Trainee> allTrainees = new ArrayList<>();
 
@@ -54,13 +58,17 @@ public class Controller {
         for (TrainingCentre centre : centres) {
             System.out.print(centre.getCurrentCapacity() + ", ");
         }
+
         if (doIncrementalOutput){
-            dm.displayTheDetails(centres, allTrainees);
+            dm.displayTheDetails(centres, closedCentres, allTrainees);
         }
 
         System.out.println("Waiting list size: " + waitingList.size());
         System.out.println("Total enrolled: " + totalEnlisted);
-
+        for (Trainee t : allTrainees){
+            if (!t.isWaiting())
+                t.incrementTrainingTime();
+        }
     }
 
     public ArrayList<Trainee> generateTrainees () {

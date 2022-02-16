@@ -10,7 +10,7 @@ public class DisplayManager {
 
     private int monthCount = 0;
     private StringBuilder sb = new StringBuilder();
-
+    // Allows the user to specify a non-negative or non-zero integer for the length of time to simulate
     public int numberOfMonths(){
         int numberOfMonths = 12;
         Scanner scanner = new Scanner(System.in);
@@ -28,14 +28,19 @@ public class DisplayManager {
         return numberOfMonths;
     }
 
-
-    public void displayTheDetails(ArrayList<TrainingCentre> openCentres, ArrayList<Trainee> allTrainees){
+    // Gathers the information and sends it to be formatted and then output once all of it is collated
+    // Deletes the contents once it has output that data for the next batch of output
+    public void displayTheDetails(ArrayList<TrainingCentre> openCentres, ArrayList<TrainingCentre> closedCentres, ArrayList<Trainee> allTrainees){
 
         totalOpenCentres(openCentres);
-        totalClosedCentres(openCentres);
+        totalClosedCentres(closedCentres);
         totalFullCentres(openCentres);
         trainingAndWaitingIncrement(allTrainees);
         // Calls the methods and appends the details to the StringBuilder
+
+        for (Trainee t : allTrainees){
+            System.out.println(t.getTrainingTime());
+        }
 
 
         System.out.println(sb); // Prints the culmination of the StringBuilder, incrementally each month or all at once
@@ -43,6 +48,7 @@ public class DisplayManager {
         sb.delete(0, sb.length());
     }
 
+    // Offers the user the choice of output each month or all at the end of the simulation
     public boolean doPrintEachMonth(){
         boolean isTrue = false;
         Scanner scanner = new Scanner(System.in);
@@ -54,11 +60,8 @@ public class DisplayManager {
         return isTrue;
     }
 
-    private StringBuilder totalClosedCentres(ArrayList<TrainingCentre> openCentres) {
-
-        return sb.append("Total closed centres: Training Hub - ").append(". Bootcamp - ").append(". Tech Centre - ").append(".\n\n");
-    }
-
+    // Calculates the current Open Centres based on the three that can exist
+    // Appends that information to a prepared String
     private StringBuilder totalOpenCentres(ArrayList<TrainingCentre> openCentres) {
         int totalOpenBootcamps = 0;
         int totalOpenTrainingHubs = 0;
@@ -75,9 +78,33 @@ public class DisplayManager {
         return sb.append("Total open centres: Training Hub - ")
                 .append(totalOpenTrainingHubs).append(", Bootcamp - ")
                 .append(totalOpenBootcamps).append(". Tech Centre - ")
-                .append(totalOpenTechCentres).append(".\n\n");
+                .append(totalOpenTechCentres).append(".\n");
+    }
+    // Calculates the current Closed Centres based on the three that can exist
+    // Appends that information to a prepared String
+    private StringBuilder totalClosedCentres(ArrayList<TrainingCentre> closedCentres) {
+
+        int totalClosedBootcamps = 0;
+        int totalClosedTrainingHubs = 0;
+        int totalClosedTechCentres = 0;
+
+        for (TrainingCentre tc: closedCentres){
+            switch (tc.getName()){
+                case "Bootcamp" -> totalClosedBootcamps++;
+                case "Training Hub" -> totalClosedTrainingHubs++;
+                case "Tech Centre" -> totalClosedTechCentres++;
+            }
+        }
+
+        return sb.append("Total closed centres: Training Hub - ")
+                .append(totalClosedTrainingHubs).append(". Bootcamp - ")
+                .append(totalClosedBootcamps).append(". Tech Centre - ")
+                .append(totalClosedTechCentres).append(".\n");
     }
 
+    /* Calculates the current Full Centres based on the three that can exist
+     Appends that information to a prepared String
+     */
     private StringBuilder totalFullCentres(ArrayList<TrainingCentre> openCentres) {
         int totalFullBootcamps = 0;
         int totalFullTrainingHubs = 0;
@@ -95,11 +122,16 @@ public class DisplayManager {
         return sb.append("Total full centres: Training Hub - ")
                     .append(totalFullTrainingHubs).append(", Bootcamp - ")
                     .append(totalFullBootcamps).append(". Tech Centre - ")
-                    .append(totalFullTechCentres).append(".\n\n");
+                    .append(totalFullTechCentres).append(".\n");
     }
 
 
-
+    /*
+    * Initialises the Training and Waiting Learning Streams to allow the counting of them from zero.
+    * Checks each trainee and if they're waiting. If they are, they increment the Waiting Streams
+    * and if they're not waiting the Training Streams get incremented all based on the course type.
+    * For example: Trainee 56 is Training and in the Java Stream, that would +1 trainingJava
+    */
     public StringBuilder trainingAndWaitingIncrement(ArrayList<Trainee> trainees){
         int trainingJava = 0, trainingCSharp = 0, trainingData = 0, trainingDevOps = 0, trainingBusiness = 0,
                 waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
@@ -128,13 +160,23 @@ public class DisplayManager {
 
         return sb.append("Total training: Java - ").append(trainingJava).append(". C# - ").append(trainingCSharp)
                 .append(". Data - ").append(trainingData).append(". DevOps - ").append(trainingDevOps)
-                .append(". Business - ").append(trainingBusiness).append(". \n\n").append("Total waiting: Java - ")
+                .append(". Business - ").append(trainingBusiness).append(". \n").append("Total waiting: Java - ")
                 .append(waitingJava).append(". C# - ").append(waitingCSharp).append(". Data - ").append(waitingData)
                 .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness).append(". \n");
     }
 
+    // Uses the variable monthCount and increments it each pass through to display the correct current month
     public void displayMonthPassed() {
         monthCount++;
         System.out.println("Month " + monthCount);
+    }
+
+    public String messageFromACompany(ArrayList<Trainee> goneToWork, String company){
+
+        StringBuilder stringBuilder = new StringBuilder();
+        int total = goneToWork.size();
+
+        return stringBuilder.append(total).append(" ").append(goneToWork.get(0).getCourseType())
+                .append(" have been taken by ").append(company).toString();
     }
 }
