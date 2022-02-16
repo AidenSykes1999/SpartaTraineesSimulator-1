@@ -54,7 +54,7 @@ public class DisplayManager {
 
     private StringBuilder totalClosedCentres(ArrayList<TrainingCentre> openCentres) {
 
-        return sb.append("Total closed centres: Training Hub - ").append(". Bootcamp - ").append(". Tech Centre - ").append(".\n\n");
+        return sb.append("Total closed centres: Training Hub - ").append(". Bootcamp - ").append(". Tech Centre - ").append(".\n");
     }
 
     private StringBuilder totalOpenCentres(ArrayList<TrainingCentre> openCentres) {
@@ -73,7 +73,7 @@ public class DisplayManager {
         return sb.append("Total open centres: Training Hub - ")
                 .append(totalOpenTrainingHubs).append(", Bootcamp - ")
                 .append(totalOpenBootcamps).append(". Tech Centre - ")
-                .append(totalOpenTechCentres).append(".\n\n");
+                .append(totalOpenTechCentres).append(".\n");
     }
 
     private StringBuilder totalFullCentres(ArrayList<TrainingCentre> openCentres) {
@@ -93,7 +93,7 @@ public class DisplayManager {
         return sb.append("Total full centres: Training Hub - ")
                     .append(totalFullTrainingHubs).append(", Bootcamp - ")
                     .append(totalFullBootcamps).append(". Tech Centre - ")
-                    .append(totalFullTechCentres).append(".\n\n");
+                    .append(totalFullTechCentres).append(".\n");
     }
 
 
@@ -126,7 +126,7 @@ public class DisplayManager {
 
         return sb.append("Total training: Java - ").append(trainingJava).append(". C# - ").append(trainingCSharp)
                 .append(". Data - ").append(trainingData).append(". DevOps - ").append(trainingDevOps)
-                .append(". Business - ").append(trainingBusiness).append(". \n\n").append("Total waiting: Java - ")
+                .append(". Business - ").append(trainingBusiness).append(". \n").append("Total waiting: Java - ")
                 .append(waitingJava).append(". C# - ").append(waitingCSharp).append(". Data - ").append(waitingData)
                 .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness).append(". \n");
     }
