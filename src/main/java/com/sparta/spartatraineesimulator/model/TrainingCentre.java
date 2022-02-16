@@ -15,7 +15,7 @@ public abstract class TrainingCentre {
 
     /// Methods inherited
 
-    abstract boolean shouldClose();
+    public abstract boolean shouldClose();
 
     public boolean isCentreFull() {
         return (currentCapacity == limit);
@@ -27,6 +27,10 @@ public abstract class TrainingCentre {
         }
         trainees.addAll(waitingList);
         this.currentCapacity = trainees.size();
+    }
+
+    public void removeTrainees() {
+        this.trainees = null;
     }
 
     public int getEmptySpace() {
