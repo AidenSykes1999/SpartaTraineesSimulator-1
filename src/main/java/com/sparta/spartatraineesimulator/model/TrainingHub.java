@@ -10,13 +10,14 @@ public class TrainingHub extends TrainingCentre {
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setCourseType(Course.NONE);
         this.setName("Training Hub");
+        this.setActiveTime(0);
     }
 
     @Override
     public boolean shouldClose() {
-        if (getCurrentCapacity() < 25){
+        if (getCurrentCapacity() < 25 && getTimeOpen() > 0){
             return true;
-        } else { return false; }
+        } else {incrementActiveTime(); return false; }
 
     }
 
