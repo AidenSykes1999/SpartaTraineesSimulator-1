@@ -4,14 +4,15 @@ import com.sparta.spartatraineesimulator.controller.Controller;
 import com.sparta.spartatraineesimulator.model.Trainee;
 import com.sparta.spartatraineesimulator.model.TrainingCentre;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
-import com.sparta.spartatraineesimulator.view.FileWriterClass;
 
-import java.util.ArrayList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
 public class Main {
 
+    public static Logger logger = LogManager.getLogger("Sparta-Simulator-Logger");
     private static int currentMonth = 0;
 
     public static void main(String[] args) {
@@ -41,7 +42,7 @@ public class Main {
 //        int numberCurrentlyTraining = controller.getNumberCurrentlyTraining();
 //        int numberOfTraineesWaiting = controller.getNumberOfTraineesWaiting();
 
-        ArrayList<Trainee> trainees = controller.allTrainees;
+        ArrayList<Trainee> trainees = controller.getAllTrainees();
         ArrayList<TrainingCentre> centres = controller.getCentres();
 
         dm.displayTheDetails(centres, trainees);

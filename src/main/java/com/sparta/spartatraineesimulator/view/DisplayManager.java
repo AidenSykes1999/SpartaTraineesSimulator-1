@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DisplayManager {
+
     private int monthCount = 0;
-    StringBuilder sb = new StringBuilder();
+    private StringBuilder sb = new StringBuilder();
+
     public int numberOfMonths(){
         int numberOfMonths = 12;
         Scanner scanner = new Scanner(System.in);

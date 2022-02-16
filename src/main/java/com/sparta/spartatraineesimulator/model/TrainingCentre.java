@@ -9,16 +9,13 @@ public abstract class TrainingCentre {
     private int limit = 0;
     private int currentCapacity = 0;
     private ArrayList<Trainee> trainees;
+
+    private Course courseType;
     private String name;
-
-    /// Constructor
-
-    public TrainingCentre() {
-    }
 
     /// Methods inherited
 
-    abstract boolean shouldClose();
+    public abstract boolean shouldClose();
 
     public boolean isCentreFull() {
         return (currentCapacity == limit);
@@ -30,6 +27,10 @@ public abstract class TrainingCentre {
         }
         trainees.addAll(waitingList);
         this.currentCapacity = trainees.size();
+    }
+
+    public void removeTrainees() {
+        this.trainees = null;
     }
 
     public int getEmptySpace() {
@@ -69,6 +70,22 @@ public abstract class TrainingCentre {
     public int getCurrentCapacity() {
         return currentCapacity;
     }
+
+    public void setCourseType(Course courseType) {
+        this.courseType = courseType;
+    }
+
+    public Course getCourseType() {
+        return courseType;
+    }
+
+    public boolean hasCourse() {
+        if (courseType != Course.NONE) {
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public String toString() {
