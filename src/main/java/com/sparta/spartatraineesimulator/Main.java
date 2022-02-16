@@ -25,7 +25,20 @@ public class Main {
 
         for(int i = 0; i < months; i++) {
 
-            controller.runSimulationTick(i, doIncremental);
+            controller.runSimulationTick(i);
+
+            if (doIncremental) {
+                dm.displayTheDetails(controller.getCentres(), controller.getClosedCentres(), controller.getAllTrainees());
+            }
+
+            // for debugging
+            for (TrainingCentre centre : controller.getCentres()) {
+                System.out.print(centre.getCurrentCapacity() + ", ");
+            }
+
+            System.out.println("Waiting list size: " + controller.getNumberOfTraineesWaiting());
+            System.out.println("Total enrolled: " + controller.getTotalEnlisted());
+
             dm.displayMonthPassed();
 
 //            try {
