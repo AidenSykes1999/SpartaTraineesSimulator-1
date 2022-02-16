@@ -45,8 +45,8 @@ public class FileWriterClass {
 
     public String createOutput(ArrayList<TrainingCentre> centres) {
         StringBuilder result = new StringBuilder();
-        for(int i = 0; i < centres.size(); i++){
-            result.append(centres.get(i));
+        for (TrainingCentre centre : centres) {
+            result.append(centre);
         }
         return result.toString();
     }
