@@ -6,15 +6,18 @@ import com.sparta.spartatraineesimulator.model.*;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class Controller {
     DisplayManager dm = new DisplayManager();
 
-    public ArrayList<TrainingCentre> centres = new ArrayList<>();
-    public ArrayList<Trainee> waitingList = new ArrayList<>();
-    public ArrayList<Trainee> allTrainees = new ArrayList<>();
+    private ArrayList<TrainingCentre> centres = new ArrayList<>();
+    private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
+
+    private ArrayList<Trainee> waitingList = new ArrayList<>();
+    private ArrayList<Trainee> allTrainees = new ArrayList<>();
 
     private int totalEnlisted = 0;
     private int traineeId = 0;
@@ -32,7 +35,18 @@ public class Controller {
         totalEnlisted += newTrainees.size();
 
         createCenter(month);
-        addTraineesToCentres();
+        addTraineesToCentres(waitingList);
+
+        // we will close the center if the current capacity of center is less than 25
+        ArrayList<Trainee> reassignedTrainees = closeCentres();
+        // try to reassign trainees
+        addTraineesToCentres(reassignedTrainees);
+
+        // if some trainees still need reassigning add them to front of waitingList
+        Collections.reverse(waitingList);
+        waitingList.addAll(reassignedTrainees);
+        Collections.reverse(waitingList);
+
 
         // for debugging
         for (TrainingCentre centre : centres) {
@@ -79,8 +93,7 @@ public class Controller {
             else if (randomChoice == 2 && bootCampCount < 2) {
                 centres.add(new BootCamp());
                 bootCampCount++;
-            }
-            else if (randomChoice == 3) {
+            } else if (randomChoice == 3) {
                 centres.add(new TechCentre());
 
             }
@@ -88,10 +101,10 @@ public class Controller {
         }
     }
 
-    // A centre takes a random number of trainees every month. (0 - 50 trainees up to their capacity)
-    private void addTraineesToCentres () {
+    private void addTraineesToTechCentres() {
         for (TrainingCentre centre : centres) {
-            if (!centre.isCentreFull()) {
+
+            if (centre.getCourseType() != Course.NONE && !centre.isCentreFull()) {
 
                 int freeSpace = centre.getEmptySpace();
 
@@ -99,6 +112,8 @@ public class Controller {
                 if (50 < freeSpace) {
                     freeSpace = 50;
                 }
+
+
 
                 if (freeSpace >= waitingList.size()) {
                     centre.addAllTrainees(waitingList);
@@ -112,7 +127,59 @@ public class Controller {
                 }
 
             }
+
         }
+
+    }
+
+    // A centre takes a random number of trainees every month. (0 - 50 trainees up to their capacity)
+    private void addTraineesToCentres(ArrayList<Trainee> trainees) {
+        for (TrainingCentre centre : centres) {
+            if (!centre.isCentreFull()) {
+
+                int freeSpace = centre.getEmptySpace();
+
+                // limit to the amount of trainee able to be taken is 50
+                if (50 < freeSpace) {
+                    freeSpace = 50;
+                }
+
+                if (freeSpace >= trainees.size()) {
+                    centre.addAllTrainees(trainees);
+                    trainees.clear();
+
+                } else if (freeSpace < trainees.size()) {
+                    List<Trainee> subListTrainee = trainees.subList(0, freeSpace);
+                    centre.addAllTrainees(subListTrainee);
+                    trainees.removeAll(subListTrainee);
+
+                }
+
+            }
+        }
+    }
+
+    private ArrayList<Trainee> closeCentres() {
+
+        ArrayList<Trainee> traineesRemovedFromCentre = new ArrayList<>();
+        ArrayList<TrainingCentre> centresToBeRemoved = new ArrayList<>();
+
+        for (TrainingCentre centre : centres) {
+            if (centre.shouldClose()) {
+                ArrayList<Trainee> trainees = centre.getTrainees();
+                traineesRemovedFromCentre.addAll(trainees);
+                System.out.println("Since the current capacity(" + centre.getCurrentCapacity() + ") of centre is less than 25, so closing the centre");
+
+                centresToBeRemoved.add(centre);
+                closedCentres.add(centre);
+                centre.removeTrainees();
+            }
+        }
+
+        centres.removeAll(centresToBeRemoved);
+
+        return traineesRemovedFromCentre;
+
     }
 
     public int getNumberOfOpenCentres() {
@@ -150,5 +217,10 @@ public class Controller {
     public ArrayList<TrainingCentre> getCentres() {
         return centres;
     }
+
+    public ArrayList<Trainee> getAllTrainees() {
+        return allTrainees;
+    }
+
 }
 
