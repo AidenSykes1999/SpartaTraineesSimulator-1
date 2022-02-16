@@ -57,7 +57,18 @@
 ### **Overview**
 You have been asked to build a simulator which will help track the number of people currently training
 
+<br/>
+<div align="left">
+    <b><a href="##table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
 ### **What is simulation?**
+<br/>
+<div align="left">
+    <b><a href="##table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
 
 ### **Project Planning**
 #### **Phase 1**
@@ -101,14 +112,14 @@ You have been asked to build a simulator which will help track the number of peo
 
 <br/>
 <div align="left">
-    <b><a href="#csv-data-migration-application-java">↥ Back to top</a></b>
+    <b><a href="##table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
 
 ### **Principles and Design Patterns**
 <br/>
 <div align="left">
-    <b><a href="#csv-data-migration-application-java">↥ Back to top</a></b>
+    <b><a href="##table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
 
@@ -120,7 +131,7 @@ You have been asked to build a simulator which will help track the number of peo
 #### **JUnit Jupiter API**
 <br/>
 <div align="left">
-    <b><a href="#csv-data-migration-application-java">↥ Back to top</a></b>
+    <b><a href="##table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
 
@@ -133,7 +144,7 @@ You have been asked to build a simulator which will help track the number of peo
 
 <br/>
 <div align="left">
-    <b><a href="#csv-data-migration-application-java">↥ Back to top</a></b>
+    <b><a href="##table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
 
@@ -144,7 +155,7 @@ You have been asked to build a simulator which will help track the number of peo
 
 <br/>
 <div align="left">
-    <b><a href="#csv-data-migration-application-java">↥ Back to top</a></b>
+    <b><a href="##table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
 
@@ -152,7 +163,7 @@ You have been asked to build a simulator which will help track the number of peo
 
 <br/>
 <div align="left">
-    <b><a href="#csv-data-migration-application-java">↥ Back to top</a></b>
+    <b><a href="##table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
 
