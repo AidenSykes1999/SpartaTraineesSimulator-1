@@ -58,13 +58,17 @@ public class Controller {
         for (TrainingCentre centre : centres) {
             System.out.print(centre.getCurrentCapacity() + ", ");
         }
+
         if (doIncrementalOutput){
             dm.displayTheDetails(centres, closedCentres, allTrainees);
         }
 
         System.out.println("Waiting list size: " + waitingList.size());
         System.out.println("Total enrolled: " + totalEnlisted);
-
+        for (Trainee t : allTrainees){
+            if (!t.isWaiting())
+                t.incrementTrainingTime();
+        }
     }
 
     public ArrayList<Trainee> generateTrainees () {
