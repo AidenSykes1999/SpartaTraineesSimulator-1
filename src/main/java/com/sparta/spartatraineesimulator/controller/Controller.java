@@ -50,13 +50,6 @@ public class Controller {
             Collections.reverse(waitingList);
         }
 
-        // for debugging
-        for (TrainingCentre centre : centres) {
-            System.out.print(centre.getCurrentCapacity() + ", ");
-        }
-
-        System.out.println("Waiting list size: " + waitingList.size());
-        System.out.println("Total enrolled: " + totalEnlisted);
         for (Trainee t : allTrainees){
             if (!t.isWaiting())
                 t.incrementTrainingTime();
@@ -174,7 +167,7 @@ public class Controller {
             if (centre.shouldClose()) {
                 ArrayList<Trainee> trainees = centre.getTrainees();
                 traineesRemovedFromCentre.addAll(trainees);
-                System.out.println("Since the current capacity(" + centre.getCurrentCapacity() + ") of centre is less than 25, so closing the centre");
+                // System.out.println("Since the current capacity(" + centre.getCurrentCapacity() + ") of centre is less than 25, so closing the centre");
 
                 centresToBeRemoved.add(centre);
                 centre.removeTrainees();
