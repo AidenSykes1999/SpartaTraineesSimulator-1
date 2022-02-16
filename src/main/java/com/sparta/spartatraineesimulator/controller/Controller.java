@@ -14,7 +14,7 @@ public class Controller {
     DisplayManager dm = new DisplayManager();
 
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
-    private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
+    public ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
 
     private ArrayList<Trainee> waitingList = new ArrayList<>();
     private ArrayList<Trainee> allTrainees = new ArrayList<>();
@@ -53,7 +53,7 @@ public class Controller {
             System.out.print(centre.getCurrentCapacity() + ", ");
         }
         if (doIncrementalOutput){
-            dm.displayTheDetails(centres, allTrainees);
+            dm.displayTheDetails(centres, closedCentres, allTrainees);
         }
 
         System.out.println("\nWaiting list size: " + waitingList.size());

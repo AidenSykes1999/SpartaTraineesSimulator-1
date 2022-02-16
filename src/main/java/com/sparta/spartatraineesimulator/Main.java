@@ -44,8 +44,9 @@ public class Main {
 
         ArrayList<Trainee> trainees = controller.getAllTrainees();
         ArrayList<TrainingCentre> centres = controller.getCentres();
+        ArrayList<TrainingCentre> closedCentres = controller.closedCentres;
 
-        dm.displayTheDetails(centres, trainees);
+        dm.displayTheDetails(centres, closedCentres, trainees);
 
 //        FileWriterClass writer = new FileWriterClass();
 //        writer.outputToFile(centres);

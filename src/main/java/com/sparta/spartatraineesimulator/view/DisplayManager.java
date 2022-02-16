@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class DisplayManager {
 
     private int monthCount = 0;
-    StringBuilder sb = new StringBuilder();
+    private StringBuilder sb = new StringBuilder();
     // Allows the user to specify a non-negative or non-zero integer for the length of time to simulate
     public int numberOfMonths(){
         int numberOfMonths = 12;
@@ -30,10 +30,10 @@ public class DisplayManager {
 
     // Gathers the information and sends it to be formatted and then output once all of it is collated
     // Deletes the contents once it has output that data for the next batch of output
-    public void displayTheDetails(ArrayList<TrainingCentre> openCentres, ArrayList<Trainee> allTrainees){
+    public void displayTheDetails(ArrayList<TrainingCentre> openCentres, ArrayList<TrainingCentre> closedCentres, ArrayList<Trainee> allTrainees){
 
         totalOpenCentres(openCentres);
-        totalClosedCentres(openCentres);
+        totalClosedCentres(closedCentres);
         totalFullCentres(openCentres);
         trainingAndWaitingIncrement(allTrainees);
         // Calls the methods and appends the details to the StringBuilder
@@ -78,9 +78,24 @@ public class DisplayManager {
     }
     // Calculates the current Closed Centres based on the three that can exist
     // Appends that information to a prepared String
-    private StringBuilder totalClosedCentres(ArrayList<TrainingCentre> openCentres) {
+    private StringBuilder totalClosedCentres(ArrayList<TrainingCentre> closedCentres) {
 
-        return sb.append("Total closed centres: Training Hub - ").append(". Bootcamp - ").append(". Tech Centre - ").append(".\n");
+        int totalClosedBootcamps = 0;
+        int totalClosedTrainingHubs = 0;
+        int totalClosedTechCentres = 0;
+
+        for (TrainingCentre tc: closedCentres){
+            switch (tc.getName()){
+                case "Bootcamp" -> totalClosedBootcamps++;
+                case "Training Hub" -> totalClosedTrainingHubs++;
+                case "Tech Centre" -> totalClosedTechCentres++;
+            }
+        }
+
+        return sb.append("Total closed centres: Training Hub - ")
+                .append(totalClosedTrainingHubs).append(". Bootcamp - ")
+                .append(totalClosedBootcamps).append(". Tech Centre - ")
+                .append(totalClosedTechCentres).append(".\n");
     }
 
     /* Calculates the current Full Centres based on the three that can exist
