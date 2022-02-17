@@ -55,8 +55,7 @@
 
 (README IN DEVELOPMENT)
 ### **Overview**
-You have been asked to build a simulator which will help track the number of people currently training
-
+Sparta Global gave us a group project to replicate the company and its expansion, with trainees acting as agents who are allocated to either the waiting list or a training centre.
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -64,6 +63,7 @@ You have been asked to build a simulator which will help track the number of peo
 <br/>
 
 ### **What is simulation?**
+A simulation is a model that mimics the operation of an existing or proposed system, providing evidence for decision-making by being able to test different scenarios or process changes.
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -80,10 +80,10 @@ You have been asked to build a simulator which will help track the number of peo
 - If a centre is full, trainees can be moved to any other centre which is not full
 - If all centres are full, the trainees go onto a waiting list. This list must be served first before new trainees are taken
 - At the end of the simulation, output should show:
-- number of open centres
-- number of full centres
-- number of trainees currently training
-- number of trainees on the waiting list
+  - number of open centres
+  - number of full centres
+  - number of trainees currently training
+  - number of trainees on the waiting list
 
 #### **Phase 2**
 - Sparta will now check centres each month. If a centre has fewer than 25 trainees, it will close. The trainees will be randomly moved to another suitable centre
@@ -94,11 +94,11 @@ You have been asked to build a simulator which will help track the number of peo
 - Bootcamp: can train a maximum of 500 trainees but can remain open for 3 months if there are fewer than 25 trainees in attendance. If a Bootcamp has 3 consecutive months of low attendance, it will close. For the lifetime of the simulation, only 2 Bootcamps can exist at a time
 - Tech Centre: Can train 200 trainees but only teaches one course per centre. This is chosen randomly when a Tech Centre is open
 - The simulation should report on the following:
-- number of open centres (breakdown for each type)
-- number of closed centres (breakdown for each type)
-- number of full centres (breakdown for each type)
-- number of trainees currently training (breakdown for each type)
-- number of trainees on the waiting list (breakdown for each type)
+  - number of open centres (breakdown for each type)
+  - number of closed centres (breakdown for each type)
+  - number of full centres (breakdown for each type)
+  - number of trainees currently training (breakdown for each type)
+  - number of trainees on the waiting list (breakdown for each type)
 
 #### **Phase 3**
 
@@ -117,6 +117,12 @@ You have been asked to build a simulator which will help track the number of peo
 <br/>
 
 ### **Principles and Design Patterns**
+This application is based on the design principles listed below:
+
+- Model-view-controller: This is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements. This is done to separate internal representations of information from the ways information is presented to and accepted from the user.
+- Object-oriented programming principles: These principles are also known as the 4 pillars of OOP: Abstraction, Inheritance, Encapsulation, and Polymorphism.
+- SOLID principles: This application strongly follows SOLID principles i.e. Single responsibility, Open–closed, Liskov substitution, Interface segregation, and Dependency inversion principles.
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -125,10 +131,28 @@ You have been asked to build a simulator which will help track the number of peo
 
 ### **Software and dependencies**
 #### **IntelliJ**
+IntelliJ IDEA [Version 2021.3.2](https://www.jetbrains.com/idea/download/#section=windows)
 #### **Log4J**
+[Version 2.17.1](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.17.1)
+* _**Note:** This dependency can be imported within Intellij using Apache Maven and IntelliJ's built-in dependency generator._
+* Alternatively you can open the Maven **"pom.xml"** file and paste in the following code within the **"dependencies"** section of the file:
 #### **JDK**
+[Version 17.0.2](https://jdk.java.net/17/)
 #### **Apache Maven**
+* _**Note:** This dependency can be imported using IntelliJ._
+* _Go to **"File" > "New Project"** and then selecting **"Maven"** as the project structure._
 #### **JUnit Jupiter API**
+[Version 5.8.2](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/5.8.2)
+* _**Note:** This dependency can be imported within Intellij using Apache Maven and IntelliJ's built-in dependency generator._
+* Alternatively you can open the Maven **"pom.xml"** file and paste in the following code within the **"dependencies"** section of the file:
+```xml
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.8.2</version>
+    </dependency>
+```
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -138,8 +162,20 @@ You have been asked to build a simulator which will help track the number of peo
 ### **How to use the application**
 
 #### **How to download**
+- Step 1: Click on the 'Code' button and then choose the 'Download ZIP' option.
+- Step 2: Extract the file by double-clicking on the downloaded ZIP file.
+- Step 3: Open IntelliJ IDEA application, then click on File option (the option is in the top left corner of the screen) and then click on Open. Then navigate to the place where you have extracted the folder, select the folder and press 'Open'.
+- Step 4: Click on 'Trust Project' button, and then Click on 'New Window'.
+- Step 5: Look for ProjectMain.java class after following these steps: SpartaTraineesSimulator > src > main > java > com.sparta.spartatraineesimulator > Main.java
+- Step 6: Run the Main class (by clicking on the green triangle button) and enjoy the application.
 
 #### **Instructions for running the application on the console**
+- Steps: As seen in the screenshot below, a user can choose from one of the following "x" options:
+- `1) TBD`
+- `2) TBD`
+- `3) TBD`
+- `4) TBD`
+- `5) TBD...`
 
 
 <br/>
@@ -150,8 +186,11 @@ You have been asked to build a simulator which will help track the number of peo
 
 ### **Testing**
 #### **JUnit Testing**
+- To provide a better performance to the user, all classes and methods in this application have been thoroughly tested using JUnit (unit testing framework).
+
 #### **Manual Testing**
 #### **Code Coverage**
+- The tests provided x% coverage of classes and y percent coverage of code lines.
 
 <br/>
 <div align="left">
