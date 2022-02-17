@@ -40,7 +40,7 @@ public class DisplayManager {
         trainingAndWaitingIncrement(allTrainees);
         // Calls the methods and appends the details to the StringBuilder
 
-        logger.info("Output the ");
+        logger.info("Output the data");
 
 
 
