@@ -6,6 +6,8 @@ import com.sparta.spartatraineesimulator.model.TrainingCentre;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.sparta.spartatraineesimulator.Main.logger;
+
 public class DisplayManager {
 
     private int monthCount = 0;
@@ -37,6 +39,8 @@ public class DisplayManager {
         totalFullCentres(openCentres);
         trainingAndWaitingIncrement(allTrainees);
         // Calls the methods and appends the details to the StringBuilder
+
+        logger.info("Output the ");
 
 
 

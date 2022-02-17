@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static Logger logger = LogManager.getLogger("Sparta-Simulator-Logger");
+    public static final Logger logger = LogManager.getLogger("Sparta-Simulator-Logger");
     private static int currentMonth = 0;
 
     public static void main(String[] args) {
