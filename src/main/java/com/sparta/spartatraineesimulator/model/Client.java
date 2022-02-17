@@ -39,14 +39,6 @@ public class Client {
         trainees.addAll(traineeList);
     }
 
-//    public boolean isHappy() {
-//        return isHappy;
-//    }
-
-//    public void setHappy(boolean happy) {
-//        isHappy = happy;
-//    }
-
     public int getMonths() {
         return months;
     }

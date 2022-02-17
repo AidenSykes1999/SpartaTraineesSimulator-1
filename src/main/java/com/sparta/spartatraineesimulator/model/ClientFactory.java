@@ -94,20 +94,27 @@ public class ClientFactory {
     }
 
     public void updateHappyClients(){
-        for (int i = 0; i < happyClients.size(); i++){
-            if (happyClients.get(i).getMonths() == 12){
 
-                recruitingClients.add(happyClients.get(i));
-                happyClients.get(i).resetMonths();
-                happyClients.get(i).resetTrainees();
+        ArrayList<Client> removeClients = new ArrayList<>();
 
-                happyClients.remove(happyClients.get(i));
+        for (Client client : happyClients){
+
+            if (client.getMonths() == 12){
+
+                recruitingClients.add(client);
+                client.resetMonths();
+                client.resetTrainees();
+
+                removeClients.add(client);
 
             }
             else{
-                happyClients.get(i).incrementMonths();
+                client.incrementMonths();
             }
+
         }
+
+        happyClients.removeAll(removeClients);
     }
 
     public ArrayList<Client> getHappyClients() {
