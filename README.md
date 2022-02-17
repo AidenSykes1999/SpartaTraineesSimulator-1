@@ -117,11 +117,12 @@ A simulation is a model that mimics the operation of an existing or proposed sys
 <br/>
 
 ### **Principles and Design Patterns**
-This application is based on the design principles listed below:
+This application is based on the following principles and design principles:
 
 - Model-view-controller: This is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements. This is done to separate internal representations of information from the ways information is presented to and accepted from the user.
 - Object-oriented programming principles: These principles are also known as the 4 pillars of OOP: Abstraction, Inheritance, Encapsulation, and Polymorphism.
 - SOLID principles: This application strongly follows SOLID principles i.e. Single responsibility, Open–closed, Liskov substitution, Interface segregation, and Dependency inversion principles.
+- Facade pattern: This design pattern has been used in this application to define a simplified interface to a more complex subsystem.
 
 <br/>
 <div align="left">
@@ -131,18 +132,32 @@ This application is based on the design principles listed below:
 
 ### **Software and dependencies**
 #### **IntelliJ**
-IntelliJ IDEA [Version 2021.3.2](https://www.jetbrains.com/idea/download/#section=windows)
+IntelliJ IDEA is an integrated development environment written in Java for developing computer software. It is developed by JetBrains, and is available as an Apache 2 Licensed community edition, and in a proprietary commercial edition. Both can be used for commercial development.
+- In this application we have used IntelliJ IDEA [Version 2021.3.2](https://www.jetbrains.com/idea/download/#section=windows)
+
 #### **Log4J**
-[Version 2.17.1](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.17.1)
+Log4j has been used by us to keep track of what happens in our sparta trainee simulation application. It is a journal of the activity of our application. This activity is called 'logging' and it has been used by us to keep an eye out for problems for users.
+- In this application we have used [Version 2.17.1](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.17.1) of Log4J API.
 * _**Note:** This dependency can be imported within Intellij using Apache Maven and IntelliJ's built-in dependency generator._
 * Alternatively you can open the Maven **"pom.xml"** file and paste in the following code within the **"dependencies"** section of the file:
+```xml
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.17.1</version>
+    </dependency> 
+```
 #### **JDK**
-[Version 17.0.2](https://jdk.java.net/17/)
+The JDK is the Java Development Kit, the full-featured SDK for Java. It has everything the JRE has, but also the compiler (javac) and tools (like javadoc and jdb). It is capable of creating and compiling programs.
+- In this application we have used JDK [Version 17.0.2](https://jdk.java.net/17/)
 #### **Apache Maven**
+Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 * _**Note:** This dependency can be imported using IntelliJ._
 * _Go to **"File" > "New Project"** and then selecting **"Maven"** as the project structure._
 #### **JUnit Jupiter API**
-[Version 5.8.2](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/5.8.2)
+
+JUnit Jupiter is the API for writing tests using JUnit version 5. JUnit 5 is the project name (and version) that includes the separation of concerns reflected in all three major modules: JUnit Jupiter, JUnit Platform, and JUnit Vintage.
+- In this application we have used JUnit Jupiter [Version 5.8.2](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/5.8.2)
 * _**Note:** This dependency can be imported within Intellij using Apache Maven and IntelliJ's built-in dependency generator._
 * Alternatively you can open the Maven **"pom.xml"** file and paste in the following code within the **"dependencies"** section of the file:
 ```xml
@@ -189,6 +204,8 @@ IntelliJ IDEA [Version 2021.3.2](https://www.jetbrains.com/idea/download/#sectio
 - To provide a better performance to the user, all classes and methods in this application have been thoroughly tested using JUnit (unit testing framework).
 
 #### **Manual Testing**
+
+- We have also used manual testing process in which test cases are executed manually where it was not possible to use any automated tool. All test cases here were executed manually according to the end user's perspective. This has been done to ensure whether the application is working, as mentioned in the requirements of the application.
 #### **Code Coverage**
 - The tests provided x% coverage of classes and y percent coverage of code lines.
 
@@ -199,6 +216,11 @@ IntelliJ IDEA [Version 2021.3.2](https://www.jetbrains.com/idea/download/#sectio
 <br/>
 
 ### **Future work**
+
+Possible improvements for Sparta Trainee Simulator 2.0:
+ - TBD
+ - TBD
+ - TBD
 
 <br/>
 <div align="left">
