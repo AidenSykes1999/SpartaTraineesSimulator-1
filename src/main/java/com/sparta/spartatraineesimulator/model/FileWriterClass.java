@@ -1,15 +1,12 @@
-package com.sparta.spartatraineesimulator.view;
+package com.sparta.spartatraineesimulator.model;
 
-import com.sparta.spartatraineesimulator.controller.Controller;
-import com.sparta.spartatraineesimulator.model.TrainingCentre;
+import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class FileWriterClass {
     //a demo class responsible to store the output in a file:  "spartaSimulationOutputFile.txt"

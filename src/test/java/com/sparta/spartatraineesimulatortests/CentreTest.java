@@ -1,8 +1,8 @@
 package com.sparta.spartatraineesimulatortests;
 
-import com.sparta.spartatraineesimulator.model.BootCamp;
-import com.sparta.spartatraineesimulator.model.TechCentre;
-import com.sparta.spartatraineesimulator.model.TrainingHub;
+import com.sparta.spartatraineesimulator.model.centre.BootCamp;
+import com.sparta.spartatraineesimulator.model.centre.TechCentre;
+import com.sparta.spartatraineesimulator.model.centre.TrainingHub;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

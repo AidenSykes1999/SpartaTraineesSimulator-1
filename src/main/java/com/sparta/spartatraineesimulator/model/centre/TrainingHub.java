@@ -1,37 +1,31 @@
-package com.sparta.spartatraineesimulator.model;
+package com.sparta.spartatraineesimulator.model.centre;
+
+import com.sparta.spartatraineesimulator.model.Course;
 
 import java.util.ArrayList;
 
-public class BootCamp extends TrainingCentre {
+public class TrainingHub extends TrainingCentre {
 
-    private int numMonthsInactive = 0;
-
-    public BootCamp() {
+    public TrainingHub() {
         super();
-        setLimit(500);
+        setLimit(100);
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setCourseType(Course.NONE);
-        this.setName("Bootcamp");
+        this.setName("Training Hub");
+        this.setActiveTime(0);
     }
 
     @Override
     public boolean shouldClose() {
-
-        if (getCurrentCapacity() < 25){
-            numMonthsInactive++;
-        }
-        // If number of months inactive is more than 3
-
-        if (numMonthsInactive >= 3){
+        if (getCurrentCapacity() < 25 && getActiveTime() > 0){
             return true;
-        }
+        } else {incrementActiveTime(); return false; }
 
-        return false;
     }
 
     @Override
     public String toString() {
-        return "BootCamp:\n" +
+        return "TrainingHub:\n" +
                 "Current capacity = " + super.getCurrentCapacity() +
                 "\nLimit = " + super.getLimit() +
                 "\nEmpty Space = " + super.getEmptySpace() +

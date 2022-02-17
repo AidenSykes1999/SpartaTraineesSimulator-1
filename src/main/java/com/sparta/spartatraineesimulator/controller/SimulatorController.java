@@ -1,13 +1,18 @@
 package com.sparta.spartatraineesimulator.controller;
 
 import com.sparta.spartatraineesimulator.model.*;
+import com.sparta.spartatraineesimulator.model.centre.BootCamp;
+import com.sparta.spartatraineesimulator.model.centre.TechCentre;
+import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
+import com.sparta.spartatraineesimulator.model.centre.TrainingHub;
+import com.sparta.spartatraineesimulator.model.client.ClientFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Controller {
+public class SimulatorController {
 
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
     private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
@@ -25,7 +30,6 @@ public class Controller {
     ClientFactory clientFactory = new ClientFactory();
 
     public void runSimulationTick (int month) {
-        currentMonth++;
 
         ArrayList<Trainee> newTrainees = generateTrainees();
 
