@@ -3,6 +3,7 @@ package com.sparta.spartatraineesimulator.model;
 import java.util.ArrayList;
 
 public class Client {
+
     private int clientId;
     private Course traineeTypeRequirement;
     private int traineeNumberRequirement;
