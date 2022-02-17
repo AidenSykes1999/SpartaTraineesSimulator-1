@@ -11,14 +11,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Controller {
-    DisplayManager dm = new DisplayManager();
 
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
     private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
-
-    public ArrayList<TrainingCentre> getClosedCentres() {
-        return closedCentres;
-    }
 
     private ArrayList<Trainee> waitingList = new ArrayList<>();
     private ArrayList<Trainee> allTrainees = new ArrayList<>();
@@ -29,7 +24,7 @@ public class Controller {
     private int bootCampCount = 0;
     private int trainingHubCount = 0;
 
-    public void runSimulationTick (int month, boolean doIncrementalOutput) {
+    public void runSimulationTick (int month) {
 
         ArrayList<Trainee> newTrainees = generateTrainees();
 
@@ -45,26 +40,16 @@ public class Controller {
         // we will close the center if the current capacity of center is less than 25
         ArrayList<Trainee> reassignedTrainees = closeCentres();
         // try to reassign trainees
-        addTraineesTechCentre(reassignedTrainees);
-        addTraineesCentre(reassignedTrainees);
+        if (reassignedTrainees.size() > 0) {
+            addTraineesTechCentre(reassignedTrainees);
+            addTraineesCentre(reassignedTrainees);
 
-        // if some trainees still need reassigning add them to front of waitingList
-        Collections.reverse(waitingList);
-        waitingList.addAll(reassignedTrainees);
-        Collections.reverse(waitingList);
-
-
-        // for debugging
-        for (TrainingCentre centre : centres) {
-            System.out.print(centre.getCurrentCapacity() + ", ");
+            // if some trainees still need reassigning add them to front of waitingList
+            Collections.reverse(waitingList);
+            waitingList.addAll(reassignedTrainees);
+            Collections.reverse(waitingList);
         }
 
-        if (doIncrementalOutput){
-            dm.displayTheDetails(centres, closedCentres, allTrainees);
-        }
-
-        System.out.println("Waiting list size: " + waitingList.size());
-        System.out.println("Total enrolled: " + totalEnlisted);
         for (Trainee t : allTrainees){
             if (!t.isWaiting())
                 t.incrementTrainingTime();
@@ -124,10 +109,21 @@ public class Controller {
                     }
                 }
 
-                List<Trainee> addedTrainees = addTrainees(centre, traineeAddList);
+                int freeSpace = centre.getEmptySpace();
 
-                if (traineeAddList.size() != 0) {
+                // limit to the amount of trainee able to be taken is 50
+                if (50 < freeSpace) {
+                    freeSpace = 50;
+                }
+
+                if (freeSpace >= traineeAddList.size()) {
+                    centre.addAllTrainees(traineeAddList);
+                    trainees.removeAll(traineeAddList);
+                } else if (freeSpace < traineeAddList.size()) {
+                    List<Trainee> addedTrainees = traineeAddList.subList(0, freeSpace);
+                    centre.addAllTrainees(addedTrainees);
                     trainees.removeAll(addedTrainees);
+
                 }
 
             }
@@ -140,40 +136,26 @@ public class Controller {
     private void addTraineesCentre(ArrayList<Trainee> trainees) {
         for (TrainingCentre centre : centres) {
             if (!centre.hasCourse() && !centre.isCentreFull()) {
-                List<Trainee> addedTrainees = addTrainees(centre, trainees);
 
-                if (trainees.size() != 0) {
+                int freeSpace = centre.getEmptySpace();
+
+                // limit to the amount of trainee able to be taken is 50
+                if (50 < freeSpace) {
+                    freeSpace = 50;
+                }
+
+                if (freeSpace >= trainees.size()) {
+                    centre.addAllTrainees(trainees);
+                    trainees.clear();
+                } else if (freeSpace < trainees.size()) {
+                    List<Trainee> addedTrainees = trainees.subList(0, freeSpace);
+                    centre.addAllTrainees(addedTrainees);
                     trainees.removeAll(addedTrainees);
+
                 }
 
             }
         }
-    }
-
-    private List<Trainee> addTrainees(TrainingCentre centre, ArrayList<Trainee> trainees) {
-
-        int freeSpace = centre.getEmptySpace();
-
-        // limit to the amount of trainee able to be taken is 50
-        if (50 < freeSpace) {
-            freeSpace = 50;
-        }
-
-        List<Trainee> addedTrainees = null;
-
-        if (freeSpace >= trainees.size()) {
-            addedTrainees = trainees;
-            centre.addAllTrainees(addedTrainees);
-            trainees.clear();
-
-        } else if (freeSpace < trainees.size()) {
-            addedTrainees = trainees.subList(0, freeSpace);
-            centre.addAllTrainees(addedTrainees);
-
-        }
-
-        return addedTrainees;
-
     }
 
     private ArrayList<Trainee> closeCentres() {
@@ -185,7 +167,7 @@ public class Controller {
             if (centre.shouldClose()) {
                 ArrayList<Trainee> trainees = centre.getTrainees();
                 traineesRemovedFromCentre.addAll(trainees);
-                System.out.println("Since the current capacity(" + centre.getCurrentCapacity() + ") of centre is less than 25, so closing the centre");
+                // System.out.println("Since the current capacity(" + centre.getCurrentCapacity() + ") of centre is less than 25, so closing the centre");
 
                 centresToBeRemoved.add(centre);
                 centre.removeTrainees();
@@ -237,6 +219,10 @@ public class Controller {
 
     public ArrayList<Trainee> getAllTrainees() {
         return allTrainees;
+    }
+
+    public ArrayList<TrainingCentre> getClosedCentres() {
+        return closedCentres;
     }
 
 }

@@ -6,11 +6,13 @@ public class TechCentre extends TrainingCentre {
 
     private final Course centreCourse = Course.randomCourseType();
 
+
     public TechCentre() {
         super();
         setLimit(200);
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setName("Tech Centre");
+        this.setTimeOpen(0);
     }
 
     public Course getCourseType() {
@@ -20,9 +22,9 @@ public class TechCentre extends TrainingCentre {
     @Override
     public boolean shouldClose() {
 
-        if (getCurrentCapacity() < 25){
+        if (getCurrentCapacity() < 25 && getTimeOpen() > 0){
             return true;
-        } else { return false; }
+        } else {incrementActiveTime(); return false; }
 
     }
 

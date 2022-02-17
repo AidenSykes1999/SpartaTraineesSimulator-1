@@ -23,7 +23,7 @@ public class ControllerTest {
     @DisplayName("When using runSimulationTick with current month 0, getNumberOfOpenCentres should be more than zero")
     public void givenTwelveMonths_CentresTotalShouldBeMoreThanZero(){
         Controller controller = new Controller();
-        controller.runSimulationTick(0, false);
+        controller.runSimulationTick(0);
         int centresTotal = controller.getNumberOfOpenCentres();
         Assertions.assertEquals(true, centresTotal > 0);
     }
@@ -32,7 +32,7 @@ public class ControllerTest {
     @DisplayName("Given using runSimulationTick with current month 0, totalEnlisted should be more than zero")
     public void givenTwelveMonths_TotalEnlistedShouldBeMoreThanZero(){
         Controller controller = new Controller();
-        controller.runSimulationTick(0, false);
+        controller.runSimulationTick(0);
         int totalEnlisted = controller.getTotalEnlisted();
         Assertions.assertEquals(true, totalEnlisted > 0);
     }
