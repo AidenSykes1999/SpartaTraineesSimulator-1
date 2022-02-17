@@ -8,12 +8,15 @@ public abstract class TrainingCentre {
 
     private int limit = 0;
     private int currentCapacity = 0;
+    private int activeTime = 0;
     private ArrayList<Trainee> trainees;
 
     private Course courseType;
     private String name;
+    private int timeOpen;
 
-    /// Methods inherited
+
+/// Methods inherited
 
     public abstract boolean shouldClose();
 
@@ -86,6 +89,14 @@ public abstract class TrainingCentre {
         return false;
     }
 
+    public int getTimeOpen() {
+        return timeOpen;
+    }
+
+    public void setTimeOpen(int timeOpen) {
+        this.timeOpen = timeOpen;
+    }
+
 
     @Override
     public String toString() {
@@ -93,6 +104,19 @@ public abstract class TrainingCentre {
                 "limit=" + limit +
                 ", currentCapacity=" + currentCapacity +
                 ", trainees=" + trainees +
+                ", time open=" + timeOpen +
                 '}';
+    }
+
+    public int getActiveTime() {
+        return activeTime;
+    }
+
+    public void setActiveTime(int activeTime) {
+        this.activeTime = activeTime;
+    }
+
+    public void incrementActiveTime(){
+        activeTime++;
     }
 }
