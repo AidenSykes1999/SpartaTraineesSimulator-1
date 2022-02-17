@@ -21,9 +21,7 @@ public class Controller {
 
     private int bootCampCount = 0;
     private int trainingHubCount = 0;
-    private int currentMonth = 0;
-
-    ClientFacade cf = new ClientFacade();
+    
     ClientFactory clientFactory = new ClientFactory();
 
     public void runSimulationTick (int month) {
