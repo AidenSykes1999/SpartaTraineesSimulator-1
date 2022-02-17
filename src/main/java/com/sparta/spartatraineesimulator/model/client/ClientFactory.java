@@ -47,17 +47,27 @@ public class ClientFactory {
 
                 int freeSpace = r.nextInt(1,
                         (client.getTraineeNumberRequirement() - client.getTrainees().size()) + 1);
-                List<Trainee> addedTrainees = traineesFromDesiredCourse.subList(0, freeSpace);
+                try{
+                    List<Trainee> addedTrainees = traineesFromDesiredCourse.subList(0, freeSpace);
+                    System.out.println(client.getClientId() + " added: " + addedTrainees.size());
+                    client.setTrainees(addedTrainees);
 
-                System.out.println(client.getClientId() + " added: " + addedTrainees.size());
-                client.setTrainees(addedTrainees);
+                    if (bench.size() > addedTrainees.size()) {
+                        bench.removeAll(addedTrainees);
+                    }
+                    else{
+                        bench.clear();
+                    }
+                }
+                catch (IndexOutOfBoundsException e){
+                    e.printStackTrace();
 
-                if (bench.size() > addedTrainees.size()) {
-                    bench.removeAll(addedTrainees);
+                    System.out.println("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
+                    System.exit(69);
                 }
-                else{
-                    bench.clear();
-                }
+
+
 
             }
         }
