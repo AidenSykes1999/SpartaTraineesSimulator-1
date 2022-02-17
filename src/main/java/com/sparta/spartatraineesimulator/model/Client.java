@@ -56,7 +56,7 @@ public class Client {
     }
 
     public void resetMonths(){
-        months = 0;
+        months = 1;
     }
 
     @Override
@@ -68,5 +68,9 @@ public class Client {
                 ", trainees=" + trainees +
                 ", months=" + months +
                 '}';
+    }
+
+    public void resetTrainees() {
+        this.trainees.clear();
     }
 }
