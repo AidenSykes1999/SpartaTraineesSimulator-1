@@ -1,6 +1,7 @@
 package com.sparta.spartatraineesimulator.model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class ClientFactory {
@@ -15,44 +16,69 @@ public class ClientFactory {
         recruitingClients.add(new Client(clientIdCounter, Course.randomCourseType(), r.nextInt(15, 51)));
     }
 
+    public void displayClients() {
+
+        System.out.println("Clients Capacity: ");
+        for (Client client : recruitingClients) {
+            System.out.print(client.getTrainees().size() + " (" + client.getTraineeNumberRequirement() + ")" + ", ");
+        }
+
+    }
+
     public void addTraineesToClients(ArrayList<Trainee> bench){
-        for (int i = 0; i <= recruitingClients.size(); i++){
-            Random r = new Random();
-            int numberOfTraineesToRecruit = r.nextInt(1, recruitingClients.get(i).getTraineeNumberRequirement()+1);
-            for (int j = 0; j < bench.size(); j++){
-                if (bench.get(j).getCourseType() == recruitingClients.get(j).getTraineeTypeRequirement() && recruitingClients.get(j).getTrainees().size() < numberOfTraineesToRecruit){
-                    recruitingClients.get(j).setTrainees(bench.get(j));
+        ArrayList<Trainee> traineesFromDesiredCourse = new ArrayList<>();
+        for (Client client: recruitingClients){
+            if (client.getTrainees().size() < client.getTraineeNumberRequirement()) {
+                traineesFromDesiredCourse.clear();
+                for (Trainee benchedTrainee: bench){
+                    if (benchedTrainee.getCourseType() == client.getTraineeTypeRequirement()){
+                        traineesFromDesiredCourse.add(benchedTrainee);
+                    }
+                }
+                Random r = new Random();
+                int freeSpace = r.nextInt(1,(client.getTraineeNumberRequirement() - client.getTrainees().size()) + 1);
+                List<Trainee> addedTrainees = traineesFromDesiredCourse.subList(0, freeSpace);
+                client.setTrainees(addedTrainees);
+                if (bench.size() > addedTrainees.size()) {
+                    bench.removeAll(addedTrainees);
+                }
+                else{
+                    bench.clear();
                 }
             }
         }
     }
 
     public void updateRecruitingClients(){
-        for (int i = 0; i <= recruitingClients.size(); i++){
-            recruitingClients.get(i).incrementMonths();
+        for (int i = 0; i < recruitingClients.size(); i++){
             if (recruitingClients.get(i).getMonths() < 12 && recruitingClients.get(i).getTrainees().size() == recruitingClients.get(i).getTraineeNumberRequirement()){
-                recruitingClients.get(i).setHappy(true);
+//                recruitingClients.get(i).setHappy(true);
                 happyClients.add(recruitingClients.get(i));
-                recruitingClients.remove(recruitingClients.get(i));
                 recruitingClients.get(i).resetMonths();
+                recruitingClients.remove(recruitingClients.get(i));
             }
             else if (recruitingClients.get(i).getMonths() >= 12 && recruitingClients.get(i).getTrainees().size() < recruitingClients.get(i).getTraineeNumberRequirement()){
-                recruitingClients.get(i).setHappy(false);
+//                recruitingClients.get(i).setHappy(false);
                 unhappyClients.add(recruitingClients.get(i));
-                recruitingClients.remove(recruitingClients.get(i));
                 recruitingClients.get(i).resetMonths();
+                recruitingClients.remove(recruitingClients.get(i));
+            }
+            else{
+                recruitingClients.get(i).incrementMonths();
             }
         }
     }
 
     public void updateHappyClients(){
-        for (int i = 0; i <= happyClients.size(); i++){
-            happyClients.get(i).incrementMonths();
+        for (int i = 0; i < happyClients.size(); i++){
             if (happyClients.get(i).getMonths() == 12){
-                happyClients.get(i).setHappy(false);
+//                happyClients.get(i).setHappy(false);
                 recruitingClients.add(happyClients.get(i));
-                happyClients.remove(happyClients.get(i));
                 happyClients.get(i).resetMonths();
+                happyClients.remove(happyClients.get(i));
+            }
+            else{
+                happyClients.get(i).incrementMonths();
             }
         }
     }

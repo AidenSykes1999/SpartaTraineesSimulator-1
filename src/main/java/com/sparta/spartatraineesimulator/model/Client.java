@@ -1,6 +1,7 @@
 package com.sparta.spartatraineesimulator.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Client {
 
@@ -8,14 +9,14 @@ public class Client {
     private Course traineeTypeRequirement;
     private int traineeNumberRequirement;
     private ArrayList<Trainee> trainees = new ArrayList<>();
-    boolean isHappy;
+//    boolean isHappy;
     int months;
 
     public Client(int clientId, Course traineeTypeRequirement, int traineeRequirement){
         this.clientId = clientId;
         this.traineeTypeRequirement = traineeTypeRequirement;
         this.traineeNumberRequirement = traineeRequirement;
-        this.months = 0;
+        this.months = 1;
     }
 
     public int getClientId() {
@@ -34,17 +35,17 @@ public class Client {
         return trainees;
     }
 
-    public void setTrainees(Trainee trainee){
-        trainees.add(trainee);
+    public void setTrainees(List<Trainee> traineeList){
+        trainees.addAll(traineeList);
     }
 
-    public boolean isHappy() {
-        return isHappy;
-    }
+//    public boolean isHappy() {
+//        return isHappy;
+//    }
 
-    public void setHappy(boolean happy) {
-        isHappy = happy;
-    }
+//    public void setHappy(boolean happy) {
+//        isHappy = happy;
+//    }
 
     public int getMonths() {
         return months;
@@ -65,7 +66,6 @@ public class Client {
                 ", traineeTypeRequirement=" + traineeTypeRequirement +
                 ", traineeNumberRequirement=" + traineeNumberRequirement +
                 ", trainees=" + trainees +
-                ", isHappy=" + isHappy +
                 ", months=" + months +
                 '}';
     }

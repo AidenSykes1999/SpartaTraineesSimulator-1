@@ -21,8 +21,13 @@ public class Controller {
 
     private int bootCampCount = 0;
     private int trainingHubCount = 0;
+    private int currentMonth = 0;
+
+    ClientFacade cf = new ClientFacade();
+    ClientFactory clientFactory = new ClientFactory();
 
     public void runSimulationTick (int month) {
+        currentMonth++;
 
         ArrayList<Trainee> newTrainees = generateTrainees();
 
@@ -70,9 +75,47 @@ public class Controller {
 
         System.out.println("Bench List size: " + benchList.size());
 
-        ClientFacade cf = new ClientFacade();
-        cf.handleClients(month, benchList);
+        if (month >= 12 && month % 3 == 0){
+            clientFactory.createClient();
+        }
+        clientFactory.addTraineesToClients(benchList);
+        clientFactory.updateRecruitingClients();
+        clientFactory.updateHappyClients();
 
+
+        System.out.println("happy clients size: " + clientFactory.getHappyClients().size());
+        System.out.println("unhappy clients size: " + clientFactory.getUnhappyClients().size());
+        System.out.println("recruiting clients size: " + clientFactory.getRecruitingClients().size());
+
+//        for (Client client : clientFactory.getRecruitingClients()){
+//            System.out.println(client.toString());
+//            System.out.println("trainees number" + client.getTrainees().size());
+//        }
+//        trainingAndWaitingIncrement(benchList);
+        clientFactory.displayClients();
+    }
+
+    // DELETE
+    public void printBench(){
+        for (int i = 0; i < benchList.size(); i++){
+
+        }
+    }
+
+    public void trainingAndWaitingIncrement(ArrayList<Trainee> benchList) {
+        int trainingJava = 0, trainingCSharp = 0, trainingData = 0, trainingDevOps = 0, trainingBusiness = 0,
+                waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
+
+        for (Trainee t : benchList) {
+                switch (t.getCourseType()) {
+                    case JAVA -> waitingJava++;
+                    case C_SHARP -> waitingCSharp++;
+                    case DATA -> waitingData++;
+                    case DEVOPS -> waitingDevOps++;
+                    case BUSINESS -> waitingBusiness++;
+                }
+        }
+        System.out.println("java = " + waitingJava + " csharp = " + waitingCSharp + " data= " + waitingData + " devops= " + waitingDevOps + " business= " + waitingBusiness);
     }
 
     public ArrayList<Trainee> generateTrainees () {
@@ -244,5 +287,14 @@ public class Controller {
         return closedCentres;
     }
 
+    public void removeFromBenchList(ArrayList<Trainee> traineeList){
+        for (int i = 0; i < traineeList.size(); i++){
+            benchList.remove(traineeList.get(i));
+        }
+    }
+
+    public void clearBenchList(){
+        benchList.clear();
+    }
 }
 

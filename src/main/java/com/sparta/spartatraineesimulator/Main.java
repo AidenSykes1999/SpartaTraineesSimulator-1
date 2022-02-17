@@ -30,6 +30,8 @@ public class Main {
                 dm.displayTheDetails(controller.getCentres(), controller.getClosedCentres(), controller.getAllTrainees());
             }
 
+            System.out.println();
+            System.out.println("centre capacity: ");
             // for debugging
             for (TrainingCentre centre : controller.getCentres()) {
                 System.out.print(centre.getCurrentCapacity() + ", ");
