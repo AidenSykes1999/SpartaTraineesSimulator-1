@@ -1,21 +1,24 @@
 package com.sparta.spartatraineesimulator.controller;
 
-// tick stuff
-
 import com.sparta.spartatraineesimulator.model.*;
-import com.sparta.spartatraineesimulator.view.DisplayManager;
+import com.sparta.spartatraineesimulator.model.centre.BootCamp;
+import com.sparta.spartatraineesimulator.model.centre.TechCentre;
+import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
+import com.sparta.spartatraineesimulator.model.centre.TrainingHub;
+import com.sparta.spartatraineesimulator.model.client.ClientFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Controller {
+public class SimulatorController {
 
     private ArrayList<TrainingCentre> centres = new ArrayList<>();
     private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
 
     private ArrayList<Trainee> waitingList = new ArrayList<>();
+    private ArrayList<Trainee> benchList = new ArrayList<>();
     private ArrayList<Trainee> allTrainees = new ArrayList<>();
 
     private int totalEnlisted = 0;
@@ -23,6 +26,8 @@ public class Controller {
 
     private int bootCampCount = 0;
     private int trainingHubCount = 0;
+    
+    ClientFactory clientFactory = new ClientFactory();
 
     public void runSimulationTick (int month) {
 
@@ -50,10 +55,42 @@ public class Controller {
             Collections.reverse(waitingList);
         }
 
-        for (Trainee t : allTrainees){
-            if (!t.isWaiting())
-                t.incrementTrainingTime();
+        ArrayList<Trainee> needsRemoving = new ArrayList<>();
+
+        for (TrainingCentre centre : centres) {
+
+            for (Trainee trainee : centre.getTrainees()) {
+
+                trainee.incrementTrainingTime();
+
+                if (trainee.getTrainingTime() == 3) {
+                    benchList.add(trainee);
+                    needsRemoving.add(trainee);
+                }
+
+            }
+
+            centre.removeCollectionTrainees(needsRemoving);
+            needsRemoving.clear();
+
         }
+
+        System.out.println("Bench List size: " + benchList.size());
+
+        if (month >= 12 && month % 3 == 0){
+            clientFactory.createClient();
+        }
+
+        clientFactory.addTraineesToClients(benchList);
+        clientFactory.updateRecruitingClients();
+        clientFactory.updateHappyClients();
+
+
+        System.out.println("happy clients size: " + clientFactory.getHappyClients().size());
+        System.out.println("unhappy clients size: " + clientFactory.getUnhappyClients().size());
+        System.out.println("recruiting clients size: " + clientFactory.getRecruitingClients().size());
+
+        clientFactory.displayClients();
     }
 
     public ArrayList<Trainee> generateTrainees () {
@@ -231,5 +268,14 @@ public class Controller {
         return closedCentres;
     }
 
+    public void removeFromBenchList(ArrayList<Trainee> traineeList){
+        for (int i = 0; i < traineeList.size(); i++){
+            benchList.remove(traineeList.get(i));
+        }
+    }
+
+    public void clearBenchList(){
+        benchList.clear();
+    }
 }
 

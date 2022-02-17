@@ -1,12 +1,12 @@
 package com.sparta.spartatraineesimulator.view;
 
 import com.sparta.spartatraineesimulator.model.Trainee;
-import com.sparta.spartatraineesimulator.model.TrainingCentre;
+import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.sparta.spartatraineesimulator.Main.logger;
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
 
 public class DisplayManager {
 
