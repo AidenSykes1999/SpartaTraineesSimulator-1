@@ -80,10 +80,10 @@ You have been asked to build a simulator which will help track the number of peo
 - If a centre is full, trainees can be moved to any other centre which is not full
 - If all centres are full, the trainees go onto a waiting list. This list must be served first before new trainees are taken
 - At the end of the simulation, output should show:
-- number of open centres
-- number of full centres
-- number of trainees currently training
-- number of trainees on the waiting list
+- Number of open centres
+- Number of full centres
+- Number of trainees currently training
+- Number of trainees on the waiting list
 
 #### **Phase 2**
 - Sparta will now check centres each month. If a centre has fewer than 25 trainees, it will close. The trainees will be randomly moved to another suitable centre

@@ -201,6 +201,12 @@ public class Controller {
                 ArrayList<Trainee> trainees = centre.getTrainees();
                 traineesRemovedFromCentre.addAll(trainees);
                 // System.out.println("Since the current capacity(" + centre.getCurrentCapacity() + ") of centre is less than 25, so closing the centre");
+                if ("Bootcamp".equals(centre.getName())){
+                    bootCampCount--;
+                }
+                if ("Training Hub".equals(centre.getName())){
+                    trainingHubCount--;
+                }
 
                 centresToBeRemoved.add(centre);
                 centre.removeTrainees();

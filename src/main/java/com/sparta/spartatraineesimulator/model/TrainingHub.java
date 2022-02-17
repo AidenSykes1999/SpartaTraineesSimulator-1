@@ -15,7 +15,7 @@ public class TrainingHub extends TrainingCentre {
 
     @Override
     public boolean shouldClose() {
-        if (getCurrentCapacity() < 25 && getTimeOpen() > 0){
+        if (getCurrentCapacity() < 25 && getActiveTime() > 0){
             return true;
         } else {incrementActiveTime(); return false; }
 

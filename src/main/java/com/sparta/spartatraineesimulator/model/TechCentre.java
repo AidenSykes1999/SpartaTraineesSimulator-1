@@ -12,7 +12,7 @@ public class TechCentre extends TrainingCentre {
         setLimit(200);
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setName("Tech Centre");
-        this.setTimeOpen(0);
+        this.setActiveTime(0);
     }
 
     public Course getCourseType() {
@@ -22,7 +22,7 @@ public class TechCentre extends TrainingCentre {
     @Override
     public boolean shouldClose() {
 
-        if (getCurrentCapacity() < 25 && getTimeOpen() > 0){
+        if (getCurrentCapacity() < 25 && getActiveTime() > 0){
             return true;
         } else {incrementActiveTime(); return false; }
 
