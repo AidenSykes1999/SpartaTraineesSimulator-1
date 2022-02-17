@@ -1,9 +1,6 @@
 package com.sparta.spartatraineesimulator.controller;
 
-// tick stuff
-
 import com.sparta.spartatraineesimulator.model.*;
-import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +13,7 @@ public class Controller {
     private ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
 
     private ArrayList<Trainee> waitingList = new ArrayList<>();
+    private ArrayList<Trainee> benchList = new ArrayList<>();
     private ArrayList<Trainee> allTrainees = new ArrayList<>();
 
     private int totalEnlisted = 0;
@@ -50,10 +48,31 @@ public class Controller {
             Collections.reverse(waitingList);
         }
 
-        for (Trainee t : allTrainees){
-            if (!t.isWaiting())
-                t.incrementTrainingTime();
+        ArrayList<Trainee> needsRemoving = new ArrayList<>();
+
+        for (TrainingCentre centre : centres) {
+
+            for (Trainee trainee : centre.getTrainees()) {
+
+                trainee.incrementTrainingTime();
+
+                if (trainee.getTrainingTime() == 3) {
+                    benchList.add(trainee);
+                    needsRemoving.add(trainee);
+                }
+
+            }
+
+            centre.removeCollectionTrainees(needsRemoving);
+            needsRemoving.clear();
+
         }
+
+        System.out.println("Bench List size: " + benchList.size());
+
+        ClientFacade cf = new ClientFacade();
+        cf.handleClients(month, benchList);
+
     }
 
     public ArrayList<Trainee> generateTrainees () {

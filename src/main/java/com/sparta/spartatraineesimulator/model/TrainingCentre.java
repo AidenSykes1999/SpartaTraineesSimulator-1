@@ -89,6 +89,11 @@ public abstract class TrainingCentre {
         return false;
     }
 
+    public void removeCollectionTrainees(ArrayList<Trainee> traineesCollection) {
+        this.trainees.removeAll(traineesCollection);
+        this.currentCapacity = this.trainees.size();
+    }
+
     public int getTimeOpen() {
         return timeOpen;
     }
