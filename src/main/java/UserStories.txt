@@ -1,0 +1,16 @@
+//  Client - A Sparta Recruiter who wants to see how the number of trainees affect the demand for centres
+
+Given: I have Training Centre
+And: The Training Centre has a capacity of {int}
+And: I have {int} amount of trainees that need to be assigned
+When: A centre hits a capacity of 100
+Then: Add all remaining trainees to the waiting list.
+
+
+// Client - A Sparta Employee who works with clients and their satisfaction.
+
+Given: I have a Client
+And: This client requires more than 15 trainees
+And: This client wants trainees with the specialisation of {String}
+When: This client has {int} amount of trainees given to it
+Then: This client should have its satisfaction set to {String} (Happy or Unhappy)
