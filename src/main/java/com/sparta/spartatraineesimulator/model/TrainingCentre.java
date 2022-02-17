@@ -36,6 +36,18 @@ public abstract class TrainingCentre {
         this.trainees = null;
     }
 
+
+    public void removeTrainees(List<Trainee> traineesToBeRemoved) {
+        ArrayList<Trainee> clonedList = new ArrayList<>();
+        clonedList.addAll(traineesToBeRemoved);
+
+        clonedList.retainAll(this.trainees);
+        this.trainees.removeAll(clonedList);
+
+        currentCapacity = currentCapacity - clonedList.size();
+    }
+
+
     public int getEmptySpace() {
         return limit - currentCapacity;
     }

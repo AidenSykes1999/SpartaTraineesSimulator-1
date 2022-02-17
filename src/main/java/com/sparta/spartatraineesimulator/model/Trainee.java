@@ -4,6 +4,7 @@ public class Trainee {
 
     private int traineeId;
     private int trainingTime = 0;
+    private boolean isBenched;
 
     private boolean isWaiting = true;
     private final Course courseType = Course.randomCourseType(); //random course for a trainee
@@ -11,6 +12,14 @@ public class Trainee {
     public Trainee(int traineeId, int trainingTime){
         this.traineeId = traineeId;
         this.trainingTime = trainingTime;
+    }
+
+    public boolean isBenched() {
+        return isBenched;
+    }
+
+    public void setBenched(boolean benched) {
+        isBenched = benched;
     }
 
     public void incrementTrainingTime(){
