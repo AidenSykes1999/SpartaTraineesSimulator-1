@@ -22,6 +22,8 @@ public class Controller {
     private int bootCampCount = 0;
     private int trainingHubCount = 0;
 
+    private ClientFactory clientFactory = new ClientFactory();
+
     public void runSimulationTick (int month) {
 
         ArrayList<Trainee> newTrainees = generateTrainees();
@@ -68,10 +70,14 @@ public class Controller {
 
         }
 
-        System.out.println("Bench List size: " + benchList.size());
+        if (month != 0 && month >= 12 && month % 3 == 0) {
+            clientFactory.createClient();
+        }
 
-        ClientFacade cf = new ClientFacade();
-        cf.handleClients(month, benchList);
+        clientFactory.addTraineesToClients(benchList);
+
+        System.out.println("Bench List size: " + benchList.size());
+        clientFactory.displayClients();
 
     }
 
@@ -177,6 +183,7 @@ public class Controller {
         }
     }
 
+    //TODO when a bootcamp or training Hub or is closed bootCampCount, trainingHubCount isn't updated
     private ArrayList<Trainee> closeCentres() {
 
         ArrayList<Trainee> traineesRemovedFromCentre = new ArrayList<>();

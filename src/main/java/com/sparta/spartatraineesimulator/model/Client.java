@@ -1,72 +1,74 @@
 package com.sparta.spartatraineesimulator.model;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Client {
 
     private int clientId;
-    private Course traineeTypeRequirement;
+    private Course courseRequirement;
+
+    private int currentCapacity = 0;
     private int traineeNumberRequirement;
-    private ArrayList<Trainee> trainees = new ArrayList<>();
-    boolean isHappy;
+    private ArrayList<Trainee> trainees;
     int months;
 
-    public Client(int clientId, Course traineeTypeRequirement, int traineeRequirement){
+    public Client(int clientId){
+
+        Random r = new Random();
+
         this.clientId = clientId;
-        this.traineeTypeRequirement = traineeTypeRequirement;
-        this.traineeNumberRequirement = traineeRequirement;
+        this.courseRequirement = Course.randomCourseType();
+
+        this.traineeNumberRequirement = r.nextInt(15, 51);
+        this.trainees = new ArrayList<>(traineeNumberRequirement);
+
         this.months = 0;
+
     }
 
-    public int getClientId() {
-        return clientId;
-    }
-
-    public Course getTraineeTypeRequirement() {
-        return traineeTypeRequirement;
-    }
-
-    public int getTraineeNumberRequirement() {
-        return traineeNumberRequirement;
+    public Course getCourseRequirement() {
+        return courseRequirement;
     }
 
     public ArrayList<Trainee> getTrainees() {
         return trainees;
     }
 
-    public void setTrainees(Trainee trainee){
-        trainees.add(trainee);
-    }
-
-    public boolean isHappy() {
-        return isHappy;
-    }
-
-    public void setHappy(boolean happy) {
-        isHappy = happy;
-    }
-
-    public int getMonths() {
-        return months;
-    }
-
-    public void incrementMonths(){
-        months++;
-    }
-
-    public void resetMonths(){
-        months = 0;
-    }
-
     @Override
     public String toString() {
         return "Client{" +
                 "clientId=" + clientId +
-                ", traineeTypeRequirement=" + traineeTypeRequirement +
+                ", courseRequirement=" + courseRequirement +
                 ", traineeNumberRequirement=" + traineeNumberRequirement +
                 ", trainees=" + trainees +
-                ", isHappy=" + isHappy +
                 ", months=" + months +
                 '}';
+    }
+
+    public int getEmptySpace() {
+        return traineeNumberRequirement - currentCapacity;
+    }
+
+    public boolean isFull() {
+        return (currentCapacity == traineeNumberRequirement);
+    }
+
+    public void addAllTrainees(List<Trainee> traineeList) {
+        for (Trainee t : traineeList){
+            t.setIsWaiting(false);
+        }
+
+        trainees.addAll(traineeList);
+        currentCapacity = trainees.size();
+    }
+
+    public int getCurrentCapacity() {
+        return currentCapacity;
+    }
+
+    public int getTraineeNumberRequirement() {
+        return traineeNumberRequirement;
     }
 }

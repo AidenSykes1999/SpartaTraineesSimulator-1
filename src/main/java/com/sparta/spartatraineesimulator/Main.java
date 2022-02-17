@@ -31,6 +31,8 @@ public class Main {
             }
 
             // for debugging
+            System.out.println();
+            System.out.println("Centre capacity: ");
             for (TrainingCentre centre : controller.getCentres()) {
                 System.out.print(centre.getCurrentCapacity() + ", ");
             }
@@ -39,12 +41,6 @@ public class Main {
             System.out.println("Total enrolled: " + controller.getTotalEnlisted());
 
             dm.displayMonthPassed();
-
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
 
         }
 
