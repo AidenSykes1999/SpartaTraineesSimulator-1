@@ -76,6 +76,7 @@ public class SimulatorController {
         }
 
         System.out.println("Bench List size: " + benchList.size());
+        System.out.println(trainingAndWaitingIncrement(benchList));
 
         if (month >= 12 && month % 3 == 0){
             clientFactory.createClient();
@@ -85,12 +86,46 @@ public class SimulatorController {
         clientFactory.updateRecruitingClients();
         clientFactory.updateHappyClients();
 
-
         System.out.println("happy clients size: " + clientFactory.getHappyClients().size());
         System.out.println("unhappy clients size: " + clientFactory.getUnhappyClients().size());
         System.out.println("recruiting clients size: " + clientFactory.getRecruitingClients().size());
 
         clientFactory.displayClients();
+    }
+
+    public StringBuilder trainingAndWaitingIncrement(ArrayList<Trainee> trainees){
+
+        StringBuilder sb = new StringBuilder();
+        int trainingJava = 0, trainingCSharp = 0, trainingData = 0, trainingDevOps = 0, trainingBusiness = 0,
+                waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
+
+        for (Trainee t: trainees){
+            if (t.isWaiting()){
+                switch (t.getCourseType()) {
+                    case JAVA -> waitingJava++;
+                    case C_SHARP -> waitingCSharp++;
+                    case DATA -> waitingData++;
+                    case DEVOPS -> waitingDevOps++;
+                    case BUSINESS -> waitingBusiness++;
+                }
+            }
+            else{
+                switch (t.getCourseType()){
+                    case JAVA -> trainingJava++;
+                    case C_SHARP -> trainingCSharp++;
+                    case DATA -> trainingData++;
+                    case DEVOPS -> trainingDevOps++;
+                    case BUSINESS -> trainingBusiness++;
+                }
+
+            }
+        }
+
+        return sb.append("Total bench: Java - ").append(trainingJava).append(". C# - ").append(trainingCSharp)
+                .append(". Data - ").append(trainingData).append(". DevOps - ").append(trainingDevOps)
+                .append(". Business - ").append(trainingBusiness).append(". \n").append("Total waiting: Java - ")
+                .append(waitingJava).append(". C# - ").append(waitingCSharp).append(". Data - ").append(waitingData)
+                .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness).append(". \n");
     }
 
     public ArrayList<Trainee> generateTrainees () {

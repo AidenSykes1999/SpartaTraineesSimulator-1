@@ -11,8 +11,8 @@ public class Client {
     private int clientId;
     private Course traineeTypeRequirement;
     private int traineeNumberRequirement;
+
     private ArrayList<Trainee> trainees = new ArrayList<>();
-//    boolean isHappy;
     int months;
 
     public Client(int clientId, Course traineeTypeRequirement, int traineeRequirement){

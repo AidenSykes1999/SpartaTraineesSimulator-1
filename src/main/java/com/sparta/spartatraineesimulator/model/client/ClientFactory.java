@@ -39,17 +39,34 @@ public class ClientFactory {
 
                 traineesFromDesiredCourse.clear();
 
+                int count = 0;
                 for (Trainee benchedTrainee: bench){
                     if (benchedTrainee.getCourseType() == client.getTraineeTypeRequirement()){
                         traineesFromDesiredCourse.add(benchedTrainee);
                     }
+                    count++;
                 }
+
+                System.out.println("Bench trainee count: " + count);
 
                 int freeSpace = r.nextInt(1,
                         (client.getTraineeNumberRequirement() - client.getTrainees().size()) + 1);
-                List<Trainee> addedTrainees = traineesFromDesiredCourse.subList(0, freeSpace);
 
-                System.out.println(client.getClientId() + " added: " + addedTrainees.size());
+                System.out.println("traineesFromDesiredCourse: " + traineesFromDesiredCourse.size());
+                System.out.println("freeSpace: " + freeSpace);
+                System.out.println("Bench size: " + bench.size());
+                System.out.println("Requirement: " + client.getTraineeNumberRequirement());
+                System.out.println("Type: " + client.getTraineeTypeRequirement());
+
+                List<Trainee> addedTrainees = null;
+
+                if (traineesFromDesiredCourse.size() < freeSpace) {
+                    addedTrainees = traineesFromDesiredCourse.subList(0, traineesFromDesiredCourse.size());
+                } else {
+                    addedTrainees = traineesFromDesiredCourse.subList(0, freeSpace);
+                }
+
+                // System.out.println(client.getClientId() + " added: " + addedTrainees.size());
                 client.setTrainees(addedTrainees);
 
                 if (bench.size() > addedTrainees.size()) {
@@ -73,7 +90,7 @@ public class ClientFactory {
                     && client.getTrainees().size() == client.getTraineeNumberRequirement()){
 
                 happyClients.add(client);
-                System.out.println("Removed from recruiting: " + client.getClientId());
+                // System.out.println("Removed from recruiting: " + client.getClientId());
 
                 client.resetMonths();
                 removeRecruiting.add(client);
