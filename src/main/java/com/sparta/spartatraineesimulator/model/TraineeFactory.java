@@ -8,13 +8,13 @@ import java.util.Random;
 public class TraineeFactory {
 
     private static int traineeId = 0;
-    private int totalEnlisted = 0;
+    private static int totalEnlisted = 0;
 
     private static Random r = new Random();
 
-    private ArrayList<Trainee> waitingList = new ArrayList<>();
-    private ArrayList<Trainee> benchList = new ArrayList<>();
-    private ArrayList<Trainee> allTrainees = new ArrayList<>();
+    private static ArrayList<Trainee> waitingList = new ArrayList<>();
+    private static ArrayList<Trainee> benchList = new ArrayList<>();
+    private static ArrayList<Trainee> allTrainees = new ArrayList<>();
 
     public static ArrayList<Trainee> generateTrainees () {
 
@@ -29,14 +29,14 @@ public class TraineeFactory {
         return newTrainees;
     }
 
-    public void enlistTrainees(ArrayList<Trainee> newTrainees) {
+    public static void enlistTrainees(ArrayList<Trainee> newTrainees) {
         allTrainees.addAll(newTrainees);
 
         waitingList.addAll(newTrainees);
         totalEnlisted += newTrainees.size();
     }
 
-    public void benchTrainees(ArrayList<TrainingCentre> centres) {
+    public static void benchTrainees(ArrayList<TrainingCentre> centres) {
 
         ArrayList<Trainee> needsRemoving = new ArrayList<>();
 
@@ -59,7 +59,7 @@ public class TraineeFactory {
         }
     }
 
-    public void addAllWaitingList(ArrayList<Trainee> trainees) {
+    public static void addAllWaitingList(ArrayList<Trainee> trainees) {
         waitingList.addAll(trainees);
     }
 

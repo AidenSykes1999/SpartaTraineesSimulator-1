@@ -9,9 +9,9 @@ import java.util.Collections;
 
 public class SimulatorController {
 
-    private TraineeFactory traineeFactory = new TraineeFactory();
-    private CentreFactory centreFactory = new CentreFactory();
-    private ClientFactory clientFactory = new ClientFactory();
+    private static TraineeFactory traineeFactory = new TraineeFactory();
+    private static CentreFactory centreFactory = new CentreFactory();
+    private static ClientFactory clientFactory = new ClientFactory();
 
     public void runSimulationTick (int month) {
 
