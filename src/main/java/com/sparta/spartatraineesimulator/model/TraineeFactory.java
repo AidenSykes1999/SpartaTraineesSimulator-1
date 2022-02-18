@@ -5,6 +5,8 @@ import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
+
 public class TraineeFactory {
 
     private static int traineeId = 0;
@@ -16,6 +18,8 @@ public class TraineeFactory {
     private static ArrayList<Trainee> benchList = new ArrayList<>();
     private static ArrayList<Trainee> allTrainees = new ArrayList<>();
 
+
+
     public static ArrayList<Trainee> generateTrainees () {
 
         int numberOfTrainees = r.nextInt(50, 101);
@@ -25,7 +29,7 @@ public class TraineeFactory {
             newTrainees.add(new Trainee(traineeId, 0));
             traineeId++;
         }
-
+        logger.debug(newTrainees.size() + " added Trainees ready to start training!");
         return newTrainees;
     }
 
@@ -57,6 +61,10 @@ public class TraineeFactory {
             needsRemoving.clear();
 
         }
+    }
+
+    public ArrayList<Trainee> getAllTrainees() {
+        return allTrainees;
     }
 
     public static void addAllWaitingList(ArrayList<Trainee> trainees) {

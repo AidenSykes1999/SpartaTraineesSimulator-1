@@ -5,6 +5,8 @@ import com.sparta.spartatraineesimulator.model.Trainee;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
+
 public class CentreFactory {
 
     private static ArrayList<TrainingCentre> centres = new ArrayList<>();
@@ -25,15 +27,17 @@ public class CentreFactory {
             // TrainingHub limit = 3
             if (randomChoice == 1 && trainingHubCount < 3) {
                 centres.add(new TrainingHub());
+                logger.info("Opened a New Training Hub");
                 trainingHubCount++;
             }
             // BootCamp limit = 2
             else if (randomChoice == 2 && bootCampCount < 2) {
                 centres.add(new BootCamp());
+                logger.info("Opened a New Boot Camp");
                 bootCampCount++;
             } else if (randomChoice == 3) {
                 centres.add(new TechCentre());
-
+                logger.info("Opened a New Tech Centre");
             }
 
         }
@@ -117,6 +121,8 @@ public class CentreFactory {
                 if ("Training Hub".equals(centre.getName())){
                     trainingHubCount--;
                 }
+
+                logger.error(centre.getName() + " removed following requirement checks failed");
 
                 centresToBeRemoved.add(centre);
                 centre.removeTrainees();
