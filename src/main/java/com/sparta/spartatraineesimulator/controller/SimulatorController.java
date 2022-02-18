@@ -82,13 +82,11 @@ public class SimulatorController {
         }
 
         clientFactory.addTraineesToClients(benchList);
-        clientFactory.updateRecruitingClients();
-        clientFactory.updateHappyClients();
+        clientFactory.updateClients();
 
 
-        System.out.println("happy clients size: " + clientFactory.getHappyClients().size());
-        System.out.println("unhappy clients size: " + clientFactory.getUnhappyClients().size());
-        System.out.println("recruiting clients size: " + clientFactory.getRecruitingClients().size());
+
+        System.out.println("recruiting clients size: " + clientFactory.getClients().size());
 
         clientFactory.displayClients();
     }

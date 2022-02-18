@@ -8,22 +8,22 @@ import java.util.List;
 import java.util.Random;
 
 public class ClientFactory {
-    private ArrayList<Client> happyClients = new ArrayList<>();
-    private ArrayList<Client> unhappyClients = new ArrayList<>();
-    private ArrayList<Client> recruitingClients = new ArrayList<>();
+    private ArrayList<Client> clients = new ArrayList<>();
     private int clientIdCounter;
 
     public void createClient(){
         Random r = new Random();
         clientIdCounter++;
-        recruitingClients.add(new Client(clientIdCounter, Course.randomCourseType(), r.nextInt(15, 51)));
+        clients.add(new Client(clientIdCounter, Course.randomCourseType(), r.nextInt(15, 51)));
     }
 
     public void displayClients() {
 
         System.out.println("Clients Capacity: ");
-        for (Client client : recruitingClients) {
-            System.out.print("ClientID " + client.getClientId() + ": " + client.getTrainees().size() + " (" + client.getTraineeNumberRequirement() + ")" + ", ");
+        for (Client client : clients) {
+            System.out.print("ClientID " + client.getClientId() + ": \n" +
+                    client.getTrainees().size() + " (" + client.getTraineeNumberRequirement() + ")" +
+                    "\nisHappy: " + client.isHappy() + ", ");
         }
 
     }
@@ -33,7 +33,7 @@ public class ClientFactory {
         ArrayList<Trainee> traineesFromDesiredCourse = new ArrayList<>();
         Random r = new Random();
 
-        for (Client client: recruitingClients){
+        for (Client client: clients){
 
             if (client.getTrainees().size() < client.getTraineeNumberRequirement()) {
 
@@ -63,72 +63,30 @@ public class ClientFactory {
         }
     }
 
-    public void updateRecruitingClients(){
-
-        ArrayList<Client> removeRecruiting = new ArrayList<>();
-
-        for (Client client : recruitingClients){
-
-            if (client.getMonths() < 12
-                    && client.getTrainees().size() == client.getTraineeNumberRequirement()){
-
-                happyClients.add(client);
-                System.out.println("Removed from recruiting: " + client.getClientId());
-
-                client.resetMonths();
-                removeRecruiting.add(client);
-
-            }
-            else if (client.getMonths() >= 12
-                    && client.getTrainees().size() < client.getTraineeNumberRequirement()){
-
-                unhappyClients.add(client);
-
-                client.resetMonths();
-                removeRecruiting.add(client);
-
-            }
-            else{
-                client.incrementMonths();
+    public void updateClients(){
+        for (int i = 0; i < clients.size(); i++){
+            if (clients.get(i).isUnhappy()) {
+                clients.remove(i);
             }
         }
-
-        recruitingClients.removeAll(removeRecruiting);
-    }
-
-    public void updateHappyClients(){
-
-        ArrayList<Client> removeClients = new ArrayList<>();
-
-        for (Client client : happyClients){
-
-            if (client.getMonths() == 12){
-
-                recruitingClients.add(client);
-                client.resetMonths();
-                client.resetTrainees();
-
-                removeClients.add(client);
-
+        for (int i = 0; i < clients.size(); i++){
+            clients.get(i).determineHappiness();
+            if (clients.get(i).isHappy()){
+                clients.get(i).incrementHappyMonths();
             }
-            else{
-                client.incrementMonths();
-            }
-
+            clients.get(i).incrementMonths();
         }
-
-        happyClients.removeAll(removeClients);
+        for (int i = 0; i < clients.size(); i++){
+            if (clients.get(i).isHappy() && clients.get(i).getHappyMonths() == 12){
+                clients.get(i).resetMonths();
+                clients.get(i).setHappyMonths(0);
+                clients.get(i).resetTrainees();
+                clients.get(i).setHappy(false);
+            }
+        }
     }
 
-    public ArrayList<Client> getHappyClients() {
-        return happyClients;
-    }
-
-    public ArrayList<Client> getUnhappyClients() {
-        return unhappyClients;
-    }
-
-    public ArrayList<Client> getRecruitingClients() {
-        return recruitingClients;
+    public ArrayList<Client> getClients() {
+        return clients;
     }
 }

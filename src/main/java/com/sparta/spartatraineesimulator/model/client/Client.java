@@ -12,14 +12,16 @@ public class Client {
     private Course traineeTypeRequirement;
     private int traineeNumberRequirement;
     private ArrayList<Trainee> trainees = new ArrayList<>();
-//    boolean isHappy;
-    int months;
+    private boolean isHappy;
+    private int months;
+    private int happyMonths = 0;
 
     public Client(int clientId, Course traineeTypeRequirement, int traineeRequirement){
         this.clientId = clientId;
         this.traineeTypeRequirement = traineeTypeRequirement;
         this.traineeNumberRequirement = traineeRequirement;
         this.months = 1;
+        this.isHappy = false;
     }
 
     public int getClientId() {
@@ -54,6 +56,50 @@ public class Client {
         months = 1;
     }
 
+    public void setMonths(int month) { months = month;}
+
+    public void resetTrainees() {
+        this.trainees = new ArrayList<>();
+    }
+
+    public boolean isHappy() {
+        return isHappy;
+    }
+
+    public void setHappy(boolean happy) {
+        isHappy = happy;
+    }
+
+    public int getHappyMonths() {
+        return happyMonths;
+    }
+
+    public void setHappyMonths(int happyMonths) {
+        this.happyMonths = happyMonths;
+    }
+
+    public void incrementHappyMonths(){
+        this.happyMonths++;
+    }
+
+    public void determineHappiness(){
+        if (this.months <= 12 && this.trainees.size() == this.traineeNumberRequirement){
+            this.isHappy = true;
+        }
+        else {
+            this.isHappy = false;
+        }
+    }
+
+    public boolean isUnhappy(){
+        if (this.months > 12 && this.trainees.size() != this.traineeNumberRequirement){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -63,9 +109,5 @@ public class Client {
                 ", trainees=" + trainees +
                 ", months=" + months +
                 '}';
-    }
-
-    public void resetTrainees() {
-        this.trainees.clear();
     }
 }
