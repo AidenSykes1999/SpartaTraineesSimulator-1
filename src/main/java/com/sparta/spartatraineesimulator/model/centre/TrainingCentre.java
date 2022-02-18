@@ -97,14 +97,6 @@ public abstract class TrainingCentre {
         this.currentCapacity = this.trainees.size();
     }
 
-    public int getTimeOpen() {
-        return timeOpen;
-    }
-
-    public void setTimeOpen(int timeOpen) {
-        this.timeOpen = timeOpen;
-    }
-
 
     @Override
     public String toString() {
