@@ -26,30 +26,30 @@ public class SimulatorMain {
 
             simulatorController.runSimulationTick(i);
 
-            if (doIncremental) {
-                dm.displayTheDetails(simulatorController.getCentres(), simulatorController.getClosedCentres(), simulatorController.getAllTrainees());
-            }
+            // if (doIncremental) {
+            //     dm.displayTheDetails(simulatorController.getCentres(), simulatorController.getClosedCentres(), simulatorController.getAllTrainees());
+            // }
 
             System.out.println();
             System.out.println("centre capacity: ");
             // for debugging
-            for (TrainingCentre centre : simulatorController.getCentres()) {
-                System.out.print(centre.getCurrentCapacity() + ", ");
-            }
+            // for (TrainingCentre centre : simulatorController.getCentres()) {
+            //     System.out.print(centre.getCurrentCapacity() + ", ");
+            // }
 
-            System.out.println("Waiting list size: " + simulatorController.getNumberOfTraineesWaiting());
-            System.out.println("Total enrolled: " + simulatorController.getTotalEnlisted());
+            // System.out.println("Waiting list size: " + simulatorController.getNumberOfTraineesWaiting());
+            // System.out.println("Total enrolled: " + simulatorController.getTotalEnlisted());
 
             dm.displayMonthPassed();
 
 
         }
 
-        ArrayList<Trainee> trainees = simulatorController.getAllTrainees();
-        ArrayList<TrainingCentre> centres = simulatorController.getCentres();
-        ArrayList<TrainingCentre> closedCentres = simulatorController.getClosedCentres();
+        // ArrayList<Trainee> trainees = simulatorController.getAllTrainees();
+        // ArrayList<TrainingCentre> centres = simulatorController.getCentres();
+        // ArrayList<TrainingCentre> closedCentres = simulatorController.getClosedCentres();
 
-        dm.displayTheDetails(centres, closedCentres, trainees);
+        // dm.displayTheDetails(centres, closedCentres, trainees);
 
 //        FileWriterClass writer = new FileWriterClass();
 //        writer.outputToFile(centres);
