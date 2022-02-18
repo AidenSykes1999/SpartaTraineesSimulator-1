@@ -5,6 +5,8 @@ import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
+
 public class TraineeFactory {
 
     private static int traineeId = 0;
@@ -27,7 +29,7 @@ public class TraineeFactory {
             newTrainees.add(new Trainee(traineeId, 0));
             traineeId++;
         }
-
+        logger.debug(newTrainees.size() + " added Trainees ready to start training!");
         return newTrainees;
     }
 

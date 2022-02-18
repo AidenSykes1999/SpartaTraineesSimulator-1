@@ -36,7 +36,7 @@ public class DisplayManager {
 
     // Gathers the information and sends it to be formatted and then output once all of it is collated
     // Deletes the contents once it has output that data for the next batch of output
-    public void displayTheDetails(ArrayList<TrainingCentre> openCentres, ArrayList<TrainingCentre> closedCentres, ArrayList<Trainee> allTrainees){
+    public void displayTheDetails(ArrayList<TrainingCentre> openCentres, ArrayList<TrainingCentre> closedCentres, ArrayList<Trainee> allTrainees, ArrayList<Trainee> benchList){
 
         totalOpenCentres(openCentres);
         totalClosedCentres(closedCentres);
@@ -48,7 +48,7 @@ public class DisplayManager {
         logger.info("Output the data");
 
 
-
+        sb.append("Current Spartans on the Bench - ").append(benchList.size()).append(". \n");
         if (doIncrement){
             System.out.println(sb);
         }
@@ -64,7 +64,7 @@ public class DisplayManager {
     }
 
     // Offers the user the choice of output each month or all at the end of the simulation
-    public void doPrintEachMonth(){
+    public static boolean doPrintEachMonth(){
         boolean isTrue = false;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Would you like incrementally display each month? (Default: No)");
@@ -72,7 +72,7 @@ public class DisplayManager {
         if ("yes".equalsIgnoreCase(str)){
             isTrue = true;
         }
-        this.doIncrement = isTrue;
+        return isTrue;
     }
 
     // Calculates the current Open Centres based on the three that can exist
@@ -170,17 +170,13 @@ public class DisplayManager {
                         case BUSINESS -> trainingBusiness++;
                     }
             }
-            else {
-                onTheBench++;
-            }
         }
 
         return sb.append("\nTotal training: Java - ").append(trainingJava).append(". C# - ").append(trainingCSharp)
                 .append(". Data - ").append(trainingData).append(". DevOps - ").append(trainingDevOps)
                 .append(". Business - ").append(trainingBusiness).append(". \n").append("Total waiting: Java - ")
                 .append(waitingJava).append(". C# - ").append(waitingCSharp).append(". Data - ").append(waitingData)
-                .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness).append(". \n")
-                .append("Current Spartans on the Bench - ").append(onTheBench).append(". \n");
+                .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness).append(". \n");
     }
 
     // Uses the variable monthCount and increments it each pass through to display the correct current month
