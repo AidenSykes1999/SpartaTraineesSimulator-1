@@ -177,11 +177,18 @@ JUnit Jupiter is the API for writing tests using JUnit version 5. JUnit 5 is the
 ### **How to use the application**
 
 #### **How to download**
-- Step 1: Click on the 'Code' button and then choose the 'Download ZIP' option.
+- Step 1: Click on the green 'Code' button and then choose the 'Download ZIP' option.
+  <img src="ProgramImages/Step1Download.png"/>
 - Step 2: Extract the file by double-clicking on the downloaded ZIP file.
-- Step 3: Open IntelliJ IDEA application, then click on File option (the option is in the top left corner of the screen) and then click on Open. Then navigate to the place where you have extracted the folder, select the folder and press 'Open'.
+  <img src="ProgramImages/Step2Download.png"/>
+- Step 3: Open IntelliJ IDEA application, then click on File option (the option is in the top left corner of the screen) and then click on Open. Then navigate to the place where you have extracted the folder, select the folder and click 'Open'.
+  <img src="ProgramImages/Step3Download.jpg"/>
+  <img src="ProgramImages/Step3bDownload.png"/>
 - Step 4: Click on 'Trust Project' button, and then Click on 'New Window'.
-- Step 5: Look for ProjectMain.java class after following these steps: SpartaTraineesSimulator > src > main > java > com.sparta.spartatraineesimulator > Main.java
+  <img src="ProgramImages/Step4Download.png"/>
+  <img src="ProgramImages/Step4bDownload.png"/>
+- Step 5: Look for Main.java class after following these steps: SpartaTraineesSimulator > src > main > java > com.sparta.spartatraineesimulator > Main.java
+  <img src="ProgramImages/Step5Download.png"/>
 - Step 6: Run the Main class (by clicking on the green triangle button) and enjoy the application.
 
 #### **Instructions for running the application on the console**
@@ -218,9 +225,8 @@ JUnit Jupiter is the API for writing tests using JUnit version 5. JUnit 5 is the
 ### **Future work**
 
 Possible improvements for Sparta Trainee Simulator 2.0:
- - TBD
- - TBD
- - TBD
+ - Add more training centres.
+ - Make a GUI for this application.
 
 <br/>
 <div align="left">
