@@ -1,20 +1,25 @@
-package com.sparta.spartatraineesimulator.model;
+package com.sparta.spartatraineesimulator.model.client;
+
+import com.sparta.spartatraineesimulator.model.Course;
+import com.sparta.spartatraineesimulator.model.Trainee;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Client {
+
     private int clientId;
     private Course traineeTypeRequirement;
     private int traineeNumberRequirement;
     private ArrayList<Trainee> trainees = new ArrayList<>();
-    boolean isHappy;
+//    boolean isHappy;
     int months;
 
     public Client(int clientId, Course traineeTypeRequirement, int traineeRequirement){
         this.clientId = clientId;
         this.traineeTypeRequirement = traineeTypeRequirement;
         this.traineeNumberRequirement = traineeRequirement;
-        this.months = 0;
+        this.months = 1;
     }
 
     public int getClientId() {
@@ -33,16 +38,8 @@ public class Client {
         return trainees;
     }
 
-    public void setTrainees(Trainee trainee){
-        trainees.add(trainee);
-    }
-
-    public boolean isHappy() {
-        return isHappy;
-    }
-
-    public void setHappy(boolean happy) {
-        isHappy = happy;
+    public void setTrainees(List<Trainee> traineeList){
+        trainees.addAll(traineeList);
     }
 
     public int getMonths() {
@@ -54,7 +51,7 @@ public class Client {
     }
 
     public void resetMonths(){
-        months = 0;
+        months = 1;
     }
 
     @Override
@@ -64,8 +61,11 @@ public class Client {
                 ", traineeTypeRequirement=" + traineeTypeRequirement +
                 ", traineeNumberRequirement=" + traineeNumberRequirement +
                 ", trainees=" + trainees +
-                ", isHappy=" + isHappy +
                 ", months=" + months +
                 '}';
+    }
+
+    public void resetTrainees() {
+        this.trainees.clear();
     }
 }

@@ -1,4 +1,7 @@
-package com.sparta.spartatraineesimulator.model;
+package com.sparta.spartatraineesimulator.model.centre;
+
+import com.sparta.spartatraineesimulator.model.Course;
+import com.sparta.spartatraineesimulator.model.Trainee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,6 +90,11 @@ public abstract class TrainingCentre {
             return true;
         }
         return false;
+    }
+
+    public void removeCollectionTrainees(ArrayList<Trainee> traineesCollection) {
+        this.trainees.removeAll(traineesCollection);
+        this.currentCapacity = this.trainees.size();
     }
 
     public int getTimeOpen() {

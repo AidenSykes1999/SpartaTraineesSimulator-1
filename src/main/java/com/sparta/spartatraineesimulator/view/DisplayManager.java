@@ -1,10 +1,12 @@
 package com.sparta.spartatraineesimulator.view;
 
 import com.sparta.spartatraineesimulator.model.Trainee;
-import com.sparta.spartatraineesimulator.model.TrainingCentre;
+import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
 
 public class DisplayManager {
 
@@ -37,6 +39,10 @@ public class DisplayManager {
         totalFullCentres(openCentres);
         trainingAndWaitingIncrement(allTrainees);
         // Calls the methods and appends the details to the StringBuilder
+
+
+        logger.info("Output the data");
+
 
 
 
