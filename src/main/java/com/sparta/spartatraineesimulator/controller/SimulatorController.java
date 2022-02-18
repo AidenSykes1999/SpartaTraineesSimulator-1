@@ -3,6 +3,7 @@ package com.sparta.spartatraineesimulator.controller;
 import com.sparta.spartatraineesimulator.model.*;
 import com.sparta.spartatraineesimulator.model.centre.*;
 import com.sparta.spartatraineesimulator.model.client.ClientFactory;
+import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,6 +13,7 @@ public class SimulatorController {
     private static TraineeFactory traineeFactory = new TraineeFactory();
     private static CentreFactory centreFactory = new CentreFactory();
     private static ClientFactory clientFactory = new ClientFactory();
+    private static DisplayManager displayManager = new DisplayManager();
 
     public void runSimulationTick (int month) {
 
@@ -35,7 +37,10 @@ public class SimulatorController {
 
         clientFactory.addTraineesToClients(traineeFactory.getBenchList());
         clientFactory.updateClients();
-        clientFactory.displayClients();
+//        clientFactory.displayClients();
+
+        displayManager.displayTheDetails(centreFactory.getCentres(), centreFactory.getClosedCentres(), traineeFactory.getAllTrainees());
+
     }
 
     private void reassignTrainees(ArrayList<Trainee> trainees) {
