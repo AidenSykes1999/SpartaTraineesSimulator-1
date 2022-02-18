@@ -80,10 +80,10 @@ A simulation is a model that mimics the operation of an existing or proposed sys
 - If a centre is full, trainees can be moved to any other centre which is not full
 - If all centres are full, the trainees go onto a waiting list. This list must be served first before new trainees are taken
 - At the end of the simulation, output should show:
-  - number of open centres
-  - number of full centres
-  - number of trainees currently training
-  - number of trainees on the waiting list
+  - Number of open centres
+  - Number of full centres
+  - Number of trainees currently training
+  - Number of trainees on the waiting list
 
 #### **Phase 2**
 - Sparta will now check centres each month. If a centre has fewer than 25 trainees, it will close. The trainees will be randomly moved to another suitable centre
@@ -94,11 +94,11 @@ A simulation is a model that mimics the operation of an existing or proposed sys
 - Bootcamp: can train a maximum of 500 trainees but can remain open for 3 months if there are fewer than 25 trainees in attendance. If a Bootcamp has 3 consecutive months of low attendance, it will close. For the lifetime of the simulation, only 2 Bootcamps can exist at a time
 - Tech Centre: Can train 200 trainees but only teaches one course per centre. This is chosen randomly when a Tech Centre is open
 - The simulation should report on the following:
-  - number of open centres (breakdown for each type)
-  - number of closed centres (breakdown for each type)
-  - number of full centres (breakdown for each type)
-  - number of trainees currently training (breakdown for each type)
-  - number of trainees on the waiting list (breakdown for each type)
+  - Number of open centres (breakdown for each type)
+  - Number of closed centres (breakdown for each type)
+  - Number of full centres (breakdown for each type)
+  - Number of trainees currently training (breakdown for each type)
+  - Number of trainees on the waiting list (breakdown for each type)
 
 #### **Phase 3**
 
