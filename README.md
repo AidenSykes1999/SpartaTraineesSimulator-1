@@ -233,5 +233,4 @@ Possible improvements for Sparta Trainee Simulator 2.0:
     <b><a href="#table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
-
 =============================== ENJOY THE APPLICATION ===============================
