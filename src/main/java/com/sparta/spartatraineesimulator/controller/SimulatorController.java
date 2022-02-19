@@ -16,6 +16,14 @@ public class SimulatorController {
     private static CentreFactory centreFactory = new CentreFactory();
     private static ClientFactory clientFactory = new ClientFactory();
 
+    public SimulatorController(TraineeFactory traineeFactory, CentreFactory centreFactory, ClientFactory clientFactory) {
+
+        this.traineeFactory = traineeFactory;
+        this.centreFactory = centreFactory;
+        this.clientFactory = clientFactory;
+
+    }
+
     public void runSimulationTick (int month) {
 
         ArrayList<Trainee> newTrainees = traineeFactory.generateTrainees();
@@ -30,7 +38,7 @@ public class SimulatorController {
         ArrayList<Trainee> reassignedTrainees = centreFactory.closeCentres();
         reassignTrainees(reassignedTrainees);
 
-        traineeFactory.benchTrainees(centreFactory.getCentres());
+        traineeFactory.benchTrainees(centreFactory.getOpenCentres());
 
         if (month >= 12 && month % 3 == 0){
             clientFactory.createClient();
@@ -38,7 +46,7 @@ public class SimulatorController {
 
         clientFactory.addTraineesToClients(traineeFactory.getBenchList());
         clientFactory.updateClients();
-        clientFactory.displayClients();
+
     }
 
     private void reassignTrainees(ArrayList<Trainee> trainees) {

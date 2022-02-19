@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CentreFactory {
 
-    private static ArrayList<TrainingCentre> centres = new ArrayList<>();
+    private static ArrayList<TrainingCentre> openCentres = new ArrayList<>();
     private static ArrayList<TrainingCentre> closedCentres = new ArrayList<>();
 
     private static int bootCampCount = 0;
@@ -24,15 +24,15 @@ public class CentreFactory {
 
             // TrainingHub limit = 3
             if (randomChoice == 1 && trainingHubCount < 3) {
-                centres.add(new TrainingHub());
+                openCentres.add(new TrainingHub());
                 trainingHubCount++;
             }
             // BootCamp limit = 2
             else if (randomChoice == 2 && bootCampCount < 2) {
-                centres.add(new BootCamp());
+                openCentres.add(new BootCamp());
                 bootCampCount++;
             } else if (randomChoice == 3) {
-                centres.add(new TechCentre());
+                openCentres.add(new TechCentre());
 
             }
 
@@ -40,7 +40,7 @@ public class CentreFactory {
     }
 
     public static void addTraineesTechCentre(ArrayList<Trainee> trainees) {
-        for (TrainingCentre centre : centres) {
+        for (TrainingCentre centre : openCentres) {
 
             if (centre.hasCourse() && !centre.isCentreFull()) {
 
@@ -77,7 +77,7 @@ public class CentreFactory {
 
     // A centre takes a random number of trainees every month. (0 - 50 trainees up to their capacity)
     public static void addTraineesCentre(ArrayList<Trainee> trainees) {
-        for (TrainingCentre centre : centres) {
+        for (TrainingCentre centre : openCentres) {
             if (!centre.hasCourse() && !centre.isCentreFull()) {
 
                 int freeSpace = centre.getEmptySpace();
@@ -106,7 +106,7 @@ public class CentreFactory {
         ArrayList<Trainee> traineesRemovedFromCentre = new ArrayList<>();
         ArrayList<TrainingCentre> centresToBeRemoved = new ArrayList<>();
 
-        for (TrainingCentre centre : centres) {
+        for (TrainingCentre centre : openCentres) {
             if (centre.shouldClose()) {
                 ArrayList<Trainee> trainees = centre.getTrainees();
                 traineesRemovedFromCentre.addAll(trainees);
@@ -123,15 +123,15 @@ public class CentreFactory {
             }
         }
 
-        centres.removeAll(centresToBeRemoved);
+        openCentres.removeAll(centresToBeRemoved);
         closedCentres.addAll(centresToBeRemoved);
 
         return traineesRemovedFromCentre;
 
     }
 
-    public ArrayList<TrainingCentre> getCentres() {
-        return centres;
+    public ArrayList<TrainingCentre> getOpenCentres() {
+        return openCentres;
     }
 
 
@@ -141,7 +141,7 @@ public class CentreFactory {
 
     public int getNumberCurrentlyTraining() {
         int totalTraining = 0;
-        for (TrainingCentre centre : centres) {
+        for (TrainingCentre centre : openCentres) {
             totalTraining += centre.getCurrentCapacity();
         }
 
@@ -149,12 +149,12 @@ public class CentreFactory {
     }
 
     public int getNumberOfOpenCentres() {
-        return centres.size();
+        return openCentres.size();
     }
 
     public int getNumberOfFullCentres() {
         int totalFullCenters = 0;
-        for (TrainingCentre centre : centres) {
+        for (TrainingCentre centre : openCentres) {
             if (centre.isCentreFull()) {
                 totalFullCenters++;
             }

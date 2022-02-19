@@ -1,6 +1,9 @@
 package com.sparta.spartatraineesimulator;
 
 import com.sparta.spartatraineesimulator.controller.SimulatorController;
+import com.sparta.spartatraineesimulator.model.centre.CentreFactory;
+import com.sparta.spartatraineesimulator.model.client.ClientFactory;
+import com.sparta.spartatraineesimulator.model.trainee.TraineeFactory;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,9 +14,15 @@ public class SimulatorMain {
     public static final Logger logger = LogManager.getLogger("Sparta-Simulator-Logger");
 
     private static DisplayManager dm = new DisplayManager();
-    private static SimulatorController simulatorController = new SimulatorController();
+    private static SimulatorController simulatorController;
 
     public static void main(String[] args) {
+
+        TraineeFactory traineeFactory = new TraineeFactory();
+        CentreFactory centreFactory = new CentreFactory();
+        ClientFactory clientFactory = new ClientFactory();
+
+        simulatorController = new SimulatorController(traineeFactory, centreFactory, clientFactory);
 
         int months = getMonthCountMain(dm, simulatorController);
         boolean isIncremental = getIncrementalMain();
@@ -22,9 +31,29 @@ public class SimulatorMain {
             simulatorController.runSimulationTick(i);
 
             if (isIncremental) {
-                System.out.println("Month " + (i+1));
+                dm.displayMonth(i);
+                displayDetails(traineeFactory, centreFactory, clientFactory);
             }
+
         }
+
+        dm.displayFinishedMsg(months);
+        displayDetails(traineeFactory, centreFactory, clientFactory);
+
+    }
+
+    private static void displayDetails(TraineeFactory traineeFactory, CentreFactory centreFactory, ClientFactory clientFactory) {
+
+        dm.displayOpenCentres(centreFactory.getOpenCentres());
+        dm.displayClosedCentres(centreFactory.getClosedCentres());
+        dm.displayFullCentres(centreFactory.getOpenCentres());
+
+        dm.displayTrainingTrainees(centreFactory.getOpenCentres());
+        dm.displayWaitingTrainees(traineeFactory.getWaitingList());
+        dm.displayBenchedTrainees(traineeFactory.getBenchList());
+
+        dm.displayClientTypes(clientFactory.getClients());
+        dm.displayTraineesWithClient(clientFactory.getClients());
 
     }
 
@@ -59,6 +88,7 @@ public class SimulatorMain {
         return simulatorController.parseIncrement(stringIncremental);
 
     }
+
 
 
 }

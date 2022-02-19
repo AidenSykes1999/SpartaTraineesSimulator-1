@@ -17,17 +17,6 @@ public class ClientFactory {
         clients.add(new Client(clientIdCounter, Course.randomCourseType(), r.nextInt(15, 51)));
     }
 
-    public void displayClients() {
-
-        System.out.println("Clients Capacity: ");
-        for (Client client : clients) {
-            System.out.println("ClientID " + client.getClientId() + ": " +
-                    client.getTrainees().size() + " (" + client.getTraineeNumberRequirement() + ")" +
-                    " isHappy: " + client.isHappy() + " happinessMonths: " + client.getHappyMonths() + ", ");
-        }
-
-    }
-
     public void addTraineesToClients(ArrayList<Trainee> bench){
 
         ArrayList<Trainee> traineesFromDesiredCourse = new ArrayList<>();
@@ -47,8 +36,6 @@ public class ClientFactory {
                     count++;
                 }
 
-                System.out.println("Bench trainee count: " + count);
-
                 int freeSpace = r.nextInt(1,
                         (client.getTraineeNumberRequirement() - client.getTrainees().size()) + 1);
 
@@ -60,13 +47,6 @@ public class ClientFactory {
                     addedTrainees = traineesFromDesiredCourse.subList(0, freeSpace);
                 }
 
-                System.out.println("traineesFromDesiredCourse: " + traineesFromDesiredCourse.size());
-                System.out.println("freeSpace: " + freeSpace);
-                System.out.println("Bench size: " + bench.size());
-                System.out.println("Requirement: " + client.getTraineeNumberRequirement());
-                System.out.println("Type: " + client.getTraineeTypeRequirement());
-
-                // System.out.println(client.getClientId() + " added: " + addedTrainees.size());
                 client.setTrainees(addedTrainees);
 
                 if (bench.size() > addedTrainees.size()) {

@@ -1,12 +1,11 @@
 package com.sparta.spartatraineesimulator.view;
 
+import com.sparta.spartatraineesimulator.model.client.Client;
 import com.sparta.spartatraineesimulator.model.trainee.Trainee;
 import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
 
 public class DisplayManager {
 
@@ -34,42 +33,22 @@ public class DisplayManager {
 
     }
 
-    // Gathers the information and sends it to be formatted and then output once all of it is collated
-    // Deletes the contents once it has output that data for the next batch of output
-    public void displayTheDetails(ArrayList<TrainingCentre> openCentres, ArrayList<TrainingCentre> closedCentres, ArrayList<Trainee> allTrainees){
-
-        totalOpenCentres(openCentres);
-        totalClosedCentres(closedCentres);
-        totalFullCentres(openCentres);
-        trainingAndWaitingIncrement(allTrainees);
-        // Calls the methods and appends the details to the StringBuilder
-
-
-        logger.info("Output the data");
-
-
-
-
-        System.out.println(sb); // Prints the culmination of the StringBuilder, incrementally each month or all at once
-
-        sb.delete(0, sb.length());
+    public void displayInvalidMonthMsg() {
+        System.out.println("Invalid months please input a number over 0");
     }
 
-    // Offers the user the choice of output each month or all at the end of the simulation
-    public boolean doPrintEachMonth(){
-        boolean isTrue = false;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Would you like incrementally display each month? (Default: No)");
-        String str = scanner.next();
-        if ("yes".equalsIgnoreCase(str)){
-            isTrue = true;
-        }
-        return isTrue;
+    public void displayInvalidIncrementalMsg() {
+        System.out.println("Invalid increment please input 0 or 1");
+    }
+
+    public void displayMonth(int i) {
+        System.out.println("\nMonth " + (i+1) + ":");
     }
 
     // Calculates the current Open Centres based on the three that can exist
     // Appends that information to a prepared String
-    private StringBuilder totalOpenCentres(ArrayList<TrainingCentre> openCentres) {
+    public void displayOpenCentres(ArrayList<TrainingCentre> openCentres) {
+
         int totalOpenBootcamps = 0;
         int totalOpenTrainingHubs = 0;
         int totalOpenTechCentres = 0;
@@ -82,14 +61,18 @@ public class DisplayManager {
             }
         }
 
-        return sb.append("Total open centres: Training Hub - ")
+        sb.append("Open centres: Training Hub - ")
                 .append(totalOpenTrainingHubs).append(", Bootcamp - ")
                 .append(totalOpenBootcamps).append(". Tech Centre - ")
-                .append(totalOpenTechCentres).append(".\n");
+                .append(totalOpenTechCentres);
+
+        System.out.println(sb);
+        sb.setLength(0);
+
     }
     // Calculates the current Closed Centres based on the three that can exist
     // Appends that information to a prepared String
-    private StringBuilder totalClosedCentres(ArrayList<TrainingCentre> closedCentres) {
+    public void displayClosedCentres(ArrayList<TrainingCentre> closedCentres) {
 
         int totalClosedBootcamps = 0;
         int totalClosedTrainingHubs = 0;
@@ -103,16 +86,20 @@ public class DisplayManager {
             }
         }
 
-        return sb.append("Total closed centres: Training Hub - ")
+        sb.append("Closed centres: Training Hub - ")
                 .append(totalClosedTrainingHubs).append(". Bootcamp - ")
                 .append(totalClosedBootcamps).append(". Tech Centre - ")
-                .append(totalClosedTechCentres).append(".\n");
+                .append(totalClosedTechCentres);
+
+        System.out.println(sb);
+        sb.setLength(0);
+
     }
 
     /* Calculates the current Full Centres based on the three that can exist
      Appends that information to a prepared String
      */
-    private StringBuilder totalFullCentres(ArrayList<TrainingCentre> openCentres) {
+    public void displayFullCentres(ArrayList<TrainingCentre> openCentres) {
         int totalFullBootcamps = 0;
         int totalFullTrainingHubs = 0;
         int totalFullTechCentres = 0;
@@ -126,25 +113,24 @@ public class DisplayManager {
                 }
         }
 
-        return sb.append("Total full centres: Training Hub - ")
+        sb.append("Full centres: Training Hub - ")
                     .append(totalFullTrainingHubs).append(", Bootcamp - ")
                     .append(totalFullBootcamps).append(". Tech Centre - ")
-                    .append(totalFullTechCentres).append(".\n");
+                    .append(totalFullTechCentres).append("\n");
+
+        System.out.println(sb);
+        sb.setLength(0);
+
     }
 
+    public void displayTrainingTrainees(ArrayList<TrainingCentre> openCentres) {
+        int waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
 
-    /*
-    * Initialises the Training and Waiting Learning Streams to allow the counting of them from zero.
-    * Checks each trainee and if they're waiting. If they are, they increment the Waiting Streams
-    * and if they're not waiting the Training Streams get incremented all based on the course type.
-    * For example: Trainee 56 is Training and in the Java Stream, that would +1 trainingJava
-    */
-    public StringBuilder trainingAndWaitingIncrement(ArrayList<Trainee> trainees){
-        int trainingJava = 0, trainingCSharp = 0, trainingData = 0, trainingDevOps = 0, trainingBusiness = 0,
-                waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
+        for (TrainingCentre centre : openCentres) {
 
-        for (Trainee t: trainees){
-            if (t.isWaiting()){
+            ArrayList<Trainee> trainees = centre.getTrainees();
+
+            for (Trainee t : trainees) {
                 switch (t.getCourseType()) {
                     case JAVA -> waitingJava++;
                     case C_SHARP -> waitingCSharp++;
@@ -153,45 +139,109 @@ public class DisplayManager {
                     case BUSINESS -> waitingBusiness++;
                 }
             }
-            else{
-                switch (t.getCourseType()){
-                    case JAVA -> trainingJava++;
-                    case C_SHARP -> trainingCSharp++;
-                    case DATA -> trainingData++;
-                    case DEVOPS -> trainingDevOps++;
-                    case BUSINESS -> trainingBusiness++;
-                }
+        }
 
+        sb.append("Training trainees: Java - ")
+                .append(waitingJava).append(". C# - ").append(waitingCSharp).append(". Data - ").append(waitingData)
+                .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness);
+
+        System.out.println(sb);
+        sb.setLength(0);
+
+    }
+
+    public void displayWaitingTrainees(ArrayList<Trainee> waitingTrainees) {
+        int waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
+
+        for (Trainee t: waitingTrainees){
+            switch (t.getCourseType()) {
+                case JAVA -> waitingJava++;
+                case C_SHARP -> waitingCSharp++;
+                case DATA -> waitingData++;
+                case DEVOPS -> waitingDevOps++;
+                case BUSINESS -> waitingBusiness++;
             }
         }
 
-        return sb.append("Total training: Java - ").append(trainingJava).append(". C# - ").append(trainingCSharp)
-                .append(". Data - ").append(trainingData).append(". DevOps - ").append(trainingDevOps)
-                .append(". Business - ").append(trainingBusiness).append(". \n").append("Total waiting: Java - ")
+        sb.append("Waiting trainees: Java - ")
                 .append(waitingJava).append(". C# - ").append(waitingCSharp).append(". Data - ").append(waitingData)
-                .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness).append(". \n");
+                .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness);
+
+        System.out.println(sb);
+        sb.setLength(0);
+
     }
 
-    // // Uses the variable monthCount and increments it each pass through to display the correct current month
-    // public void displayMonthPassed() {
-    //     monthCount++;
-    //     System.out.println("Month " + monthCount);
-    // }
+    public void displayBenchedTrainees(ArrayList<Trainee> benchedTrainees) {
+        int benchJava = 0, benchCSharp = 0, benchData = 0, benchDevOps = 0, benchBusiness = 0;
 
-    public String messageFromACompany(ArrayList<Trainee> goneToWork, String company){
+        for (Trainee t: benchedTrainees){
+            switch (t.getCourseType()) {
+                case JAVA -> benchJava++;
+                case C_SHARP -> benchCSharp++;
+                case DATA -> benchData++;
+                case DEVOPS -> benchDevOps++;
+                case BUSINESS -> benchBusiness++;
+            }
+        }
 
-        StringBuilder stringBuilder = new StringBuilder();
-        int total = goneToWork.size();
+        sb.append("Benched trainees: Java - ")
+                .append(benchJava).append(". C# - ").append(benchCSharp).append(". Data - ").append(benchData)
+                .append(". DevOps - ").append(benchDevOps).append(". Business - ").append(benchBusiness).append("\n");
 
-        return stringBuilder.append(total).append(" ").append(goneToWork.get(0).getCourseType())
-                .append(" have been taken by ").append(company).toString();
+        System.out.println(sb);
+        sb.setLength(0);
     }
 
-    public void displayInvalidMonthMsg() {
-        System.out.println("Invalid months please input a number over 0");
+    public void displayClientTypes(ArrayList<Client> clients) {
+
+        int clientJava = 0, clientCSharp = 0, clientData = 0, clientDevOps = 0, clientBusiness = 0;
+
+        for (Client c: clients){
+            switch (c.getTraineeTypeRequirement()) {
+                case JAVA -> clientJava++;
+                case C_SHARP -> clientCSharp++;
+                case DATA -> clientData++;
+                case DEVOPS -> clientDevOps++;
+                case BUSINESS -> clientBusiness++;
+            }
+        }
+
+        sb.append("Client types: Java - ")
+                .append(clientJava).append(". C# - ").append(clientCSharp).append(". Data - ").append(clientData)
+                .append(". DevOps - ").append(clientDevOps).append(". Business - ").append(clientBusiness);
+
+        System.out.println(sb);
+        sb.setLength(0);
+
     }
 
-    public void displayInvalidIncrementalMsg() {
-        System.out.println("Invalid increment please input 0 or 1");
+    public void displayTraineesWithClient(ArrayList<Client> clients) {
+
+        int traineeJava = 0, traineeCSharp = 0, traineeData = 0, traineeDevOps = 0, traineeBusiness = 0;
+
+        for (Client c: clients) {
+            for (Trainee t : c.getTrainees()) {
+                switch (t.getCourseType()) {
+                    case JAVA -> traineeJava++;
+                    case C_SHARP -> traineeCSharp++;
+                    case DATA -> traineeData++;
+                    case DEVOPS -> traineeDevOps++;
+                    case BUSINESS -> traineeBusiness++;
+                }
+            }
+        }
+
+        sb.append("Client trainees: Java - ")
+                .append(traineeJava).append(". C# - ").append(traineeCSharp).append(". Data - ").append(traineeData)
+                .append(". DevOps - ").append(traineeDevOps).append(". Business - ").append(traineeBusiness);
+
+        System.out.println(sb);
+        sb.setLength(0);
+
+    }
+
+    public void displayFinishedMsg(int months) {
+        System.out.println("\nAfter " + (months) + " months:");
     }
 }
