@@ -5,6 +5,8 @@ import com.sparta.spartatraineesimulator.model.trainee.Trainee;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
+
 public class CentreFactory {
 
     private static ArrayList<TrainingCentre> openCentres = new ArrayList<>();
@@ -12,6 +14,8 @@ public class CentreFactory {
 
     private static int bootCampCount = 0;
     private static int trainingHubCount = 0;
+
+    private static int id = 0;
 
     public static void createCenter (int month) {
         if (month % 2 == 0) {
@@ -24,17 +28,22 @@ public class CentreFactory {
 
             // TrainingHub limit = 3
             if (randomChoice == 1 && trainingHubCount < 3) {
-                openCentres.add(new TrainingHub());
+                openCentres.add(new TrainingHub(id));
+                logger.debug("Creating TrainingHub, ID: " +  id);
                 trainingHubCount++;
             }
             // BootCamp limit = 2
             else if (randomChoice == 2 && bootCampCount < 2) {
-                openCentres.add(new BootCamp());
+                openCentres.add(new BootCamp(id));
+                logger.debug("Creating Bootcamp, ID: " +  id);
                 bootCampCount++;
             } else if (randomChoice == 3) {
-                openCentres.add(new TechCentre());
+                openCentres.add(new TechCentre(id));
+                logger.debug("Creating TechCentre, ID: " +  id);
 
             }
+
+            id++;
 
         }
     }
@@ -43,6 +52,8 @@ public class CentreFactory {
         for (TrainingCentre centre : openCentres) {
 
             if (centre.hasCourse() && !centre.isCentreFull()) {
+
+                logger.debug("Added trainees to " + centre.getName() + ", ID: " + centre.getId());
 
                 ArrayList<Trainee> traineeAddList = new ArrayList<>();
 
@@ -79,6 +90,8 @@ public class CentreFactory {
     public static void addTraineesCentre(ArrayList<Trainee> trainees) {
         for (TrainingCentre centre : openCentres) {
             if (!centre.hasCourse() && !centre.isCentreFull()) {
+
+                logger.debug("Adding trainees to " + centre.getName() + ", ID: " + centre.getId());
 
                 int freeSpace = centre.getEmptySpace();
 
@@ -120,6 +133,8 @@ public class CentreFactory {
 
                 centresToBeRemoved.add(centre);
                 centre.removeTrainees();
+
+                logger.debug("Closing " + centre.getName() + " ID: " + centre.getId());
             }
         }
 

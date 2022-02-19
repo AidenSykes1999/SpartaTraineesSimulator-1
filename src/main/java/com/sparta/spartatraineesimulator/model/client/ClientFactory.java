@@ -7,14 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
+
 public class ClientFactory {
     private ArrayList<Client> clients = new ArrayList<>();
     private int clientIdCounter;
 
     public void createClient(){
         Random r = new Random();
-        clientIdCounter++;
+
         clients.add(new Client(clientIdCounter, Course.randomCourseType(), r.nextInt(15, 51)));
+
+        clientIdCounter++;
+
+        logger.debug("Creating client id: " + clientIdCounter);
     }
 
     public void addTraineesToClients(ArrayList<Trainee> bench){
@@ -25,6 +31,8 @@ public class ClientFactory {
         for (Client client: clients){
 
             if (client.getTrainees().size() < client.getTraineeNumberRequirement()) {
+
+                logger.debug("Adding trainees to client ID: " + client.getClientId());
 
                 traineesFromDesiredCourse.clear();
 
@@ -59,6 +67,8 @@ public class ClientFactory {
     }
 
     public void updateClients() {
+
+        logger.info("Updating clients status...");
 
         for (int i = 0; i < clients.size(); i++){
             clients.get(i).determineHappiness();

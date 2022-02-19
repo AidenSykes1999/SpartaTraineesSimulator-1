@@ -47,11 +47,16 @@ public class SimulatorController {
         clientFactory.addTraineesToClients(traineeFactory.getBenchList());
         clientFactory.updateClients();
 
+        logger.debug("WaitingList size: " + traineeFactory.getWaitingList().size());
+        logger.debug("BenchList size: " + traineeFactory.getBenchList().size());
+
     }
 
     private void reassignTrainees(ArrayList<Trainee> trainees) {
         // try to reassign trainees
         if (trainees.size() > 0) {
+
+            logger.debug("Attempting to reassign trainees...");
 
             centreFactory.addTraineesTechCentre(trainees);
             centreFactory.addTraineesCentre(trainees);

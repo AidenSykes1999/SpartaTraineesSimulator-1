@@ -73,6 +73,10 @@ public class Client {
         this.happyMonths++;
     }
 
+    public int getClientId() {
+        return clientId;
+    }
+
     public void determineHappiness(){
         if (this.isHappy) {
             return;

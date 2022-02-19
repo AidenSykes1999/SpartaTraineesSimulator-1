@@ -23,6 +23,7 @@ public class SimulatorMain {
         ClientFactory clientFactory = new ClientFactory();
 
         simulatorController = new SimulatorController(traineeFactory, centreFactory, clientFactory);
+        logger.debug("Successfully created simulatorController");
 
         int months = getMonthCountMain(dm, simulatorController);
         boolean isIncremental = getIncrementalMain();
@@ -36,6 +37,8 @@ public class SimulatorMain {
             }
 
         }
+
+        logger.info("Simulation ended displaying details...");
 
         if (!isIncremental) {
             dm.displayFinishedMsg(months);

@@ -7,6 +7,8 @@ import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
+
 public class DisplayManager {
 
     private StringBuilder sb = new StringBuilder();
@@ -19,6 +21,8 @@ public class DisplayManager {
 
         String numberOfMonths = scanner.next();
 
+        logger.info("Input was '" + numberOfMonths + "'");
+
         return numberOfMonths;
     }
 
@@ -28,6 +32,8 @@ public class DisplayManager {
         System.out.println("Would you like to get monthly updates? (1: Yes, 0: No)");
 
         String incremental = scanner.next();
+
+        logger.info("Incremental input was '" + incremental + "'");
 
         return incremental;
 

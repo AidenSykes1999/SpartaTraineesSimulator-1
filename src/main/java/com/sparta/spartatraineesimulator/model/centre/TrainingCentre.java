@@ -17,7 +17,14 @@ public abstract class TrainingCentre {
     private Course courseType;
     private String name;
 
+    private int id;
+
 /// Methods inherited
+
+
+    public TrainingCentre(int id) {
+        this.id = id;
+    }
 
     public abstract boolean shouldClose();
 
@@ -115,5 +122,9 @@ public abstract class TrainingCentre {
 
     public void incrementActiveTime(){
         activeTime++;
+    }
+
+    public int getId() {
+        return id;
     }
 }

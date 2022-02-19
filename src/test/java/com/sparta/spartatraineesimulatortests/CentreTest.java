@@ -14,7 +14,7 @@ public class CentreTest {
     @DisplayName("Given the project is run, ensure that Tech Centre is runnable.")
     void getTechCentreTestMethod(){
 
-        TechCentre centre = new TechCentre();
+        TechCentre centre = new TechCentre(1);
 
         Assertions.assertNotNull(centre);
 
@@ -24,7 +24,7 @@ public class CentreTest {
     @DisplayName("Given the project is run, ensure that BootCamp is runnable.")
     void getBootCampMethod(){
 
-        BootCamp centre = new BootCamp();
+        BootCamp centre = new BootCamp(1);
 
         Assertions.assertNotNull(centre);
 
@@ -34,7 +34,7 @@ public class CentreTest {
     @DisplayName("Given the project is run, ensure that Training Hub is runnable.")
     void getTrainingHubMethod(){
 
-        TrainingHub centre = new TrainingHub();
+        TrainingHub centre = new TrainingHub(1);
 
         Assertions.assertNotNull(centre);
 
@@ -45,9 +45,9 @@ public class CentreTest {
     @DisplayName("Given the project is run, ensure that program can flag max capacity")
     void isMaxCapacity(){
 
-        TechCentre centre = new TechCentre();
-        TrainingHub centre2 = new TrainingHub();
-        BootCamp centre3 = new BootCamp();
+        TechCentre centre = new TechCentre(0);
+        TrainingHub centre2 = new TrainingHub(1);
+        BootCamp centre3 = new BootCamp(2);
 
         Boolean expected = centre.isCentreFull();
         Boolean expected2 = centre2.isCentreFull();
@@ -62,7 +62,7 @@ public class CentreTest {
     @DisplayName("Given there is a Centre, ensure that program can find the number of empty spaces in the centre")
     void findEmptySpaceInCentre(){
 
-        TechCentre techCentre = new TechCentre();
+        TechCentre techCentre = new TechCentre(1);
 
         int expected = techCentre.getEmptySpace();
 
@@ -74,7 +74,7 @@ public class CentreTest {
     @DisplayName("Given there is a Tech Centre. Check if the capacity is low enough to consider deleting the Centre.")
     void checkIfCentreNeedsToClose() {
 
-        TechCentre techCentre = new TechCentre();
+        TechCentre techCentre = new TechCentre(2);
         techCentre.setCurrentCapacity(24);
 
         boolean expected = techCentre.shouldClose();
@@ -88,7 +88,7 @@ public class CentreTest {
     @DisplayName("Given there is a Training Hub. Check if the capacity is low enough to consider deleting the Centre.")
     void checkIfTrainingHubNeedsToClose() {
 
-        TrainingHub trainingHub = new TrainingHub();
+        TrainingHub trainingHub = new TrainingHub(2);
         trainingHub.setCurrentCapacity(24);
 
         boolean expected = trainingHub.shouldClose();
