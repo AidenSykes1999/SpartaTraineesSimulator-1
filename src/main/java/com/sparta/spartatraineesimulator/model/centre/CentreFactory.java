@@ -39,8 +39,7 @@ public class CentreFactory {
                 bootCampCount++;
             } else if (randomChoice == 3) {
                 openCentres.add(new TechCentre(id));
-                logger.debug("Creating TechCentre, ID: " +  id);
-
+                logger.info("Opened a New Tech Centre, ID: " +  id);
             }
 
             id++;
@@ -130,6 +129,8 @@ public class CentreFactory {
                 if ("Training Hub".equals(centre.getName())){
                     trainingHubCount--;
                 }
+
+                logger.error(centre.getName() + " removed following requirement checks failed");
 
                 centresToBeRemoved.add(centre);
                 centre.removeTrainees();

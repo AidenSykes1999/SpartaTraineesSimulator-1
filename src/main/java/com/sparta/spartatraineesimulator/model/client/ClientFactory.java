@@ -58,9 +58,6 @@ public class ClientFactory {
                 if (bench.size() > addedTrainees.size()) {
                     bench.removeAll(addedTrainees);
                 }
-                else{
-                    bench.clear();
-                }
 
             }
         }

@@ -24,18 +24,6 @@ public class DisplayManager {
         logger.info("Input was '" + numberOfMonths + "'");
 
         return numberOfMonths;
-    }
-
-    public String getIsIncremental() {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Would you like to get monthly updates? (1: Yes, 0: No)");
-
-        String incremental = scanner.next();
-
-        logger.info("Incremental input was '" + incremental + "'");
-
-        return incremental;
 
     }
 
@@ -51,8 +39,19 @@ public class DisplayManager {
         System.out.println("\nMonth " + (i+1) + ":");
     }
 
-    // Calculates the current Open Centres based on the three that can exist
-    // Appends that information to a prepared String
+    public String getIsIncremental() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like to get monthly updates? (1: Yes, 0: No)");
+
+        String incremental = scanner.next();
+
+        logger.info("Incremental input was '" + incremental + "'");
+
+        return incremental;
+
+    }
+
     public void displayOpenCentres(ArrayList<TrainingCentre> openCentres) {
 
         int totalOpenBootcamps = 0;
@@ -152,7 +151,6 @@ public class DisplayManager {
         int waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
 
         for (TrainingCentre centre : openCentres) {
-
             ArrayList<Trainee> trainees = centre.getTrainees();
 
             for (Trainee t : trainees) {
@@ -176,6 +174,7 @@ public class DisplayManager {
     }
 
     public void displayWaitingTrainees(ArrayList<Trainee> waitingTrainees) {
+
         int waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
 
         for (Trainee t: waitingTrainees){
@@ -269,4 +268,5 @@ public class DisplayManager {
     public void displayFinishedMsg(int months) {
         System.out.println("\nMonth " + (months) + ":");
     }
+
 }

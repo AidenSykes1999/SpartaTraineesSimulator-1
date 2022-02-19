@@ -38,7 +38,7 @@ public class SimulatorMain {
 
         }
 
-        logger.info("Simulation ended displaying details...");
+        logger.info("Simulation ran for " + (months+1) + " months ended displaying details...");
 
         if (!isIncremental) {
             dm.displayFinishedMsg(months);
