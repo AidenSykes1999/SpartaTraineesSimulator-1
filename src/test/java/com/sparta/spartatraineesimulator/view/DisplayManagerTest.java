@@ -20,34 +20,34 @@ class DisplayManagerTest {
         dm = new DisplayManager();
     }
 
-    @Test
-    @DisplayName("Given a positive Integer, return the Integer")
-    public void givenAPositiveIntegerReturnTheInteger(){
-        String input = "5";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        assertEquals(5, dm.numberOfMonths());
-    }
-
-    @Test
-    @DisplayName("Given a negative Integer, return the Integer")
-    public void givenANegativeIntegerReturnTwelve(){
-        String input = "-1";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        assertEquals(12, dm.numberOfMonths());
-    }
-
-    @Test
-    @DisplayName("Given Zero, return the Integer")
-    public void givenZeroReturnTwelve(){
-        String input = "-1";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        assertEquals(12, dm.numberOfMonths());
-    }
+    // @Test
+    // @DisplayName("Given a positive Integer, return the Integer")
+    // public void givenAPositiveIntegerReturnTheInteger(){
+    //     String input = "5";
+    //     InputStream in = new ByteArrayInputStream(input.getBytes());
+    //     System.setIn(in);
+    //
+    //     assertEquals(5, dm.numberOfMonths());
+    // }
+    //
+    // @Test
+    // @DisplayName("Given a negative Integer, return the Integer")
+    // public void givenANegativeIntegerReturnTwelve(){
+    //     String input = "-1";
+    //     InputStream in = new ByteArrayInputStream(input.getBytes());
+    //     System.setIn(in);
+    //
+    //     assertEquals(12, dm.numberOfMonths());
+    // }
+    //
+    // @Test
+    // @DisplayName("Given Zero, return the Integer")
+    // public void givenZeroReturnTwelve(){
+    //     String input = "-1";
+    //     InputStream in = new ByteArrayInputStream(input.getBytes());
+    //     System.setIn(in);
+    //
+    //     assertEquals(12, dm.numberOfMonths());
+    // }
 
 }

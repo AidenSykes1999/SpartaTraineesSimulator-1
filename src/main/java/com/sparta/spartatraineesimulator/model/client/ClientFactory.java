@@ -1,7 +1,7 @@
 package com.sparta.spartatraineesimulator.model.client;
 
 import com.sparta.spartatraineesimulator.model.Course;
-import com.sparta.spartatraineesimulator.model.Trainee;
+import com.sparta.spartatraineesimulator.model.trainee.Trainee;
 
 import java.util.ArrayList;
 import java.util.List;

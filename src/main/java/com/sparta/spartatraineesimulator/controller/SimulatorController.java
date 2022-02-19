@@ -1,11 +1,14 @@
 package com.sparta.spartatraineesimulator.controller;
 
-import com.sparta.spartatraineesimulator.model.*;
 import com.sparta.spartatraineesimulator.model.centre.*;
 import com.sparta.spartatraineesimulator.model.client.ClientFactory;
+import com.sparta.spartatraineesimulator.model.trainee.Trainee;
+import com.sparta.spartatraineesimulator.model.trainee.TraineeFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
 
 public class SimulatorController {
 
@@ -41,6 +44,7 @@ public class SimulatorController {
     private void reassignTrainees(ArrayList<Trainee> trainees) {
         // try to reassign trainees
         if (trainees.size() > 0) {
+
             centreFactory.addTraineesTechCentre(trainees);
             centreFactory.addTraineesCentre(trainees);
 
@@ -48,9 +52,61 @@ public class SimulatorController {
             Collections.reverse(traineeFactory.getWaitingList());
             traineeFactory.addAllWaitingList(trainees);
             Collections.reverse(traineeFactory.getWaitingList());
+
+        }
+
+    }
+
+    public boolean checkMonthCount(String count) {
+
+        int monthCount;
+
+        try {
+            monthCount = Integer.parseInt(count);
+        } catch (NumberFormatException e) {
+            logger.warn("Invalid month input, isn't a number");
+            return false;
+        }
+
+        if (monthCount > 0) {
+            logger.info("Valid month input");
+            return true;
+        }
+        else {
+            logger.warn("Invalid month input is not over 0");
+            return false;
+        }
+
+    }
+
+    public int parseMonthCount(String stringMonths) {
+        return Integer.parseInt(stringMonths);
+    }
+
+    public boolean checkIncremental(String stringIncremental) {
+
+        int increment;
+
+        try {
+            increment = Integer.parseInt(stringIncremental);
+        } catch (NumberFormatException e) {
+            logger.warn("Invalid increment input, isn't a number");
+            return false;
+        }
+
+        if (increment == 0 || increment == 1) {
+            logger.info("Valid increment input");
+            return true;
+        }
+        else {
+            logger.warn("Invalid increment input is not 0 or 1");
+            return false;
         }
     }
 
-
+    public boolean parseIncrement(String stringIncremental) {
+        int incrementNum = Integer.parseInt(stringIncremental);
+        return (incrementNum == 1);
+    }
 }
 

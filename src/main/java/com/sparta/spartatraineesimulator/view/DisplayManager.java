@@ -1,6 +1,6 @@
 package com.sparta.spartatraineesimulator.view;
 
-import com.sparta.spartatraineesimulator.model.Trainee;
+import com.sparta.spartatraineesimulator.model.trainee.Trainee;
 import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 
 import java.util.ArrayList;
@@ -10,24 +10,28 @@ import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
 
 public class DisplayManager {
 
-    private int monthCount = 0;
     private StringBuilder sb = new StringBuilder();
     // Allows the user to specify a non-negative or non-zero integer for the length of time to simulate
-    public int numberOfMonths(){
-        int numberOfMonths = 12;
+
+    public String getMonths(){
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many months would you like to simulate?");
-        while (scanner.hasNext()){
-            numberOfMonths = scanner.nextInt();
-            if (numberOfMonths < 1){
-                numberOfMonths = 12;
-            }
-            else
-                return numberOfMonths;
 
+        String numberOfMonths = scanner.next();
 
-        }
         return numberOfMonths;
+    }
+
+    public String getIsIncremental() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like to get monthly updates? (1: Yes, 0: No)");
+
+        String incremental = scanner.next();
+
+        return incremental;
+
     }
 
     // Gathers the information and sends it to be formatted and then output once all of it is collated
@@ -168,11 +172,11 @@ public class DisplayManager {
                 .append(". DevOps - ").append(waitingDevOps).append(". Business - ").append(waitingBusiness).append(". \n");
     }
 
-    // Uses the variable monthCount and increments it each pass through to display the correct current month
-    public void displayMonthPassed() {
-        monthCount++;
-        System.out.println("Month " + monthCount);
-    }
+    // // Uses the variable monthCount and increments it each pass through to display the correct current month
+    // public void displayMonthPassed() {
+    //     monthCount++;
+    //     System.out.println("Month " + monthCount);
+    // }
 
     public String messageFromACompany(ArrayList<Trainee> goneToWork, String company){
 
@@ -181,5 +185,13 @@ public class DisplayManager {
 
         return stringBuilder.append(total).append(" ").append(goneToWork.get(0).getCourseType())
                 .append(" have been taken by ").append(company).toString();
+    }
+
+    public void displayInvalidMonthMsg() {
+        System.out.println("Invalid months please input a number over 0");
+    }
+
+    public void displayInvalidIncrementalMsg() {
+        System.out.println("Invalid increment please input 0 or 1");
     }
 }

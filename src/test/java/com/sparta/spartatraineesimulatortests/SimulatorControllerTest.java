@@ -1,13 +1,5 @@
 package com.sparta.spartatraineesimulatortests;
 
-import com.sparta.spartatraineesimulator.controller.SimulatorController;
-import com.sparta.spartatraineesimulator.model.Trainee;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-
 public class SimulatorControllerTest {
 
     // @Test
