@@ -25,10 +25,6 @@ public class Client {
         this.isHappy = false;
     }
 
-    public int getClientId() {
-        return clientId;
-    }
-
     public Course getTraineeTypeRequirement() {
         return traineeTypeRequirement;
     }
@@ -45,10 +41,6 @@ public class Client {
         trainees.addAll(traineeList);
     }
 
-    public int getMonths() {
-        return months;
-    }
-
     public void incrementMonths(){
         months++;
     }
@@ -56,8 +48,6 @@ public class Client {
     public void resetMonths(){
         months = 1;
     }
-
-    public void setMonths(int month) { months = month;}
 
     public void resetTrainees() {
         this.trainees = new ArrayList<>();

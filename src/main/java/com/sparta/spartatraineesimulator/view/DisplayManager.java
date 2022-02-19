@@ -53,23 +53,46 @@ public class DisplayManager {
         int totalOpenTrainingHubs = 0;
         int totalOpenTechCentres = 0;
 
+        int java = 0, cSharp = 0, data = 0, devOps = 0, business = 0;
+
         for (TrainingCentre tc: openCentres){
-            switch (tc.getName()){
-                case "Bootcamp" -> totalOpenBootcamps++;
-                case "Training Hub" -> totalOpenTrainingHubs++;
-                case "Tech Centre" -> totalOpenTechCentres++;
+            String name = tc.getName();
+
+            if (name == "Bootcamp") {
+                totalOpenBootcamps++;
+            }
+            else if (name == "Training Hub") {
+                totalOpenTrainingHubs++;
+            }
+            else if (name == "Tech Centre") {
+                totalOpenTechCentres++;
+
+                switch (tc.getCourseType()) {
+                    case JAVA -> java++;
+                    case C_SHARP -> cSharp++;
+                    case DATA -> data++;
+                    case DEVOPS -> devOps++;
+                    case BUSINESS -> business++;
+                }
+
             }
         }
 
         sb.append("Open centres: Training Hub - ")
                 .append(totalOpenTrainingHubs).append(", Bootcamp - ")
                 .append(totalOpenBootcamps).append(". Tech Centre - ")
-                .append(totalOpenTechCentres);
+                .append(totalOpenTechCentres).append(" ( Java - ")
+                .append(java).append(". C# - ").append(cSharp)
+                .append(". Data - ").append(data).append(". DevOps - ")
+                .append(devOps).append(". Business - ").append(business)
+                .append(" )");
+        ;
 
         System.out.println(sb);
         sb.setLength(0);
 
     }
+
     // Calculates the current Closed Centres based on the three that can exist
     // Appends that information to a prepared String
     public void displayClosedCentres(ArrayList<TrainingCentre> closedCentres) {
@@ -78,18 +101,41 @@ public class DisplayManager {
         int totalClosedTrainingHubs = 0;
         int totalClosedTechCentres = 0;
 
+        int java = 0, cSharp = 0, data = 0, devOps = 0, business = 0;
+
         for (TrainingCentre tc: closedCentres){
-            switch (tc.getName()){
-                case "Bootcamp" -> totalClosedBootcamps++;
-                case "Training Hub" -> totalClosedTrainingHubs++;
-                case "Tech Centre" -> totalClosedTechCentres++;
+            String name = tc.getName();
+
+            if (name == "Bootcamp") {
+                totalClosedBootcamps++;
             }
+            else if (name == "Training Hub") {
+                totalClosedTrainingHubs++;
+            }
+            else if (name == "Tech Centre") {
+                totalClosedTechCentres++;
+
+                switch (tc.getCourseType()) {
+                    case JAVA -> java++;
+                    case C_SHARP -> cSharp++;
+                    case DATA -> data++;
+                    case DEVOPS -> devOps++;
+                    case BUSINESS -> business++;
+                }
+
+            }
+
+
         }
 
         sb.append("Closed centres: Training Hub - ")
                 .append(totalClosedTrainingHubs).append(". Bootcamp - ")
                 .append(totalClosedBootcamps).append(". Tech Centre - ")
-                .append(totalClosedTechCentres);
+                .append(totalClosedTechCentres).append(" ( Java - ")
+                .append(java).append(". C# - ").append(cSharp)
+                .append(". Data - ").append(data).append(". DevOps - ")
+                .append(devOps).append(". Business - ").append(business)
+                .append(" )").append("\n");
 
         System.out.println(sb);
         sb.setLength(0);
@@ -100,23 +146,52 @@ public class DisplayManager {
      Appends that information to a prepared String
      */
     public void displayFullCentres(ArrayList<TrainingCentre> openCentres) {
+
         int totalFullBootcamps = 0;
         int totalFullTrainingHubs = 0;
         int totalFullTechCentres = 0;
 
+        int java = 0, cSharp = 0, data = 0, devOps = 0, business = 0;
+
         for (TrainingCentre tc: openCentres){
-            if (tc.isCentreFull())
-                switch (tc.getName()){
-                    case "Bootcamp" -> totalFullBootcamps++;
-                    case "Training Hub" -> totalFullTrainingHubs++;
-                    case "Tech Centre" -> totalFullTechCentres++;
+
+            if (tc.isCentreFull()) {
+
+                String name = tc.getName();
+
+                if (name == "Bootcamp") {
+                    totalFullBootcamps++;
                 }
+
+                else if (name == "Training Hub") {
+                    totalFullTrainingHubs++;
+                }
+
+                else if (name == "Tech Centre") {
+
+                    totalFullTechCentres++;
+
+                    switch (tc.getCourseType()) {
+                        case JAVA -> java++;
+                        case C_SHARP -> cSharp++;
+                        case DATA -> data++;
+                        case DEVOPS -> devOps++;
+                        case BUSINESS -> business++;
+                    }
+                }
+            }
+
+
         }
 
         sb.append("Full centres: Training Hub - ")
                     .append(totalFullTrainingHubs).append(", Bootcamp - ")
                     .append(totalFullBootcamps).append(". Tech Centre - ")
-                    .append(totalFullTechCentres).append("\n");
+                    .append(totalFullTechCentres).append(" ( Java - ")
+                    .append(java).append(". C# - ").append(cSharp)
+                    .append(". Data - ").append(data).append(". DevOps - ")
+                    .append(devOps).append(". Business - ").append(business)
+                    .append(" )").append("\n");
 
         System.out.println(sb);
         sb.setLength(0);
@@ -242,6 +317,6 @@ public class DisplayManager {
     }
 
     public void displayFinishedMsg(int months) {
-        System.out.println("\nAfter " + (months) + " months:");
+        System.out.println("\nMonth " + (months) + ":");
     }
 }

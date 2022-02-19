@@ -37,8 +37,10 @@ public class SimulatorMain {
 
         }
 
-        dm.displayFinishedMsg(months);
-        displayDetails(traineeFactory, centreFactory, clientFactory);
+        if (!isIncremental) {
+            dm.displayFinishedMsg(months);
+            displayDetails(traineeFactory, centreFactory, clientFactory);
+        }
 
     }
 
@@ -46,7 +48,7 @@ public class SimulatorMain {
 
         dm.displayOpenCentres(centreFactory.getOpenCentres());
         dm.displayClosedCentres(centreFactory.getClosedCentres());
-        dm.displayFullCentres(centreFactory.getOpenCentres());
+        //dm.displayFullCentres(centreFactory.getOpenCentres());
 
         dm.displayTrainingTrainees(centreFactory.getOpenCentres());
         dm.displayWaitingTrainees(traineeFactory.getWaitingList());
