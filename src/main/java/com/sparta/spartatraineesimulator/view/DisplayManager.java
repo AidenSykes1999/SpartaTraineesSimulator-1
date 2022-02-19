@@ -142,62 +142,6 @@ public class DisplayManager {
 
     }
 
-    /* Calculates the current Full Centres based on the three that can exist
-     Appends that information to a prepared String
-     */
-    public void displayFullCentres(ArrayList<TrainingCentre> openCentres) {
-
-        int totalFullBootcamps = 0;
-        int totalFullTrainingHubs = 0;
-        int totalFullTechCentres = 0;
-
-        int java = 0, cSharp = 0, data = 0, devOps = 0, business = 0;
-
-        for (TrainingCentre tc: openCentres){
-
-            if (tc.isCentreFull()) {
-
-                String name = tc.getName();
-
-                if (name == "Bootcamp") {
-                    totalFullBootcamps++;
-                }
-
-                else if (name == "Training Hub") {
-                    totalFullTrainingHubs++;
-                }
-
-                else if (name == "Tech Centre") {
-
-                    totalFullTechCentres++;
-
-                    switch (tc.getCourseType()) {
-                        case JAVA -> java++;
-                        case C_SHARP -> cSharp++;
-                        case DATA -> data++;
-                        case DEVOPS -> devOps++;
-                        case BUSINESS -> business++;
-                    }
-                }
-            }
-
-
-        }
-
-        sb.append("Full centres: Training Hub - ")
-                    .append(totalFullTrainingHubs).append(", Bootcamp - ")
-                    .append(totalFullBootcamps).append(". Tech Centre - ")
-                    .append(totalFullTechCentres).append(" ( Java - ")
-                    .append(java).append(". C# - ").append(cSharp)
-                    .append(". Data - ").append(data).append(". DevOps - ")
-                    .append(devOps).append(". Business - ").append(business)
-                    .append(" )").append("\n");
-
-        System.out.println(sb);
-        sb.setLength(0);
-
-    }
-
     public void displayTrainingTrainees(ArrayList<TrainingCentre> openCentres) {
         int waitingJava = 0, waitingCSharp = 0, waitingData = 0, waitingDevOps = 0, waitingBusiness = 0;
 

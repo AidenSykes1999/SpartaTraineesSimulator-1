@@ -44,11 +44,11 @@ public class SimulatorMain {
 
     }
 
-    private static void displayDetails(TraineeFactory traineeFactory, CentreFactory centreFactory, ClientFactory clientFactory) {
+    private static void displayDetails(TraineeFactory traineeFactory,
+                                       CentreFactory centreFactory, ClientFactory clientFactory) {
 
         dm.displayOpenCentres(centreFactory.getOpenCentres());
         dm.displayClosedCentres(centreFactory.getClosedCentres());
-        //dm.displayFullCentres(centreFactory.getOpenCentres());
 
         dm.displayTrainingTrainees(centreFactory.getOpenCentres());
         dm.displayWaitingTrainees(traineeFactory.getWaitingList());

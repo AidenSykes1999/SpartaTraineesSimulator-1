@@ -28,12 +28,10 @@ public class ClientFactory {
 
                 traineesFromDesiredCourse.clear();
 
-                int count = 0;
                 for (Trainee benchedTrainee: bench){
                     if (benchedTrainee.getCourseType() == client.getTraineeTypeRequirement()){
                         traineesFromDesiredCourse.add(benchedTrainee);
                     }
-                    count++;
                 }
 
                 int freeSpace = r.nextInt(1,

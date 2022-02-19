@@ -1,4 +1,4 @@
-package com.sparta.spartatraineesimulator.modelTests;
+package com.sparta.spartatraineesimulatortests;
 
 import com.sparta.spartatraineesimulator.model.ProjectRandomGenerator;
 import org.junit.jupiter.api.Assertions;

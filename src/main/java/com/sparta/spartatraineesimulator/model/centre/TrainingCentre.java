@@ -16,8 +16,6 @@ public abstract class TrainingCentre {
 
     private Course courseType;
     private String name;
-    private int timeOpen;
-
 
 /// Methods inherited
 
@@ -104,7 +102,6 @@ public abstract class TrainingCentre {
                 "limit=" + limit +
                 ", currentCapacity=" + currentCapacity +
                 ", trainees=" + trainees +
-                ", time open=" + timeOpen +
                 '}';
     }
 
