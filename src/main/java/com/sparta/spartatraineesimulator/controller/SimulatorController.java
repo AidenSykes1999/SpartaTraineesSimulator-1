@@ -1,9 +1,9 @@
 package com.sparta.spartatraineesimulator.controller;
 
-import com.sparta.spartatraineesimulator.model.*;
 import com.sparta.spartatraineesimulator.model.centre.*;
 import com.sparta.spartatraineesimulator.model.client.ClientFactory;
-import com.sparta.spartatraineesimulator.view.DisplayManager;
+import com.sparta.spartatraineesimulator.model.trainee.Trainee;
+import com.sparta.spartatraineesimulator.model.trainee.TraineeFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,13 +12,19 @@ import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
 
 public class SimulatorController {
 
-    private final TraineeFactory traineeFactory = new TraineeFactory();
-    private final CentreFactory centreFactory = new CentreFactory();
-    private final ClientFactory clientFactory = new ClientFactory();
-    private final DisplayManager displayManager = new DisplayManager();
-    public static boolean doIncrement = DisplayManager.doPrintEachMonth();
+    private static TraineeFactory traineeFactory = new TraineeFactory();
+    private static CentreFactory centreFactory = new CentreFactory();
+    private static ClientFactory clientFactory = new ClientFactory();
 
-    public void runSimulationTick (int month, int months) {
+    public SimulatorController(TraineeFactory traineeFactory, CentreFactory centreFactory, ClientFactory clientFactory) {
+
+        this.traineeFactory = traineeFactory;
+        this.centreFactory = centreFactory;
+        this.clientFactory = clientFactory;
+
+    }
+
+    public void runSimulationTick (int month) {
 
         ArrayList<Trainee> newTrainees = TraineeFactory.generateTrainees();
         TraineeFactory.enlistTrainees(newTrainees);
@@ -38,7 +44,7 @@ public class SimulatorController {
         ArrayList<Trainee> reassignedTrainees = CentreFactory.closeCentres();
         reassignTrainees(reassignedTrainees);
 
-        TraineeFactory.benchTrainees(centreFactory.getCentres());
+        traineeFactory.benchTrainees(centreFactory.getOpenCentres());
 
         if (month >= 12 && month % 3 == 0){
             clientFactory.createClient();
@@ -46,28 +52,80 @@ public class SimulatorController {
 
         clientFactory.addTraineesToClients(traineeFactory.getBenchList());
         clientFactory.updateClients();
-        if (doIncrement) {
-            displayManager.displayTheDetails(centreFactory.getCentres(), centreFactory.getClosedCentres(), traineeFactory.getAllTrainees(), traineeFactory.getBenchList());
-        }
-        if (!doIncrement && month+1 == months) {
-            displayManager.displayTheDetails(centreFactory.getCentres(), centreFactory.getClosedCentres(), traineeFactory.getAllTrainees(), traineeFactory.getBenchList());
-        }
+
+        logger.debug("WaitingList size: " + traineeFactory.getWaitingList().size());
+        logger.debug("BenchList size: " + traineeFactory.getBenchList().size());
 
     }
 
     private void reassignTrainees(ArrayList<Trainee> trainees) {
         // try to reassign trainees
         if (trainees.size() > 0) {
-            CentreFactory.addTraineesTechCentre(trainees);
-            CentreFactory.addTraineesCentre(trainees);
+
+            logger.debug("Attempting to reassign trainees...");
+
+            centreFactory.addTraineesTechCentre(trainees);
+            centreFactory.addTraineesCentre(trainees);
 
             // if some trainees still need reassigning add them to front of waitingList
             Collections.reverse(traineeFactory.getWaitingList());
             TraineeFactory.addAllWaitingList(trainees);
             Collections.reverse(traineeFactory.getWaitingList());
+
+        }
+
+    }
+
+    public boolean checkMonthCount(String count) {
+
+        int monthCount;
+
+        try {
+            monthCount = Integer.parseInt(count);
+        } catch (NumberFormatException e) {
+            logger.warn("Invalid month input, isn't a number");
+            return false;
+        }
+
+        if (monthCount > 0) {
+            logger.info("Valid month input");
+            return true;
+        }
+        else {
+            logger.warn("Invalid month input is not over 0");
+            return false;
+        }
+
+    }
+
+    public int parseMonthCount(String stringMonths) {
+        return Integer.parseInt(stringMonths);
+    }
+
+    public boolean checkIncremental(String stringIncremental) {
+
+        int increment;
+
+        try {
+            increment = Integer.parseInt(stringIncremental);
+        } catch (NumberFormatException e) {
+            logger.warn("Invalid increment input, isn't a number");
+            return false;
+        }
+
+        if (increment == 0 || increment == 1) {
+            logger.info("Valid increment input");
+            return true;
+        }
+        else {
+            logger.warn("Invalid increment input is not 0 or 1");
+            return false;
         }
     }
 
-
+    public boolean parseIncrement(String stringIncremental) {
+        int incrementNum = Integer.parseInt(stringIncremental);
+        return (incrementNum == 1);
+    }
 }
 

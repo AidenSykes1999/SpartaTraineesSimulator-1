@@ -8,8 +8,8 @@ public class BootCamp extends TrainingCentre {
 
     private int numMonthsInactive = 0;
 
-    public BootCamp() {
-        super();
+    public BootCamp(int id) {
+        super(id);
         setLimit(500);
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setCourseType(Course.NONE);

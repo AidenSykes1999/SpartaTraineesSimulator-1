@@ -1,7 +1,7 @@
 package com.sparta.spartatraineesimulator.model.centre;
 
 import com.sparta.spartatraineesimulator.model.Course;
-import com.sparta.spartatraineesimulator.model.Trainee;
+import com.sparta.spartatraineesimulator.model.trainee.Trainee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,15 @@ public abstract class TrainingCentre {
 
     private Course courseType;
     private String name;
-    private int timeOpen;
 
+    private int id;
 
 /// Methods inherited
+
+
+    public TrainingCentre(int id) {
+        this.id = id;
+    }
 
     public abstract boolean shouldClose();
 
@@ -104,7 +109,6 @@ public abstract class TrainingCentre {
                 "limit=" + limit +
                 ", currentCapacity=" + currentCapacity +
                 ", trainees=" + trainees +
-                ", time open=" + timeOpen +
                 '}';
     }
 
@@ -118,5 +122,9 @@ public abstract class TrainingCentre {
 
     public void incrementActiveTime(){
         activeTime++;
+    }
+
+    public int getId() {
+        return id;
     }
 }

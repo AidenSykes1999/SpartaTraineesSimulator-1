@@ -1,4 +1,4 @@
-package com.sparta.spartatraineesimulator.model;
+package com.sparta.spartatraineesimulator.model.trainee;
 
 import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
 
@@ -38,11 +38,15 @@ public class TraineeFactory {
 
         waitingList.addAll(newTrainees);
         totalEnlisted += newTrainees.size();
+
+        logger.info("Creating new trainees size: " + newTrainees.size()+  ", total enlisted: " + totalEnlisted);
     }
 
     public static void benchTrainees(ArrayList<TrainingCentre> centres) {
 
         ArrayList<Trainee> needsRemoving = new ArrayList<>();
+
+        logger.debug("Benching trainees...");
 
         for (TrainingCentre centre : centres) {
 

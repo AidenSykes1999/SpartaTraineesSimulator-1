@@ -8,9 +8,8 @@ public class TechCentre extends TrainingCentre {
 
     private final Course centreCourse = Course.randomCourseType();
 
-
-    public TechCentre() {
-        super();
+    public TechCentre(int id) {
+        super(id);
         setLimit(200);
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setName("Tech Centre");

@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class TrainingHub extends TrainingCentre {
 
-    public TrainingHub() {
-        super();
+    public TrainingHub(int id) {
+        super(id);
         setLimit(100);
         this.setTrainees(new ArrayList<>(getLimit()));
         this.setCourseType(Course.NONE);

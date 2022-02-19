@@ -1,43 +1,99 @@
 package com.sparta.spartatraineesimulator;
 
 import com.sparta.spartatraineesimulator.controller.SimulatorController;
-import com.sparta.spartatraineesimulator.model.Trainee;
-import com.sparta.spartatraineesimulator.model.TraineeFactory;
 import com.sparta.spartatraineesimulator.model.centre.CentreFactory;
-import com.sparta.spartatraineesimulator.model.centre.TrainingCentre;
+import com.sparta.spartatraineesimulator.model.client.ClientFactory;
+import com.sparta.spartatraineesimulator.model.trainee.TraineeFactory;
 import com.sparta.spartatraineesimulator.view.DisplayManager;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-
 public class SimulatorMain {
 
     public static final Logger logger = LogManager.getLogger("Sparta-Simulator-Logger");
 
+    private static DisplayManager dm = new DisplayManager();
+    private static SimulatorController simulatorController;
 
     public static void main(String[] args) {
 
-        DisplayManager dm = new DisplayManager();
-        SimulatorController simulatorController = new SimulatorController();
+        TraineeFactory traineeFactory = new TraineeFactory();
+        CentreFactory centreFactory = new CentreFactory();
+        ClientFactory clientFactory = new ClientFactory();
 
-        int months = dm.numberOfMonths();
+        simulatorController = new SimulatorController(traineeFactory, centreFactory, clientFactory);
+        logger.debug("Successfully created simulatorController");
 
+        int months = getMonthCountMain(dm, simulatorController);
+        boolean isIncremental = getIncrementalMain();
 
         for(int i = 0; i < months; i++) {
+            simulatorController.runSimulationTick(i);
 
-            simulatorController.runSimulationTick(i, months);
-
-            dm.displayMonthPassed();
-
+            if (isIncremental) {
+                dm.displayMonth(i);
+                displayDetails(traineeFactory, centreFactory, clientFactory);
+            }
 
         }
 
-        // dm.displayTheDetails(centres, closedCentres, trainees);
+        logger.info("Simulation ran for " + (months+1) + " months ended displaying details...");
 
-//        FileWriterClass writer = new FileWriterClass();
-//        writer.outputToFile(centres);
+        if (!isIncremental) {
+            dm.displayFinishedMsg(months);
+            displayDetails(traineeFactory, centreFactory, clientFactory);
+        }
+
     }
+
+    private static void displayDetails(TraineeFactory traineeFactory,
+                                       CentreFactory centreFactory, ClientFactory clientFactory) {
+
+        dm.displayOpenCentres(centreFactory.getOpenCentres());
+        dm.displayClosedCentres(centreFactory.getClosedCentres());
+
+        dm.displayTrainingTrainees(centreFactory.getOpenCentres());
+        dm.displayWaitingTrainees(traineeFactory.getWaitingList());
+        dm.displayBenchedTrainees(traineeFactory.getBenchList());
+
+        dm.displayClientTypes(clientFactory.getClients());
+        dm.displayTraineesWithClient(clientFactory.getClients());
+
+    }
+
+    private static int getMonthCountMain(DisplayManager dm, SimulatorController simulatorController) {
+
+        String stringMonths = dm.getMonths();
+        boolean monthCheck = simulatorController.checkMonthCount(stringMonths);
+
+        while (!monthCheck) {
+            logger.warn("Invalid month input retrying");
+            dm.displayInvalidMonthMsg();
+            stringMonths = dm.getMonths();
+            monthCheck = simulatorController.checkMonthCount(stringMonths);
+        }
+
+        return simulatorController.parseMonthCount(stringMonths);
+
+    }
+
+    private static boolean getIncrementalMain() {
+
+        String stringIncremental = dm.getIsIncremental();
+        boolean incrementalCheck = simulatorController.checkIncremental(stringIncremental);
+
+        while (!incrementalCheck) {
+            logger.warn("Invalid increment input retrying");
+            dm.displayInvalidIncrementalMsg();
+            stringIncremental = dm.getIsIncremental();
+            incrementalCheck = simulatorController.checkIncremental(stringIncremental);
+        }
+
+        return simulatorController.parseIncrement(stringIncremental);
+
+    }
+
+
 
 }

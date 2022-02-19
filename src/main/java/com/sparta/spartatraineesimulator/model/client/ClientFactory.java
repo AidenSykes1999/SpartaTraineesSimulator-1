@@ -1,11 +1,13 @@
 package com.sparta.spartatraineesimulator.model.client;
 
 import com.sparta.spartatraineesimulator.model.Course;
-import com.sparta.spartatraineesimulator.model.Trainee;
+import com.sparta.spartatraineesimulator.model.trainee.Trainee;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
 
 public class ClientFactory {
     private ArrayList<Client> clients = new ArrayList<>();
@@ -13,19 +15,12 @@ public class ClientFactory {
 
     public void createClient(){
         Random r = new Random();
-        clientIdCounter++;
+
         clients.add(new Client(clientIdCounter, Course.randomCourseType(), r.nextInt(15, 51)));
-    }
 
-    public void displayClients() {
+        clientIdCounter++;
 
-        System.out.println("Clients Capacity: ");
-        for (Client client : clients) {
-            System.out.println("ClientID " + client.getClientId() + ": " +
-                    client.getTrainees().size() + " (" + client.getTraineeNumberRequirement() + ")" +
-                    " isHappy: " + client.isHappy() + " happinessMonths: " + client.getHappyMonths() + ", ");
-        }
-
+        logger.debug("Creating client id: " + clientIdCounter);
     }
 
     public void addTraineesToClients(ArrayList<Trainee> bench){
@@ -37,17 +32,15 @@ public class ClientFactory {
 
             if (client.getTrainees().size() < client.getTraineeNumberRequirement()) {
 
+                logger.debug("Adding trainees to client ID: " + client.getClientId());
+
                 traineesFromDesiredCourse.clear();
 
-                int count = 0;
                 for (Trainee benchedTrainee: bench){
                     if (benchedTrainee.getCourseType() == client.getTraineeTypeRequirement()){
                         traineesFromDesiredCourse.add(benchedTrainee);
                     }
-                    count++;
                 }
-
-//                System.out.println("Bench trainee count: " + count);
 
                 int freeSpace = r.nextInt(1,
                         (client.getTraineeNumberRequirement() - client.getTrainees().size()) + 1);
@@ -60,27 +53,19 @@ public class ClientFactory {
                     addedTrainees = traineesFromDesiredCourse.subList(0, freeSpace);
                 }
 
-//                System.out.println("traineesFromDesiredCourse: " + traineesFromDesiredCourse.size());
-//                System.out.println("freeSpace: " + freeSpace);
-//                System.out.println("Bench size: " + bench.size());
-//                System.out.println("Requirement: " + client.getTraineeNumberRequirement());
-//                System.out.println("Type: " + client.getTraineeTypeRequirement());
-
-                // System.out.println(client.getClientId() + " added: " + addedTrainees.size());
                 client.setTrainees(addedTrainees);
 
                 if (bench.size() > addedTrainees.size()) {
                     bench.removeAll(addedTrainees);
                 }
 
-
-
-
             }
         }
     }
 
     public void updateClients() {
+
+        logger.info("Updating clients status...");
 
         for (int i = 0; i < clients.size(); i++){
             clients.get(i).determineHappiness();
