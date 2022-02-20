@@ -61,6 +61,10 @@ public class Client {
         isHappy = happy;
     }
 
+    public int getMonths() {
+        return months;
+    }
+
     public int getHappyMonths() {
         return happyMonths;
     }

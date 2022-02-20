@@ -86,4 +86,12 @@ public class TraineeFactory {
     public int getTotalEnlisted() {
         return totalEnlisted;
     }
+
+    public void clearAllTrainees() {
+        allTrainees = new ArrayList<>();
+    }
+
+    public void clearWaitingList() {
+        waitingList = new ArrayList<>();
+    }
 }

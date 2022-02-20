@@ -146,12 +146,12 @@ public class CentreFactory {
 
     }
 
-    public ArrayList<TrainingCentre> getOpenCentres() {
+    public static ArrayList<TrainingCentre> getOpenCentres() {
         return openCentres;
     }
 
 
-    public ArrayList<TrainingCentre> getClosedCentres() {
+    public static ArrayList<TrainingCentre> getClosedCentres() {
         return closedCentres;
     }
 
@@ -164,11 +164,11 @@ public class CentreFactory {
         return totalTraining;
     }
 
-    public int getNumberOfOpenCentres() {
+    public static int getNumberOfOpenCentres() {
         return openCentres.size();
     }
 
-    public int getNumberOfFullCentres() {
+    public static int getNumberOfFullCentres() {
         int totalFullCenters = 0;
         for (TrainingCentre centre : openCentres) {
             if (centre.isCentreFull()) {
@@ -179,4 +179,7 @@ public class CentreFactory {
         return totalFullCenters;
     }
 
+    public static void clearOpenCentres(){
+        openCentres = new ArrayList<>();
+    }
 }
