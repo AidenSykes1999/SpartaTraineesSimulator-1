@@ -188,7 +188,7 @@ JUnit Jupiter is the API for writing tests using JUnit version 5. JUnit 5 is the
   <img src="ProgramImages/Step4bDownload.png"/>
 - Step 5: Look for Main.java class after following these steps: SpartaTraineesSimulator > src > main > java > com.sparta.spartatraineesimulator > Main.java
   <img src="ProgramImages/Step5Download.png"/>
-- Step 6: Run the Main class (by clicking on the green triangle button) and enjoy the application.
+- Step 6: Run the Main class (SimulatorMain) and enjoy the application.
 
 #### **Instructions for running the application on the console**
 - `1) Input the number of months you want to run the simualtion for.`
@@ -203,23 +203,30 @@ JUnit Jupiter is the API for writing tests using JUnit version 5. JUnit 5 is the
 
 ### **Testing**
 
-#### **Manual Testing**
-
-- We have also used manual testing process in which test cases are executed manually where it was not possible to use any automated tool. All test cases here were executed manually according to the end user's perspective. This has been done to ensure whether the application is working, as mentioned in the requirements of the application.
-
-
 #### **JUnit Testing**
 - To provide a better performance to the user, all classes and methods in this application have been thoroughly tested using JUnit (unit testing framework).
+- We tested the TrainingCentre abstract class and all the subclasses.
+- The factories to created trainees, centres and clients.
+- And finally the course and its random generator.
 
 Results: 
 
 ![CentreTest](https://user-images.githubusercontent.com/48356710/154861543-65d69ac2-160c-4841-9162-b3fc4de07658.png)
+
 ![ClientFactoryTest](https://user-images.githubusercontent.com/48356710/154861546-5993a329-6da1-4f92-8fb4-5b30609f248d.png)
+
 ![CourseRandomGeneratorTest](https://user-images.githubusercontent.com/48356710/154861547-179050b5-3609-4d8d-a535-1b57adb3ec88.png)
+
 ![CourseTest](https://user-images.githubusercontent.com/48356710/154861548-d79fb7c4-62ec-44e2-9dba-7ebb04da73d1.png)
+
 ![TraineeFactoryTest](https://user-images.githubusercontent.com/48356710/154861549-900697e8-a09a-4064-b94b-e329a294e3b6.png)
+
 ![CentreFactoryTest](https://user-images.githubusercontent.com/48356710/154861552-7ee4106e-2b68-4352-b374-aa1446c9c720.png)
 
+#### **Manual Testing**
+
+- We tried to use Junit testing for as much as possible this was possible for all the model.
+- However, the main method SimulatorMain, the view DisplayManager and the controller SimulatorController we had issues with testing so we chose to manually test.
 
 <br/>
 <div align="left">
