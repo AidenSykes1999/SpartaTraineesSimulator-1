@@ -1,6 +1,6 @@
 package com.sparta.spartatraineesimulator.model.centre;
 
-import com.sparta.spartatraineesimulator.model.Course;
+import com.sparta.spartatraineesimulator.model.course.Course;
 
 import java.util.ArrayList;
 

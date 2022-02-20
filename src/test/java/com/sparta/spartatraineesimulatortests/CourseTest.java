@@ -1,6 +1,6 @@
 package com.sparta.spartatraineesimulatortests;
 
-import com.sparta.spartatraineesimulator.model.Course;
+import com.sparta.spartatraineesimulator.model.course.Course;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
