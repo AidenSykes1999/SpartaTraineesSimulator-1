@@ -61,6 +61,7 @@ public class DisplayManager {
         int java = 0, cSharp = 0, data = 0, devOps = 0, business = 0;
 
         for (TrainingCentre tc: openCentres){
+
             String name = tc.getName();
 
             if (name == "Bootcamp") {
@@ -92,6 +93,56 @@ public class DisplayManager {
                 .append(devOps).append(". Business - ").append(business)
                 .append(" )");
         ;
+
+        System.out.println(sb);
+        sb.setLength(0);
+
+    }
+
+    public void displayFullCentres(ArrayList<TrainingCentre> openCentres) {
+
+        int totalClosedBootcamps = 0;
+        int totalClosedTrainingHubs = 0;
+        int totalClosedTechCentres = 0;
+
+        int java = 0, cSharp = 0, data = 0, devOps = 0, business = 0;
+
+        for (TrainingCentre tc: openCentres){
+            String name = tc.getName();
+
+            if (tc.isCentreFull()) {
+
+                if (name == "Bootcamp") {
+                    totalClosedBootcamps++;
+                }
+                else if (name == "Training Hub") {
+                    totalClosedTrainingHubs++;
+                }
+                else if (name == "Tech Centre") {
+                    totalClosedTechCentres++;
+
+                    switch (tc.getCourseType()) {
+                        case JAVA -> java++;
+                        case C_SHARP -> cSharp++;
+                        case DATA -> data++;
+                        case DEVOPS -> devOps++;
+                        case BUSINESS -> business++;
+                    }
+
+                }
+
+            }
+
+        }
+
+        sb.append("Full centres: Training Hub - ")
+                .append(totalClosedTrainingHubs).append(". Bootcamp - ")
+                .append(totalClosedBootcamps).append(". Tech Centre - ")
+                .append(totalClosedTechCentres).append(" ( Java - ")
+                .append(java).append(". C# - ").append(cSharp)
+                .append(". Data - ").append(data).append(". DevOps - ")
+                .append(devOps).append(". Business - ").append(business)
+                .append(" )");
 
         System.out.println(sb);
         sb.setLength(0);

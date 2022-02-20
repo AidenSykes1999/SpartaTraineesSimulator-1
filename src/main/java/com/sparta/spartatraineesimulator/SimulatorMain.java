@@ -51,6 +51,7 @@ public class SimulatorMain {
                                        CentreFactory centreFactory, ClientFactory clientFactory) {
 
         dm.displayOpenCentres(centreFactory.getOpenCentres());
+        dm.displayFullCentres(centreFactory.getOpenCentres());
         dm.displayClosedCentres(centreFactory.getClosedCentres());
 
         dm.displayTrainingTrainees(centreFactory.getOpenCentres());
