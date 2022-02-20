@@ -1,6 +1,6 @@
 package com.sparta.spartatraineesimulator.model.client;
 
-import com.sparta.spartatraineesimulator.model.Course;
+import com.sparta.spartatraineesimulator.model.course.Course;
 import com.sparta.spartatraineesimulator.model.trainee.Trainee;
 
 import java.util.ArrayList;
@@ -11,6 +11,7 @@ import static com.sparta.spartatraineesimulator.SimulatorMain.logger;
 
 public class ClientFactory {
     private ArrayList<Client> clients = new ArrayList<>();
+    private ArrayList<Client> unhappyClients = new ArrayList<>();
     private int clientIdCounter;
 
     public void createClient(){
@@ -68,28 +69,42 @@ public class ClientFactory {
         logger.info("Updating clients status...");
 
         for (int i = 0; i < clients.size(); i++){
+
             clients.get(i).determineHappiness();
+
             if (clients.get(i).isHappy()){
+
                 clients.get(i).incrementHappyMonths();
                 clients.get(i).resetMonths();
+
             } else {
                 clients.get(i).incrementMonths();
             }
+
         }
 
         for (int i = 0; i < clients.size(); i++){
+
             if (clients.get(i).isUnhappy()) {
+                unhappyClients.add(clients.get(i));
                 clients.remove(i);
+
             }
+
         }
 
         for (int i = 0; i < clients.size(); i++){
+
             if (clients.get(i).isHappy() && clients.get(i).getHappyMonths() == 12){
+
                 clients.get(i).resetMonths();
                 clients.get(i).setHappyMonths(0);
+
                 clients.get(i).resetTrainees();
                 clients.get(i).setHappy(false);
+
             }
+
         }
 
     }
@@ -97,4 +112,9 @@ public class ClientFactory {
     public ArrayList<Client> getClients() {
         return clients;
     }
+
+    public ArrayList<Client> getUnhappyClients() {
+        return unhappyClients;
+    }
+
 }

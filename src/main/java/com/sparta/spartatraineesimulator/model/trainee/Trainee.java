@@ -1,6 +1,6 @@
 package com.sparta.spartatraineesimulator.model.trainee;
 
-import com.sparta.spartatraineesimulator.model.Course;
+import com.sparta.spartatraineesimulator.model.course.Course;
 
 public class Trainee {
 

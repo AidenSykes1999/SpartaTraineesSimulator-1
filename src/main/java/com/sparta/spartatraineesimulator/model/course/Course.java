@@ -1,4 +1,4 @@
-package com.sparta.spartatraineesimulator.model;
+package com.sparta.spartatraineesimulator.model.course;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ public enum Course { //courses in the academy
 
     private static final List<Course> VALUES = List.of(values()); //using generalised list to store the enums in it
     private static final int COURSES_SIZE = 5; //size of the courses list- a constant
-    private static final ProjectRandomGenerator projectRandomGenerator =
-            new ProjectRandomGenerator(1234567891234567891L); //using a long seed (will also test it later)
+    private static final CourseRandomGenerator COURSE_RANDOM_GENERATOR =
+            new CourseRandomGenerator(0); //using a long seed (will also test it later)
 
     public String getCourse() { //will use this in testing
         return switch (this) {
@@ -27,6 +27,6 @@ public enum Course { //courses in the academy
     }
 
     public static Course randomCourseType() { //selecting a random course
-        return VALUES.get(projectRandomGenerator.inRange(0, COURSES_SIZE-1)); //getting a random value/course from the list of courses (within our range)
+        return VALUES.get(COURSE_RANDOM_GENERATOR.inRange(0, COURSES_SIZE-1)); //getting a random value/course from the list of courses (within our range)
     }
 }

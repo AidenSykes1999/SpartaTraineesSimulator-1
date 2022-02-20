@@ -6,6 +6,9 @@ import com.sparta.spartatraineesimulator.model.centre.TrainingHub;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class CentreTest {
 
@@ -70,13 +73,45 @@ public class CentreTest {
 
     }
 
-    @Test
-    @DisplayName("Given there is a Tech Centre. Check if the capacity is low enough to consider deleting the Centre.")
-    void checkIfCentreNeedsToClose() {
+    @ParameterizedTest
+    @ValueSource(ints = {24,23,15})
+    @DisplayName("Given a Tech Centre is just created with below 25 trainees. Check that it's not closed right away.")
+    void checkIfCentreNeedsHasCloseBuffer(int traineeNumber) {
 
         TechCentre techCentre = new TechCentre(2);
-        techCentre.setCurrentCapacity(24);
+        techCentre.setCurrentCapacity(traineeNumber);
 
+        boolean expected = techCentre.shouldClose();
+
+        Assertions.assertFalse(expected);
+
+
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {24,23,15})
+    @DisplayName("Given a Training Hub is just created with below 25 trainees. Check that it's not closed right away.")
+    void checkIf_TrainingHub_HasCloseBuffer(int traineeNumber) {
+
+        TrainingHub trainingHub = new TrainingHub(2);
+        trainingHub.setCurrentCapacity(traineeNumber);
+
+        boolean expected = trainingHub.shouldClose();
+
+        Assertions.assertFalse(expected);
+
+
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {24,23,15})
+    @DisplayName("Given a Tech Centre is just created with below 25 trainees. Check that it closes after using the close buffer.")
+    void checkIf_Centre_CanCloseAfterBuffer(int traineeNumber) {
+
+        TechCentre techCentre = new TechCentre(2);
+        techCentre.setCurrentCapacity(traineeNumber);
+
+        techCentre.shouldClose();
         boolean expected = techCentre.shouldClose();
 
         Assertions.assertTrue(expected);
@@ -84,13 +119,15 @@ public class CentreTest {
 
     }
 
-    @Test
-    @DisplayName("Given there is a Training Hub. Check if the capacity is low enough to consider deleting the Centre.")
-    void checkIfTrainingHubNeedsToClose() {
+    @ParameterizedTest
+    @ValueSource(ints = {24,23,15})
+    @DisplayName("Given a Training Hub is just created with below 25 trainees. Check that it closes after using the close buffer.")
+    void checkIf_TrainingHub_CanCloseAfterBuffer(int traineeNumber) {
 
         TrainingHub trainingHub = new TrainingHub(2);
-        trainingHub.setCurrentCapacity(24);
+        trainingHub.setCurrentCapacity(traineeNumber);
 
+        trainingHub.shouldClose();
         boolean expected = trainingHub.shouldClose();
 
         Assertions.assertTrue(expected);
@@ -98,5 +135,36 @@ public class CentreTest {
 
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {24,23,15})
+    @DisplayName("Given a Bootcamp is just created with below 25 trainees. Check that it closes after 3 times.")
+    void checkIf_Bootcamp_CanClose(int traineeNumber) {
+
+        BootCamp bootCamp = new BootCamp(2);
+        bootCamp.setCurrentCapacity(traineeNumber);
+
+        bootCamp.shouldClose();
+        bootCamp.shouldClose();
+        boolean expected = bootCamp.shouldClose();
+
+        Assertions.assertTrue(expected);
+
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {25,26,30})
+    @DisplayName("Given a Bootcamp is just created with 25 or over trainees. Check that it doesn't close after 3 times.")
+    void checkIf_Bootcamp_DoesntClose(int traineeNumber) {
+
+        BootCamp bootCamp = new BootCamp(2);
+        bootCamp.setCurrentCapacity(traineeNumber);
+
+        bootCamp.shouldClose();
+        bootCamp.shouldClose();
+        boolean expected = bootCamp.shouldClose();
+
+        Assertions.assertFalse(expected);
+
+    }
 
 }

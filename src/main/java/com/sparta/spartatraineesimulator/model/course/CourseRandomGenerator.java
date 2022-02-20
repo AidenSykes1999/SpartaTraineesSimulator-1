@@ -1,12 +1,18 @@
-package com.sparta.spartatraineesimulator.model;
+package com.sparta.spartatraineesimulator.model.course;
 
 import java.util.Random;
 
-public class ProjectRandomGenerator {
+public class CourseRandomGenerator {
+
     private final Random random;
     //constructor
-    public ProjectRandomGenerator(long seed) {
-        random = new Random(seed);}
+    public CourseRandomGenerator(long seed) {
+        if (seed == 0) {
+            random = new Random();
+        } else {
+            random = new Random(seed);
+        }
+    }
 
     public int inRange(int minimum, int maximum) {          //specifying the range through this method, to use this later in picking a random course
         if (minimum > maximum) {                            //a negative value will result in IllegalArgumentException.

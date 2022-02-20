@@ -231,7 +231,7 @@ public class DisplayManager {
             }
         }
 
-        sb.append("Client types: Java - ")
+        sb.append("Recruiting and Happy Client types: Java - ")
                 .append(clientJava).append(". C# - ").append(clientCSharp).append(". Data - ").append(clientData)
                 .append(". DevOps - ").append(clientDevOps).append(". Business - ").append(clientBusiness);
 
@@ -256,9 +256,30 @@ public class DisplayManager {
             }
         }
 
-        sb.append("Client trainees: Java - ")
+        sb.append("Recruiting and Happy Client trainees: Java - ")
                 .append(traineeJava).append(". C# - ").append(traineeCSharp).append(". Data - ").append(traineeData)
                 .append(". DevOps - ").append(traineeDevOps).append(". Business - ").append(traineeBusiness);
+
+        System.out.println(sb);
+        sb.setLength(0);
+
+    }
+
+    public void displayClientStatus(ArrayList<Client> clients, ArrayList<Client> unhappyClients) {
+
+        int happyClientsCount = 0;
+        int recruitingClientsCount = 0;
+
+        for (Client c: clients) {
+            if (c.isHappy()) {
+                happyClientsCount++;
+            } else {
+                recruitingClientsCount++;
+            }
+        }
+
+        sb.append("Client status: Recruiting - ").append(recruitingClientsCount).append(". Happy - ")
+            .append(happyClientsCount).append(". Unhappy - ").append(unhappyClients.size());
 
         System.out.println(sb);
         sb.setLength(0);
