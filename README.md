@@ -15,7 +15,7 @@
 
 > Contributors:
 >
-> • Roberto Lovece - Junior Java SDET Consultant | [GitHub](https://github.com/RobertoLovece) | [LinkedIn](https://www.linkedin.com/in/roberto-lovece-20abb121a/) | 
+> • Roberto Lovece - Junior Java SDET Consultant | [Portfolio](https://robertolovece.github.io/Portfolio-Website/) | [GitHub](https://github.com/RobertoLovece) | [LinkedIn](https://www.linkedin.com/in/roberto-lovece-20abb121a/) | 
 >
 > • Suyash Srivastava - Junior Java SDET Consultant | [GitHub](https://github.com/SuyashsGit) | [LinkedIn](https://www.linkedin.com/in/suyash-srivastava-0a977a15a/) |
 >
@@ -51,6 +51,7 @@
   - [JUnit Testing](#junit-testing)
   - [Manual Testing](#manual-testing)
   - [Code Coverage](#code-coverage)
+* [**Logging**](#logging)
 * [**Future work**](#future-work)
 
 (README IN DEVELOPMENT)
@@ -122,7 +123,7 @@ This application is based on the following principles and design principles:
 - Model-view-controller: This is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements. This is done to separate internal representations of information from the ways information is presented to and accepted from the user.
 - Object-oriented programming principles: These principles are also known as the 4 pillars of OOP: Abstraction, Inheritance, Encapsulation, and Polymorphism.
 - SOLID principles: This application strongly follows SOLID principles i.e. Single responsibility, Open–closed, Liskov substitution, Interface segregation, and Dependency inversion principles.
-- Facade pattern: This design pattern has been used in this application to define a simplified interface to a more complex subsystem.
+- Factory pattern: Used to product and manage the trainee, centre and client objects in the simulation.
 
 <br/>
 <div align="left">
@@ -192,13 +193,9 @@ JUnit Jupiter is the API for writing tests using JUnit version 5. JUnit 5 is the
 - Step 6: Run the Main class (by clicking on the green triangle button) and enjoy the application.
 
 #### **Instructions for running the application on the console**
-- Steps: As seen in the screenshot below, a user can choose from one of the following "x" options:
-- `1) TBD`
-- `2) TBD`
-- `3) TBD`
-- `4) TBD`
-- `5) TBD...`
-
+- `1) Input the number of months you want to run the simualtion for.`
+- `2) Input 1 or 0 for incremental or non-incremental display.`
+- `3) View the output and enjoy!`
 
 <br/>
 <div align="left">
@@ -221,6 +218,16 @@ JUnit Jupiter is the API for writing tests using JUnit version 5. JUnit 5 is the
     <b><a href="#table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
+
+### **Logging**
+
+The levels of logging utilized where debug, info, warn.
+
+Examples of where logging levels are used:
+
+- Debug - logs the size of waiting and bench list.
+- Info - logs when the simulation ends.
+- Warn - logs when the user input an invalid option.
 
 ### **Future work**
 
