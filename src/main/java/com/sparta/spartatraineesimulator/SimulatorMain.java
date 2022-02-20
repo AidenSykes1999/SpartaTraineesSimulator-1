@@ -57,6 +57,7 @@ public class SimulatorMain {
         dm.displayWaitingTrainees(traineeFactory.getWaitingList());
         dm.displayBenchedTrainees(traineeFactory.getBenchList());
 
+        dm.displayClientStatus(clientFactory.getClients(), clientFactory.getUnhappyClients());
         dm.displayClientTypes(clientFactory.getClients());
         dm.displayTraineesWithClient(clientFactory.getClients());
 
