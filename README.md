@@ -50,11 +50,9 @@
 * [**Testing**](#testing)
   - [JUnit Testing](#junit-testing)
   - [Manual Testing](#manual-testing)
-  - [Code Coverage](#code-coverage)
 * [**Logging**](#logging)
 * [**Future work**](#future-work)
 
-(README IN DEVELOPMENT)
 ### **Overview**
 Sparta Global gave us a group project to replicate the company and its expansion, with trainees acting as agents who are allocated to either the waiting list or a training centre.
 <br/>
@@ -204,14 +202,24 @@ JUnit Jupiter is the API for writing tests using JUnit version 5. JUnit 5 is the
 <br/>
 
 ### **Testing**
-#### **JUnit Testing**
-- To provide a better performance to the user, all classes and methods in this application have been thoroughly tested using JUnit (unit testing framework).
 
 #### **Manual Testing**
 
 - We have also used manual testing process in which test cases are executed manually where it was not possible to use any automated tool. All test cases here were executed manually according to the end user's perspective. This has been done to ensure whether the application is working, as mentioned in the requirements of the application.
-#### **Code Coverage**
-- The tests provided x% coverage of classes and y percent coverage of code lines.
+
+
+#### **JUnit Testing**
+- To provide a better performance to the user, all classes and methods in this application have been thoroughly tested using JUnit (unit testing framework).
+
+Results: 
+
+![CentreTest](https://user-images.githubusercontent.com/48356710/154861543-65d69ac2-160c-4841-9162-b3fc4de07658.png)
+![ClientFactoryTest](https://user-images.githubusercontent.com/48356710/154861546-5993a329-6da1-4f92-8fb4-5b30609f248d.png)
+![CourseRandomGeneratorTest](https://user-images.githubusercontent.com/48356710/154861547-179050b5-3609-4d8d-a535-1b57adb3ec88.png)
+![CourseTest](https://user-images.githubusercontent.com/48356710/154861548-d79fb7c4-62ec-44e2-9dba-7ebb04da73d1.png)
+![TraineeFactoryTest](https://user-images.githubusercontent.com/48356710/154861549-900697e8-a09a-4064-b94b-e329a294e3b6.png)
+![CentreFactoryTest](https://user-images.githubusercontent.com/48356710/154861552-7ee4106e-2b68-4352-b374-aa1446c9c720.png)
+
 
 <br/>
 <div align="left">
@@ -241,3 +249,4 @@ Possible improvements for Sparta Trainee Simulator 2.0:
 </div>
 <br/>
 =============================== ENJOY THE APPLICATION ===============================
+
