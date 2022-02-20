@@ -223,6 +223,12 @@ Results:
 
 ![CentreFactoryTest](https://user-images.githubusercontent.com/48356710/154861552-7ee4106e-2b68-4352-b374-aa1446c9c720.png)
 
+Test Coverage:
+
+![TestCoverage](https://user-images.githubusercontent.com/98388461/154864374-dea956e5-5748-4ea2-95e0-cd9e33908df3.jpg)
+
+Low test coverage of some tests is due to the large amount of randomness involved in the methods and also getter and setter methods which were not tested.
+
 #### **Manual Testing**
 
 - We tried to use Junit testing for as much as possible this was possible for all the model.
