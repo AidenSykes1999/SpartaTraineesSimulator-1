@@ -64,13 +64,13 @@ public class DisplayManager {
 
             String name = tc.getName();
 
-            if (name == "Bootcamp") {
+            if (name.equals("Bootcamp")) {
                 totalOpenBootcamps++;
             }
-            else if (name == "Training Hub") {
+            else if (name.equals("Training Hub")) {
                 totalOpenTrainingHubs++;
             }
-            else if (name == "Tech Centre") {
+            else if (name.equals("Tech Centre")) {
                 totalOpenTechCentres++;
 
                 switch (tc.getCourseType()) {
@@ -112,13 +112,13 @@ public class DisplayManager {
 
             if (tc.isCentreFull()) {
 
-                if (name == "Bootcamp") {
+                if (name.equals("Bootcamp")) {
                     totalClosedBootcamps++;
                 }
-                else if (name == "Training Hub") {
+                else if (name.equals("Training Hub")) {
                     totalClosedTrainingHubs++;
                 }
-                else if (name == "Tech Centre") {
+                else if (name.equals("Tech Centre")) {
                     totalClosedTechCentres++;
 
                     switch (tc.getCourseType()) {
@@ -162,13 +162,13 @@ public class DisplayManager {
         for (TrainingCentre tc: closedCentres){
             String name = tc.getName();
 
-            if (name == "Bootcamp") {
+            if (name.equals("Bootcamp")) {
                 totalClosedBootcamps++;
             }
-            else if (name == "Training Hub") {
+            else if (name.equals("Training Hub")) {
                 totalClosedTrainingHubs++;
             }
-            else if (name == "Tech Centre") {
+            else if (name.equals("Tech Centre")) {
                 totalClosedTechCentres++;
 
                 switch (tc.getCourseType()) {
